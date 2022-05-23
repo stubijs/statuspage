@@ -57,14 +57,15 @@ jobs:
       uses: cloudflare/wrangler-action@2.0.0
       with:
         apiToken: ${{ secrets.CF_API_TOKEN }}
+        accountId: ${{ secrets.CF_ACCOUNT_ID }}
         workingDirectory: './packages/status-worker/'
         preCommands: |
-          echo "account_id = \"${{ secrets.CF_ACCOUNT_ID }}\"" >> wrangler.toml
-          wrangler kv:namespace create KV_STATUS_PAGE
-          wrangler kv:namespace create KV_STATUS_PAGE --preview
           apt-get update && apt-get install -y jq
+          export KV_NAMESPACE_STATUS=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
+          [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE
+          [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE --preview
           export KV_NAMESPACE_ID=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
-          export KV_NAMESPACE_ID_PREVIEW=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE_PREVIEW")))' | jq -r ".[0].id")
+          export KV_NAMESPACE_ID_PREVIEW=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE_preview")))' | jq -r ".[0].id")
           echo "kv_namespaces = [{binding=\"KV_STATUS_PAGE\", id=\"${KV_NAMESPACE_ID}\", preview_id=\"${KV_NAMESPACE_ID_PREVIEW}\"}]" >> wrangler.toml
           echo "[triggers]" >> wrangler.toml
           echo "crons = [\"*/10 * * * *\"]" >> wrangler.toml
