@@ -57,6 +57,7 @@ jobs:
       uses: cloudflare/wrangler-action@2.0.0
       with:
         apiToken: ${{ secrets.CF_API_TOKEN }}
+        workingDirectory: './packages/status-worker/'
         preCommands: |
           echo "account_id = \"${{ secrets.CF_ACCOUNT_ID }}\"" >> wrangler.toml
           wrangler kv:namespace create KV_STATUS_PAGE
