@@ -58,7 +58,6 @@ jobs:
       with:
         apiToken: ${{ secrets.CF_API_TOKEN }}
         preCommands: |
-          echo "account_id = \"${{ secrets.CF_ACCOUNT_ID }}\"" >> wrangler.toml
           wrangler kv:namespace create KV_STATUS_PAGE
           wrangler kv:namespace create KV_STATUS_PAGE --preview
           apt-get update && apt-get install -y jq
