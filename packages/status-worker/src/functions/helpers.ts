@@ -2,7 +2,7 @@ import config from './../../../../config.json'
 
 declare const KV_STATUS_PAGE: KVNamespace
 
-const kvDataKey = process.env.MONITOR_DATA || 'monitors_data_v1_1'
+const kvDataKey = 'monitors_data_v1_1'
 
 export interface WorkerMonitor { id?: string; name: any; description?: string; url: any; method: any; expectStatus?: number; followRedirect?: boolean; linkable?: boolean }
 

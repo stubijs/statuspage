@@ -44,15 +44,6 @@ jobs:
     - name: Install dependencies
       run: pnpm install
 
-    - name: Set env file
-      run: |
-        touch ./packages/status-worker/.env
-        if [${{secrets.SECRET_SLACK_WEBHOOK_URL}}] ; then echo SECRET_SLACK_WEBHOOK_URL=${{secrets.SECRET_SLACK_WEBHOOK_URL}} >> ./packages/status-worker/.env ; fi
-        if [${{secrets.SECRET_TELEGRAM_API_TOKEN}}] ; then echo SECRET_SLACK_WEBHOOK_URL=${{secrets.SECRET_TELEGRAM_API_TOKEN}} >> ./packages/status-worker/.env ; fi
-        if [${{secrets.SECRET_TELEGRAM_CHAT_ID}}] ; then echo SECRET_SLACK_WEBHOOK_URL=${{secrets.SECRET_TELEGRAM_CHAT_ID}} >> ./packages/status-worker/.env ; fi
-        if [${{secrets.SECRET_DISCORD_WEBHOOK_URL}}] ; then echo SECRET_SLACK_WEBHOOK_URL=${{secrets.SECRET_DISCORD_WEBHOOK_URL}} >> ./packages/status-worker/.env ; fi
-        cat ./packages/status-worker/.env
-
     - name: Publish
       uses: cloudflare/wrangler-action@2.0.0
       with:
@@ -71,4 +62,14 @@ jobs:
           echo "crons = [\"*/10 * * * *\"]" >> wrangler.toml
         postCommands: |
           pnpm publish
+        secrets: |
+          SECRET_SLACK_WEBHOOK_URL
+          SECRET_TELEGRAM_API_TOKEN
+          SECRET_TELEGRAM_CHAT_ID
+          SECRET_DISCORD_WEBHOOK_URL          
         environment: production
+      env:
+        SECRET_SLACK_WEBHOOK_URL: ${{secrets.SECRET_SLACK_WEBHOOK_URL}}
+        SECRET_TELEGRAM_API_TOKEN: ${{secrets.SECRET_TELEGRAM_API_TOKEN}}
+        SECRET_TELEGRAM_CHAT_ID: ${{secrets.SECRET_TELEGRAM_CHAT_ID}}
+        SECRET_DISCORD_WEBHOOK_URL: ${{secrets.SECRET_DISCORD_WEBHOOK_URL}}

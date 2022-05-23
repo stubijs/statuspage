@@ -69,7 +69,7 @@ export async function processCronTrigger(event: ScheduledEvent) {
     // Send Slack message on monitor change
     if (
       monitorStatusChanged &&
-      "SECRET_SLACK_WEBHOOK_URL" in process.env
+      typeof SECRET_SLACK_WEBHOOK_URL !== 'undefined'
     ) {
       event.waitUntil(notifySlack(monitor, monitorOperational))
     }
@@ -77,8 +77,8 @@ export async function processCronTrigger(event: ScheduledEvent) {
     // Send Telegram message on monitor change
     if (
       monitorStatusChanged &&
-      "SECRET_TELEGRAM_API_TOKEN" in process.env &&
-      "SECRET_TELEGRAM_CHAT_ID" in process.env
+      typeof SECRET_TELEGRAM_API_TOKEN!== 'undefined' &&
+      typeof SECRET_TELEGRAM_CHAT_ID !== 'undefined'
     ) {
       event.waitUntil(notifyTelegram(monitor, monitorOperational))
     }
@@ -86,7 +86,7 @@ export async function processCronTrigger(event: ScheduledEvent) {
     // Send Discord message on monitor change
     if (
       monitorStatusChanged &&
-      "SECRET_DISCORD_WEBHOOK_URL" in process.env
+      typeof SECRET_DISCORD_WEBHOOK_URL !== 'undefined'
     ) {
       event.waitUntil(notifyDiscord(monitor, monitorOperational))
     }

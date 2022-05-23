@@ -11,14 +11,16 @@
 import { processCronTrigger } from './functions/cronTrigger'
 
 export default {
+  
   async fetch(request: Request): Promise<Response> {
+
+    addEventListener('scheduled', event => {
+      event.waitUntil(triggerEvent(event));
+    });
+
     return new Response("Statuspage Worker!");
   },
 };
-
-addEventListener('scheduled', event => {
-  event.waitUntil(triggerEvent(event));
-});
 
 async function triggerEvent(event: ScheduledEvent) {
   // Write code for updating your API
