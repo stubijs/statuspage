@@ -1,0 +1,72 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - uses: pnpm/action-setup@v2.0.1
+      name: Install pnpm
+      id: pnpm-install
+      with:
+        version: 7
+        run_install: false
+
+    - name: Get pnpm store directory
+      id: pnpm-cache
+      run: |
+        echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
+    - uses: actions/cache@v3
+      name: Setup pnpm cache
+      with:
+        path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Set env file
+      run: |
+        touch ./packages/status-worker/.env
+        if [${{secrets.SECRET_SLACK_WEBHOOK_URL}}] ; then echo SECRET_SLACK_WEBHOOK_URL=${{secrets.SECRET_SLACK_WEBHOOK_URL}} >> ./packages/status-worker/.env ; fi
+        if [${{secrets.SECRET_TELEGRAM_API_TOKEN}}] ; then echo SECRET_SLACK_WEBHOOK_URL=${{secrets.SECRET_TELEGRAM_API_TOKEN}} >> ./packages/status-worker/.env ; fi
+        if [${{secrets.SECRET_TELEGRAM_CHAT_ID}}] ; then echo SECRET_SLACK_WEBHOOK_URL=${{secrets.SECRET_TELEGRAM_CHAT_ID}} >> ./packages/status-worker/.env ; fi
+        if [${{secrets.SECRET_DISCORD_WEBHOOK_URL}}] ; then echo SECRET_SLACK_WEBHOOK_URL=${{secrets.SECRET_DISCORD_WEBHOOK_URL}} >> ./packages/status-worker/.env ; fi
+        cat ./packages/status-worker/.env
+
+    - name: Publish
+      uses: cloudflare/wrangler-action@1.3.0
+      with:
+        apiToken: ${{ secrets.CF_API_TOKEN }}
+        preCommands: |
+          echo "account_id = \"${{ secrets.CF_ACCOUNT_ID }}\"" >> wrangler.toml
+          wrangler kv:namespace create KV_STATUS_PAGE
+          wrangler kv:namespace create KV_STATUS_PAGE --preview
+          apt-get update && apt-get install -y jq
+          export KV_NAMESPACE_ID=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
+          export KV_NAMESPACE_ID_PREVIEW=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE_PREVIEW")))' | jq -r ".[0].id")
+          echo "kv_namespaces = [{binding=\"KV_STATUS_PAGE\", id=\"${KV_NAMESPACE_ID}\", preview_id=\"${KV_NAMESPACE_ID_PREVIEW}\"}]" >> wrangler.toml
+          echo "[triggers]" >> wrangler.toml
+          echo "crons = [\"*/10 * * * *\"]" >> wrangler.toml
+        postCommands: |
+          pnpm publish
+        environment: production

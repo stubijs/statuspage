@@ -1,0 +1,40 @@
+{
+  "settings": {
+    "title": "Status Page",
+    "url": "https://status-page.eidam.dev",
+    "logo": "logo-192x192.png",
+    "daysInHistogram": 90,
+    "collectResponseTimes": true,
+    "user_agent": "cf-worker-status-page",
+    "allmonitorsOperational": "All Systems Operational",
+    "notAllmonitorsOperational": "Not All Systems Operational",
+    "monitorLabelOperational": "Operational",
+    "monitorLabelNotOperational": "Not Operational",
+    "monitorLabelNoData": "No data",
+    "dayInHistogramNoData": "No data",
+    "dayInHistogramOperational": "All good",
+    "dayInHistogramNotOperational": " incident(s)"
+  },  
+  "monitors": [
+    {
+      "id": "cms-jstubenrauch-de",
+      "name": "cms.jstubenrauch.de",
+      "description": "CMS jstubenrauch.",
+      "url": "https://cms.jstubenrauch.de/",
+      "method": "GET",
+      "expectStatus": 200,
+      "followRedirect": false,
+      "linkable": true
+    },
+    {
+      "id": "status-jstubenrauch-de",
+      "name": "status.jstubenrauch.de",
+      "description": "Status Page jstubenrauch.",
+      "url": "https://status.jstubenrauch.de/",
+      "method": "GET",
+      "expectStatus": 200,
+      "followRedirect": false,
+      "linkable": true
+    }
+  ]
+}
