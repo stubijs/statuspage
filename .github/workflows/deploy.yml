@@ -52,8 +52,7 @@ jobs:
         workingDirectory: './packages/status-worker/'
         preCommands: |
           wrangler kv:namespace list
-          apt-get update 
-          apt-get install -y jq
+          $(apt-get update && apt-get install -y jq)
           export KV_NAMESPACE_STATUS=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
           [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE
           [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE --preview
