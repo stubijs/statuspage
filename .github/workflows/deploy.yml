@@ -53,10 +53,6 @@ jobs:
         if [${{secrets.SECRET_DISCORD_WEBHOOK_URL}}] ; then echo SECRET_SLACK_WEBHOOK_URL=${{secrets.SECRET_DISCORD_WEBHOOK_URL}} >> ./packages/status-worker/.env ; fi
         cat ./packages/status-worker/.env
 
-    - name: Install jq
-      run: |
-        sudo apt-get update && sudo apt-get install -y jq
-
     - name: Publish
       uses: cloudflare/wrangler-action@2.0.0
       with:
@@ -64,6 +60,7 @@ jobs:
         accountId: ${{ secrets.CF_ACCOUNT_ID }}
         workingDirectory: './packages/status-worker/'
         preCommands: |
+          sudo apt-get update && sudo apt-get install -y jq
           export KV_NAMESPACE_STATUS=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
           [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE
           [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE --preview
