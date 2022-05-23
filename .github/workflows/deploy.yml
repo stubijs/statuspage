@@ -60,6 +60,7 @@ jobs:
           echo "kv_namespaces = [{binding=\"KV_STATUS_PAGE\", id=\"${KV_NAMESPACE_ID}\", preview_id=\"${KV_NAMESPACE_ID_PREVIEW}\"}]" >> wrangler.toml
           echo "[triggers]" >> wrangler.toml
           echo "crons = [\"*/10 * * * *\"]" >> wrangler.toml
+          cat wrangler.toml
         postCommands: |
           pnpm publish
         secrets: |
