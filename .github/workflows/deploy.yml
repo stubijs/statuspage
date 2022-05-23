@@ -55,7 +55,7 @@ jobs:
 
     - name: Install jq
       run: |
-        apt-get update && apt-get install -y jq
+        sudo apt-get update && sudo apt-get install -y jq
 
     - name: Publish
       uses: cloudflare/wrangler-action@2.0.0
