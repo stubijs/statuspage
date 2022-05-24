@@ -16,34 +16,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
-
-    - uses: pnpm/action-setup@v2.0.1
-      name: Install pnpm
-      id: pnpm-install
-      with:
-        version: 7
-        run_install: false
-
-    - name: Get pnpm store directory
-      id: pnpm-cache
-      run: |
-        echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
-
-    - uses: actions/cache@v3
-      name: Setup pnpm cache
-      with:
-        path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-        restore-keys: |
-          ${{ runner.os }}-pnpm-store-
-
-    - name: Install dependencies
-      run: pnpm install
-
     - name: Publish
       uses: cloudflare/wrangler-action@2.0.0
       with:
@@ -52,7 +24,7 @@ jobs:
         workingDirectory: './packages/status-worker/'
         preCommands: |
           wrangler kv:namespace list
-          $(apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends jq)
+          $(apt-get update && apt-get install -yq jq)
           export KV_NAMESPACE_STATUS=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
           [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE
           [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE --preview
@@ -62,8 +34,6 @@ jobs:
           echo "[triggers]" >> wrangler.toml
           echo "crons = [\"*/10 * * * *\"]" >> wrangler.toml
           cat wrangler.toml
-        postCommands: |
-          pnpm publish
         secrets: |
           SECRET_SLACK_WEBHOOK_URL
           SECRET_TELEGRAM_API_TOKEN
