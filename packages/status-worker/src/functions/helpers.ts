@@ -2,7 +2,7 @@ import config from './../../../../config.json'
 
 declare const KV_STATUS_PAGE: KVNamespace
 
-const kvDataKey = 'monitors_data_v1_1'
+const kvDataKey = 'KV_STATUS_PAGE'
 
 export interface WorkerMonitor { id?: string; name: any; description?: string; url: any; method: any; expectStatus?: number; followRedirect?: boolean; linkable?: boolean }
 
@@ -23,7 +23,7 @@ export async function getKVMonitors() {
 
   const defaultData: WorkerMonitorState = { lastUpdate: {allOperational: true}, monitors: {} }
 
-  if (data) {return data as unknown as WorkerMonitorState} else {return defaultData}
+  if (Object.keys(data).length === 0) {return data} else {return defaultData}
 }
 
 export async function setKVMonitors(data: WorkerMonitorState) {
