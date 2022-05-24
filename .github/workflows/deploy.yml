@@ -23,7 +23,8 @@ jobs:
         accountId: ${{ secrets.CF_ACCOUNT_ID }}
         workingDirectory: './packages/status-worker/'
         preCommands: |
-          $(apt-get update && apt-get install -yq jq)
+          apt-get update
+          apt-get install -y jq
           echo "test"
           export KV_NAMESPACE_STATUS=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
           [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE
