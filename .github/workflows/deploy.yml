@@ -33,7 +33,7 @@ jobs:
         [ -z ${{secrets.SECRET_TELEGRAM_API_TOKEN}} ] && echo ${{secrets.SECRET_TELEGRAM_API_TOKEN}}| wrangler secret put "SECRET_TELEGRAM_API_TOKEN"
         [ -z ${{secrets.SECRET_TELEGRAM_CHAT_ID}} ] && echo ${{secrets.SECRET_TELEGRAM_CHAT_ID}} | wrangler secret put "SECRET_TELEGRAM_CHAT_ID"
         [ -z ${{secrets.SECRET_DISCORD_WEBHOOK_URL}} ] && ${{secrets.SECRET_DISCORD_WEBHOOK_URL}}| wrangler secret put "SECRET_DISCORD_WEBHOOK_URL"
-        export KV_NAMESPACE_STATUS=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
+        export KV_NAMESPACE_STATUS=$(wrangler kv:namespace list \| jq -c 'map(select(.title \| contains("KV_STATUS_PAGE")))' \| jq -r ".[0].id")
         [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE
         [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE --preview
         export KV_NAMESPACE_ID=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
