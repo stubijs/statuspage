@@ -40,7 +40,7 @@ jobs:
         export KV_NAMESPACE_ID_PREVIEW=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE_preview")))' | jq -r ".[0].id")
         echo "kv_namespaces = [{binding=\"KV_STATUS_PAGE\", id=\"${KV_NAMESPACE_ID}\", preview_id=\"${KV_NAMESPACE_ID_PREVIEW}\"}]" >> wrangler.toml
         echo "[triggers]" >> wrangler.toml
-        echo "crons = [\"*/10 * * * *\"]" >> wrangler.toml
+        echo "crons = [\"*/5 * * * *\"]" >> wrangler.toml
         wrangler publish
       env: 
         CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}

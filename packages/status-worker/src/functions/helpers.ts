@@ -122,7 +122,8 @@ export async function notifyDiscord(monitor: WorkerMonitor, operational: boolean
 }
 
 export async function getCheckLocation() {
-  const res = await fetch('https://cloudflare-dns.com/dns-query', {
+  return ""
+  /* const res = await fetch('https://cloudflare-dns.com/dns-query', {
     method: 'OPTIONS',
   })
 
@@ -132,4 +133,5 @@ export async function getCheckLocation() {
   } else {
     return ""
   }
+  */
 }
