@@ -29,8 +29,6 @@ jobs:
     - name: Publish
       run: | 
         cd packages/status-worker/
-        export API_CREDENTIALS=${{ secrets.CF_API_TOKEN }}
-        export CLOUDFLARE_ACCOUNT_ID=${{ secrets.CF_ACCOUNT_ID }}
         [ -z ${{secrets.SECRET_SLACK_WEBHOOK_URL}} ] && echo ${{secrets.SECRET_SLACK_WEBHOOK_URL}} | wrangler secret put "SECRET_SLACK_WEBHOOK_URL"
         [ -z ${{secrets.SECRET_TELEGRAM_API_TOKEN}} ] && echo ${{secrets.SECRET_TELEGRAM_API_TOKEN}}| wrangler secret put "SECRET_TELEGRAM_API_TOKEN"
         [ -z ${{secrets.SECRET_TELEGRAM_CHAT_ID}} ] && echo ${{secrets.SECRET_TELEGRAM_CHAT_ID}} | wrangler secret put "SECRET_TELEGRAM_CHAT_ID"
@@ -44,3 +42,6 @@ jobs:
         echo "[triggers]" >> wrangler.toml
         echo "crons = [\"*/10 * * * *\"]" >> wrangler.toml
         wrangler publish
+      env: 
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
