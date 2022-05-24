@@ -23,7 +23,7 @@ export async function getKVMonitors() {
 
   const defaultData: WorkerMonitorState = { lastUpdate: {allOperational: true}, monitors: {} }
 
-  if (Object.keys(data).length === 0) {return data} else {return defaultData}
+  if (data && Object.keys(data).length === 0 && Object.getPrototypeOf(data) === Object.prototype) {return defaultData} else {return data as unknown as WorkerMonitorState}
 }
 
 export async function setKVMonitors(data: WorkerMonitorState) {
