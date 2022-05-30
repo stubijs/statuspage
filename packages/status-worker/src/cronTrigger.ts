@@ -71,7 +71,6 @@ export async function notifySlack(monitor: WorkerMonitor, operational: boolean) 
     headers: { 'Content-Type': 'application/json' },
   })
 }
-
 export async function notifyTelegram(monitor: WorkerMonitor, operational: boolean) {
   const text = `Monitor *${monitor.name.replaceAll(
     '-',
@@ -118,18 +117,15 @@ export async function notifyDiscord(monitor: WorkerMonitor, operational: boolean
 }
 
 export async function getCheckLocation() {
-  return ''
-  /* const res = await fetch('https://cloudflare-dns.com/dns-query', {
+  const res = await fetch('https://cloudflare-dns.com/dns-query', {
     method: 'OPTIONS',
   })
 
   const header = res.headers.get('cf-ray')
-  if ( header ) {
+  if (header)
     return header.split('-')[1]
-  } else {
-    return ""
-  }
-  */
+  else
+    return 'unknown'
 }
 
 function getDate() {
