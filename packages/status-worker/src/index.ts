@@ -10,6 +10,7 @@
 
 import { processCronTrigger } from './cronTrigger'
 
+/*
 const testEvent: ScheduledEvent = {
   cron: '',
   scheduledTime: 0,
@@ -42,13 +43,16 @@ const testEvent: ScheduledEvent = {
     throw new Error('Function not implemented.')
   },
 }
+*/
 
 export default {
 
+  /*
   async fetch(request: Request, env: unknown, ctx: ExecutionContext): Promise<Response> {
     ctx.waitUntil(triggerEvent(testEvent, env))
     return new Response('Statuspage Worker!')
   },
+  */
   async scheduled(event: ScheduledEvent, env: unknown, ctx: ExecutionContext) {
     ctx.waitUntil(triggerEvent(event, env))
   },
