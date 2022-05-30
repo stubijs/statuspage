@@ -1,4 +1,4 @@
-import config from './../../config.json'
+import config from './../../../config.json'
 
 const kvDataKey = 'monitor-data-v1'
 
