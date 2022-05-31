@@ -23,12 +23,9 @@ jobs:
         cd packages/status-page/
         pnpm run docs:build
         cp _worker.js ./dist/_worker.js
-
-    - name: Publish to Cloudflare Pages
-      uses: cloudflare/pages-action@1
+        export CLOUDFLARE_API_TOKEN="${{ secrets.CF_API_TOKEN }}"
+        export CLOUDFLARE_ACCOUNT_ID="${{ secrets.CF_ACCOUNT_ID }}"
+        wrangler pages publish "${directory}" --project-name="${projectName}"
       with:
-        apiToken: ${{ secrets.CF_API_TOKEN}}
-        accountId: ${{ secrets.CF_ACCOUNT_ID }}
         projectName: 'status-page'
-        directory: 'packages/status-page/dist'
-        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        directory: 'dist'
