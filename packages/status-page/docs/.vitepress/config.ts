@@ -46,9 +46,11 @@ export default defineConfig({
     plugins: [
       Components({
         // relative paths to the directory to search for components.
-        dirs: ['docs/.vitepress/theme/components'],
+        dirs: ['.vitepress/theme/components'],
         // valid file extensions for components.
-        extensions: ['vue'],
+        extensions: ['vue', 'md'],
+        // allow auto import and register components used in markdown
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         // search for subdirectories
         deep: true,
       }),
