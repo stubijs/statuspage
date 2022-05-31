@@ -25,7 +25,4 @@ jobs:
         cp _worker.js ./dist/_worker.js
         export CLOUDFLARE_API_TOKEN="${{ secrets.CF_API_TOKEN }}"
         export CLOUDFLARE_ACCOUNT_ID="${{ secrets.CF_ACCOUNT_ID }}"
-        wrangler pages publish "${directory}" --project-name="${projectName}"
-      with:
-        projectName: 'status-page'
-        directory: 'dist'
+        wrangler pages publish "dist" --project-name="status-page"
