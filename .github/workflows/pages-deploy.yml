@@ -20,6 +20,7 @@ jobs:
     - name: Install dependencies
       run: | 
         pnpm install
+        pnpm i -g wrangler
         cd packages/status-page/
         pnpm run docs:build
         cp _worker.js ./dist/_worker.js
