@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import Components from 'unplugin-vue-components/vite'
 // import { version } from '../../package.json'
 
 const statusPageName = 'Status Page jstubenrauch'
@@ -6,10 +7,10 @@ const statusPageDescription = 'Statuspage with Cloudflare Worker and Pages, Vite
 const ogUrl = ''
 const ogImage = ''
 
-
 export default defineConfig({
   title: statusPageName,
   description: statusPageDescription,
+  outDir: './../dist',
   head: [
     ['meta', { name: 'theme-color', content: '#ffffff' }],
     ['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }],
@@ -30,7 +31,7 @@ export default defineConfig({
   ],
   themeConfig: {
     repo: 'stubijs/statuspage',
-    //logo: '/logo.svg',
+    // logo: '/logo.svg',
     sidebar: false,
     docsDir: 'docs',
     docsBranch: 'main',
@@ -40,5 +41,17 @@ export default defineConfig({
     nav: [
     ],
 
+  },
+  vite: {
+    plugins: [
+      Components({
+        // relative paths to the directory to search for components.
+        dirs: ['docs/.vitepress/theme/components'],
+        // valid file extensions for components.
+        extensions: ['vue'],
+        // search for subdirectories
+        deep: true,
+      }),
+    ],
   },
 })

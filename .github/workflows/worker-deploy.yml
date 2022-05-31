@@ -1,12 +1,9 @@
-name: Deploy
+name: Deploy Worker
 
 on:
   push:
     branches:
       - main
-  repository_dispatch:
-  schedule:
-    - cron: '0 0 1 * *'
 
 jobs:
   deploy:

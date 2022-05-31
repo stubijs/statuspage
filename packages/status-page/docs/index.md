@@ -6,4 +6,4 @@ title: 'Statuspage build with Cloudflare Worker and Pages, Vitepress, Vite and V
 footer: 'MIT Licensed | Copyright © 2022 - by Jan Stubenrauch'
 ---
 
-Test
+<status-page />

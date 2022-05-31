@@ -8,7 +8,7 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
-import { processCronTrigger } from './cronTrigger'
+import { getKVMonitors, processCronTrigger } from './cronTrigger'
 
 /*
 const testEvent: ScheduledEvent = {
@@ -47,12 +47,11 @@ const testEvent: ScheduledEvent = {
 
 export default {
 
-  /*
   async fetch(request: Request, env: unknown, ctx: ExecutionContext): Promise<Response> {
-    ctx.waitUntil(triggerEvent(testEvent, env))
+    ctx.waitUntil(getKVMonitors(env))
     return new Response('Statuspage Worker!')
   },
-  */
+
   async scheduled(event: ScheduledEvent, env: unknown, ctx: ExecutionContext) {
     ctx.waitUntil(triggerEvent(event, env))
   },
