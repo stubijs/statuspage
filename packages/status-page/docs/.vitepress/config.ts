@@ -30,17 +30,14 @@ export default defineConfig({
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' }],
   ],
   themeConfig: {
-    repo: 'stubijs/statuspage',
     // logo: '/logo.svg',
-    sidebar: false,
-    docsDir: 'docs',
-    docsBranch: 'main',
-    editLinks: true,
-    editLinkText: 'Suggest changes to this page',
-
+    sidebar: [],
     nav: [
     ],
-
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © since 2022 Jan Stubenrauch',
+    },
   },
   vite: {
     plugins: [

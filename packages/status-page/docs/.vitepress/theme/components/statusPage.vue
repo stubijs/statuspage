@@ -6,21 +6,28 @@ const success = ref(false)
 const error = ref(false)
 
 onMounted(() => {
-  (async () => {
-    const response = await fetch('/api/statuspage/', {
-      method: 'GET',
-    })
-    const data = await response.json()
-    if (data === true) {
-      success.value = true
-      loading.value = false
-      console.log(data)
+  fetch('/api/statuspage/').then(async (response) => {
+    try {
+      const data = await response.json()
+      console.log('response data?', data)
     }
-    else {
-      error.value = true
-      console.log(data)
+    catch (error) {
+      console.log('Error happened here!')
+      console.log(error)
     }
-  })()
+  })
+  /*
+  const data = await response
+  if (data === true) {
+    success.value = true
+    loading.value = false
+    console.log(data)
+  }
+  else {
+    error.value = true
+    console.log(data)
+  }
+  */
 })
 </script>
 
