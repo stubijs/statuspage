@@ -23,7 +23,7 @@ jobs:
         cd packages/status-page/
         pnpm run docs:build
         cp _worker.js ./dist/_worker.js
-        export CF_API_TOKEN="${{ secrets.CF_API_TOKEN }}"
-        export CF_ACCOUNT_ID="${{ secrets.CF_ACCOUNT_ID }}"
+        export CLOUDFLARE_API_TOKEN="${{ secrets.CF_API_TOKEN }}"
+        export CLOUDFLARE_ACCOUNT_ID="${{ secrets.CF_ACCOUNT_ID }}"
         pnpm i -g wrangler
         wrangler pages publish "dist" --project-name="status-page" --project-name="status-page"
