@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import Components from 'unplugin-vue-components/vite'
 // import { version } from '../../package.json'
 
-const statusPageName = 'Status Page jstubenrauch'
+const statusPageName = 'Status Page'
 const statusPageDescription = 'Statuspage with Cloudflare Worker and Pages, Vitepress, Vite and Vue'
 const ogUrl = ''
 const ogImage = ''
