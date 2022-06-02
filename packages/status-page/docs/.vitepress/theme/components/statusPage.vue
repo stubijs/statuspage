@@ -32,6 +32,10 @@ onMounted(() => {
       ERROR
     </template>
     <template v-else>
+      <monitor-status-header :cf-kv-status="data.lastUpdate.allOperational" :cf-kv-number="data.lastUpdate.time" :cf-kv-loc="data.lastUpdate.loc" />
+      <template v-for="(item, index) in data.monitors">
+        {{ item }} - {{ index }}
+      </template>
       {{ data }}
     </template>
   </template>
