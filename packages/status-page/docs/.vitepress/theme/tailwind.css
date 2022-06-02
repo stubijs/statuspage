@@ -9,12 +9,62 @@
     @apply bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-600 shadow rounded-lg p-4 mb-2;
 }
 
+.pill {
+    @apply px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full;
+  }
+
+.histogram {
+@apply h-6 w-full mx-auto;
+}
+
+.hitbox {
+    @apply items-end box-border h-full w-full p-px rounded-sm
+}
+
+.bar {
+@apply bg-gray-300 dark:bg-gray-600 pb-0 h-full w-[85%] rounded
+}
+
+.bar.green {
+@apply bg-green-400 dark:bg-green-700;
+}
+
+.bar.red {
+@apply bg-red-400 dark:bg-red-700;
+}
+
+.bar.yellow {
+@apply bg-yellow-400 dark:bg-yellow-700;
+}
+
 .status-header-green {
     @apply bg-green-200 text-green-700 dark:bg-green-700 dark:text-green-200 border-green-300 dark:border-green-600
 }
 
 .status-header-yellow {
     @apply bg-yellow-200 text-yellow-700 dark:bg-yellow-700 dark:text-yellow-200 border-yellow-300 dark:border-yellow-600
+}
+
+.status-label-green {
+    @apply bg-green-200 text-green-800 dark:bg-green-800 dark:text-green-200
+}
+
+.status-label-yellow {
+    @apply bg-yellow-200 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-200
+}
+
+.tooltip {
+    @apply relative;
+}
+
+.tooltip .content {
+@apply invisible absolute z-50 inline-block;
+@apply rounded-lg py-1 px-2 bg-gray-100 dark:bg-gray-800 shadow;
+@apply opacity-0 transition-all duration-200 scale-50;
+}
+
+.tooltip:hover .content {
+@apply visible opacity-100 scale-100;
 }
 
 }

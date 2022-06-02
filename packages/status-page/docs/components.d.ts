@@ -7,7 +7,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     MonitorCard: typeof import('./.vitepress/theme/components/monitorCard.vue')['default']
     MonitorDayAverage: typeof import('./.vitepress/theme/components/monitorDayAverage.vue')['default']
-    MonitorFilter: typeof import('./.vitepress/theme/components/monitorFilter.vue')['default']
     MonitorHistogram: typeof import('./.vitepress/theme/components/monitorHistogram.vue')['default']
     MonitorStatusHeader: typeof import('./.vitepress/theme/components/monitorStatusHeader.vue')['default']
     MonitorStatusLabel: typeof import('./.vitepress/theme/components/monitorStatusLabel.vue')['default']

@@ -4,13 +4,13 @@ const kvDataKey = 'monitor-data-v1'
 
 export interface WorkerMonitor { id?: string; name: any; description?: string; url: any; method: any; expectStatus?: number; followRedirect?: boolean; linkable?: boolean }
 
-type MonitorRes = Record<string, { n: number; ms: number; a: number }>
+export type MonitorRes = Record<string, { n: number; ms: number; a: number }>
 
-type MonitorChecks = Record<string, { fails: number; res: MonitorRes }>
+export type MonitorChecks = Record<string, { fails: number; res: MonitorRes }>
 
-interface Monitor { firstCheck: string; lastCheck: { status?: number; statusText?: string; operational?: boolean }; checks: MonitorChecks}
+export interface Monitor { firstCheck: string; lastCheck: { status?: number; statusText?: string; operational?: boolean }; checks: MonitorChecks}
 
-type Monitors = Record<string, Monitor>
+export type Monitors = Record<string, Monitor>
 
 export interface WorkerMonitorState { lastUpdate: { allOperational: boolean; time?: number; loc?: string }; monitors: Monitors }
 

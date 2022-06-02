@@ -9,6 +9,7 @@
     "allmonitorsOperational": "All Systems Operational",
     "notAllmonitorsOperational": "Not All Systems Operational",
     "monitorLabelOperational": "Operational",
+    "monitorLabelPartOperational": "Partial Operational",    
     "monitorLabelNotOperational": "Not Operational",
     "monitorLabelNoData": "No data",
     "dayInHistogramNoData": "No data",

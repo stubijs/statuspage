@@ -1,32 +1,60 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import config from './../../../../../../config.json'
+
+const props = defineProps({
+  monitorData: Object,
+  monitorDay: Number,
+})
+
+const date = new Date()
+date.setDate(date.getDate() - config.settings.daysInHistogram + props.monitorDay)
+const dayIndex = date.toISOString().split('T')[0]
+
+const colorbar = computed(() => {
+  if (props.monitorData.checks[dayIndex]) {
+    if (props.monitorData.checks[dayIndex].fails > 0) {
+      if (props.monitorData.checks[dayIndex].res.length > 0)
+        return 'bar yellow'
+      else
+        return 'bar red'
+    }
+    else {
+      return 'bar green'
+    }
+  }
+  else {
+    return 'bar'
+  }
+})
+
+const operationLabel = computed(() => {
+  if (props.monitorData.checks[dayIndex]) {
+    if (props.monitorData.checks[dayIndex].fails > 0) {
+      if (props.monitorData.checks[dayIndex].res.length > 0)
+        return config.settings.monitorLabelPartOperational
+      else
+        return config.settings.monitorLabelNotOperational
+    }
+    else {
+      return config.settings.monitorLabelOperational
+    }
+  }
+  else {
+    return config.settings.monitorLabelNoData
+  }
+})
 </script>
 
 <template>
-  <div
-    key="{`${monitorId}-histogram`}"
-    className="flex flex-row items-center histogram"
-  >
-    <template>
-      <div key="{key}" className="hitbox tooltip">
-        <div className="{`${bg}" bar`} />
-        <div className="content text-center py-1 px-2 mt-2 left-1/2 -ml-20 w-40 text-xs">
-          {dayInHistogram}
-          <br>
-          <span className="font-semibold text-sm">
-            {dayInHistogramLabel}
-          </span>
-          {kvMonitor &&
-          kvMonitor.checks.hasOwnProperty(dayInHistogram) &&
-          Object.keys(kvMonitor.checks[dayInHistogram].res).map((key) => {
-          return (
-          <MonitorDayAverage
-            location="{key}"
-            avg="{kvMonitor.checks[dayInHistogram].res[key].a}"
-          />
-          )
-          })}
-        </div>
-      </div>
-    </template>
+  <div class="hitbox tooltip">
+    <div :class="colorbar" />
+    <div class="content text-center py-1 px-2 mt-2 left-1/2 -ml-20 w-40 text-xs">
+      {{ dayIndex }}
+      <br>
+      <span class="font-semibold text-sm">
+        {{ operationLabel }}
+      </span>
+    </div>
   </div>
 </template>
