@@ -1,7 +1,7 @@
 export default {
   async fetch(request, env) {
     const url = new URL(request.url)
-    if (url.pathname.valueOf('/api/statuspage/')) {
+    if (url.pathname.startsWith('/api/statuspage/')) {
       // TODO: Add your custom /api/* logic here.
       const kvDataKey = 'monitor-data-v1'
       const data = await env.KV_STATUS_PAGE.get(kvDataKey, { type: 'json' })
@@ -15,6 +15,6 @@ export default {
     }
     // Otherwise, serve the static assets.
     // Without this, the Worker will error and no assets will be served.
-    return new Response('Sry not found')
+    return env.ASSETS.fetch(request)
   },
 }
