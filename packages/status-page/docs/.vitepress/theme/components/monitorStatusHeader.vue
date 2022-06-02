@@ -22,9 +22,9 @@ onMounted(() => {
 <template>
   <div class="card mb-4 font-semibold" :class="[props.cfKvStatus ? 'status-header-green' : 'status-header-yellow']">
     <div class="flex flex-row justify-between items-center">
-      <div>Operational: {props.cfKvStatus}</div>
+      <div>Operational: {{props.cfKvStatus}}</div>
       <div class="text-xs font-light">
-        checked { time } sec ago from {location}
+        checked {{ time }} sec ago from {{ location }}
       </div>
     </div>
   </div>
