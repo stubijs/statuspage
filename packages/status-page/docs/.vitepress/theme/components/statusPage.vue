@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import config from './../../../../../../config.json'
 
 const loading = ref(true)
 const error = ref(false)
@@ -34,8 +35,8 @@ onMounted(() => {
     <template v-else>
       <div class="container mx-auto px-4">
         <monitor-status-header :cf-kv-status="data.lastUpdate.allOperational" :cf-kv-number="data.lastUpdate.time" :cf-kv-loc="data.lastUpdate.loc" />
-        <template v-for="(item, index) in data.monitors">
-          <monitor-card :card-item="item" :card-index="index" />
+        <template v-for="(item, index) in config.monitors" :key="index">
+          <monitor-card :card-item="data.monitors[item.id]" :card-index="item.id" />
         </template>
         {{ data }}
       </div>
