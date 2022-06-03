@@ -30,12 +30,12 @@ const daysHistogram = [...Array(config.settings.daysInHistogram)].map((_, i) => 
         </template>
         <template v-if="cardMonitor.linkable === true || cardMonitor.linkable === undefined">
           <a :href="cardMonitor.url" target="_blank">
-            <div class="text-xl">{{ cardMonitor.name }}</div>
+            <div class="text-base md:text-xl">{{ cardMonitor.name }}</div>
           </a>
         </template>
         <template v-else>
           <span>
-            <div class="text-xl">{{ cardMonitor.name }}</div>
+            <div class="text-base md:text-xl">{{ cardMonitor.name }}</div>
           </span>
         </template>
       </div>
