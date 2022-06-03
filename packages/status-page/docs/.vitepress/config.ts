@@ -13,24 +13,31 @@ export default defineConfig({
   outDir: './../dist',
   head: [
     ['meta', { name: 'theme-color', content: '#ffffff' }],
+    // Only 4 Icons
     ['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }],
-    ['link', { rel: 'alternate icon', href: '/favicon.ico', type: 'image/png', sizes: '16x16' }],
+    ['link', { rel: 'icon', href: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' }],
+    ['link', { rel: 'icon', href: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' }],
+    ['link', { rel: 'manifest', href: '/site.webmanifest' }],
+    ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#ffc40d' }],
+    ['meta', { name: 'msapplication-TileColor', content: '#ffc40d' }],
+    ['meta', { name: 'theme-color', content: '#ffffff' }],
+    // SEO
     ['meta', { name: 'author', content: 'Jan Stubenrauch' }],
     ['meta', { name: 'keywords', content: 'status page, vite, vitepress, github, vue, cloudflare worker, cloudflare pages' }],
+    // Open Graph Tags
     ['meta', { property: 'og:title', content: statusPageName }],
     ['meta', { property: 'og:description', content: statusPageDescription }],
     ['meta', { property: 'og:url', content: ogUrl }],
     ['meta', { property: 'og:image', content: ogImage }],
+    // twitter
     ['meta', { name: 'twitter:title', content: statusPageName }],
     ['meta', { name: 'twitter:description', content: statusPageDescription }],
     ['meta', { name: 'twitter:image', content: ogImage }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    // ['link', { href: font, rel: 'stylesheet' }],
-    ['link', { rel: 'mask-icon', href: '/logo.svg', color: '#ffffff' }],
-    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' }],
   ],
   themeConfig: {
-    // logo: '/logo.svg',
+    logo: '/logo.svg',
     sidebar: [],
     nav: [
     ],
@@ -38,6 +45,9 @@ export default defineConfig({
       message: 'Released under the MIT License.',
       copyright: 'Copyright © since 2022 Jan Stubenrauch',
     },
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/stubijs/statuspage/' },
+    ],
   },
   vite: {
     plugins: [
