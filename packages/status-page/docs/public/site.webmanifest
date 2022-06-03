@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Status Page",
+    "short_name": "Status Page",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
