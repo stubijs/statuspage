@@ -14,7 +14,7 @@ const dayIndex = date.toISOString().split('T')[0]
 const colorbar = computed(() => {
   if (props.monitorData.checks[dayIndex]) {
     if (props.monitorData.checks[dayIndex].fails > 0) {
-      if (Object.prototype.hasOwnProperty.call(props.monitorData.checks[dayIndex], 'res'))
+      if (Object.prototype.hasOwnProperty.call(props.monitorData.checks[dayIndex], 'res') && Object.keys(props.monitorData.checks[dayIndex].res).length > 0)
         return 'bar yellow'
       else
         return 'bar red'
@@ -31,7 +31,7 @@ const colorbar = computed(() => {
 const operationLabel = computed(() => {
   if (props.monitorData.checks[dayIndex]) {
     if (props.monitorData.checks[dayIndex].fails > 0) {
-      if (Object.prototype.hasOwnProperty.call(props.monitorData.checks[dayIndex], 'res'))
+      if (Object.prototype.hasOwnProperty.call(props.monitorData.checks[dayIndex], 'res') && Object.keys(props.monitorData.checks[dayIndex].res).length > 0)
         return config.settings.monitorLabelPartOperational
       else
         return config.settings.monitorLabelNotOperational
