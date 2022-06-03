@@ -8,7 +8,7 @@ const props = defineProps({
 })
 
 const date = new Date()
-date.setDate(date.getDate() - config.settings.daysInHistogram + props.monitorDay)
+date.setDate(date.getDate() - config.settings.daysInHistogram + props.monitorDay + 1)
 const dayIndex = date.toISOString().split('T')[0]
 
 const colorbar = computed(() => {
