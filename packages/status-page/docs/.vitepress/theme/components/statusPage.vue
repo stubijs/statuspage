@@ -38,7 +38,7 @@ onMounted(() => {
       ERROR
     </template>
     <template v-else>
-      <div class="container mx-auto px-4 mt-4">
+      <div class="container mx-auto px-8 mt-4">
         <monitor-status-header :cf-kv-status="data.lastUpdate.allOperational" :cf-kv-number="data.lastUpdate.time" :cf-kv-loc="data.lastUpdate.loc" />
         <template v-for="(item, index) in config.monitors" :key="index">
           <monitor-card :card-item="data.monitors[item.id]" :card-monitor="item" />

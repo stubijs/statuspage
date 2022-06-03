@@ -66,7 +66,7 @@ const showPings = computed(() => {
 <template>
   <div class="hitbox tooltip">
     <div :class="colorbar" />
-    <div class="content text-center py-1 px-2 mt-2 left-1/2 -ml-20 w-40 text-xs">
+    <div class="content text-center py-1 px-2 mt-2 left-1/2 -ml-20 w-32 text-xs">
       {{ dayIndex }}
       <br>
       <span class="font-semibold text-sm">
