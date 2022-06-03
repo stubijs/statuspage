@@ -11,7 +11,6 @@ onMounted(() => {
   fetch('/api/statuspage/').then(async (response) => {
     try {
       data = await response.json()
-      console.log(data)
       loading.value = false
     }
     catch (error) {
