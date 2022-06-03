@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import config from './../../../../../../config.json'
+import MonitorDayAverage from './monitorDayAverage.vue';
 
 const props = defineProps({
   monitorData: Object,
@@ -55,6 +56,9 @@ const operationLabel = computed(() => {
       <span class="font-semibold text-sm">
         {{ operationLabel }}
       </span>
+      <template v-for="(item, key) in props.monitorData.checks[dayIndex].res" :key="key">
+        <Monitor-day-average :data-res-item="item" :data-res-index="key" />
+      </template>
     </div>
   </div>
 </template>
