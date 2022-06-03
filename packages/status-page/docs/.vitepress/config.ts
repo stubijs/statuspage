@@ -14,7 +14,7 @@ export default defineConfig({
   head: [
     ['meta', { name: 'theme-color', content: '#ffffff' }],
     // Only 4 Icons
-    ['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg', sizes: 'any' }],
+    ['link', { rel: 'icon', href: '/icon.svg', type: 'image/svg', sizes: 'any' }],
     ['link', { rel: 'icon', href: '/favicon.png', type: 'image/png', sizes: '32x32' }],
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' }],
     ['link', { rel: 'manifest', href: '/site.webmanifest' }],
@@ -36,7 +36,7 @@ export default defineConfig({
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
   ],
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/icon.svg',
     sidebar: [],
     nav: [
     ],
