@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import config from './../../../../../../config.json'
-import MonitorDayAverage from './monitorDayAverage.vue';
 
 const props = defineProps({
   monitorData: Object,
@@ -45,6 +44,23 @@ const operationLabel = computed(() => {
     return config.settings.monitorLabelNoData
   }
 })
+
+const showPings = computed(() => {
+  if (props.monitorData.checks[dayIndex]) {
+    if (props.monitorData.checks[dayIndex].fails > 0) {
+      if (Object.prototype.hasOwnProperty.call(props.monitorData.checks[dayIndex], 'res') && Object.keys(props.monitorData.checks[dayIndex].res).length > 0)
+        return true
+      else
+        return false
+    }
+    else {
+      return true
+    }
+  }
+  else {
+    return false
+  }
+})
 </script>
 
 <template>
@@ -56,7 +72,7 @@ const operationLabel = computed(() => {
       <span class="font-semibold text-sm">
         {{ operationLabel }}
       </span>
-      <template v-if="Object.prototype.hasOwnProperty.call(props.monitorData.checks[dayIndex], 'res') && Object.keys(props.monitorData.checks[dayIndex].res).length > 0">
+      <template v-if="showPings">
         <template v-for="(item, key) in props.monitorData.checks[dayIndex].res" :key="key">
           <Monitor-day-average :data-res-item="item" :data-res-index="key" />
         </template>
