@@ -56,8 +56,10 @@ const operationLabel = computed(() => {
       <span class="font-semibold text-sm">
         {{ operationLabel }}
       </span>
-      <template v-for="(item, key) in props.monitorData.checks[dayIndex].res" :key="key">
-        <Monitor-day-average :data-res-item="item" :data-res-index="key" />
+      <template v-if="Object.prototype.hasOwnProperty.call(props.monitorData.checks[dayIndex], 'res') && Object.keys(props.monitorData.checks[dayIndex].res).length > 0">
+        <template v-for="(item, key) in props.monitorData.checks[dayIndex].res" :key="key">
+          <Monitor-day-average :data-res-item="item" :data-res-index="key" />
+        </template>
       </template>
     </div>
   </div>
