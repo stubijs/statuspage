@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import config from './../../../../../../config.json'
+// import data from './../../../../test/data/KV_default.json'
 
 const loading = ref(true)
 const error = ref(false)
@@ -9,7 +10,7 @@ let data = {}
 onMounted(() => {
   fetch('/api/statuspage/').then(async (response) => {
     try {
-      data = await response.json()
+      data = await resonse.json()
       loading.value = false
     }
     catch (error) {
@@ -21,6 +22,10 @@ onMounted(() => {
       console.log(error)
     }
   })
+  /*
+ loading.value = false
+ console.log(data)
+ */
 })
 </script>
 
@@ -33,12 +38,11 @@ onMounted(() => {
       ERROR
     </template>
     <template v-else>
-      <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4 mt-4">
         <monitor-status-header :cf-kv-status="data.lastUpdate.allOperational" :cf-kv-number="data.lastUpdate.time" :cf-kv-loc="data.lastUpdate.loc" />
         <template v-for="(item, index) in config.monitors" :key="index">
-          <monitor-card :card-item="data.monitors[item.id]" :card-index="item.id" />
+          <monitor-card :card-item="data.monitors[item.id]" :card-monitor="item" />
         </template>
-        {{ data }}
       </div>
     </template>
   </template>

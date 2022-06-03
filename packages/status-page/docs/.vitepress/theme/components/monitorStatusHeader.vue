@@ -18,7 +18,7 @@ const location = computed(() => { return locations[props.cfKvLoc] || 'unknown' }
 </script>
 
 <template>
-  <div class="card mb-4 font-semibold" :class="[props.cfKvStatus ? 'status-header-green' : 'status-header-yellow']">
+  <div class="card mb-6 font-semibold" :class="[props.cfKvStatus ? 'status-header-green' : 'status-header-yellow']">
     <div class="flex flex-row justify-between items-center">
       <div>Operational: {{ props.cfKvStatus }}</div>
       <div class="text-xs font-light">
