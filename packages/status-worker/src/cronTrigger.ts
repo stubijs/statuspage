@@ -4,9 +4,11 @@ const kvDataKey = 'monitor-data-v1'
 
 export interface WorkerMonitor { id?: string; name: any; description?: string; url: any; method: any; expectStatus?: number; followRedirect?: boolean; linkable?: boolean }
 
-export type MonitorRes = Record<string, { n: number; ms: number; a: number }>
+export type MonitorRes = Record<string, { n: number; ms: number; a: number; msMin: number; msMax: number }>
 
-export type MonitorChecks = Record<string, { fails: number; res: MonitorRes }>
+export type failData = Record<number, { loc: string }>
+
+export type MonitorChecks = Record<string, { fails: number; res: MonitorRes; failData: failData }>
 
 export interface Monitor { firstCheck: string; lastCheck: { status?: number; statusText?: string; operational?: boolean }; checks: MonitorChecks}
 
@@ -220,6 +222,7 @@ export async function processCronTrigger(event: ScheduledEvent, env: unknown) {
       monitorsState.monitors[monitor.id].checks[checkDay] = {
         fails: 0,
         res: {},
+        failData: {},
       }
     }
 
@@ -234,8 +237,18 @@ export async function processCronTrigger(event: ScheduledEvent, env: unknown) {
           n: 0,
           ms: 0,
           a: 0,
+          msMin: 10000000,
+          msMax: 0,
         }
       }
+
+      // check and save min ms
+      if (monitorsState.monitors[monitor.id].checks[checkDay].res[checkLocation].msMin > requestTime)
+        monitorsState.monitors[monitor.id].checks[checkDay].res[checkLocation].msMin = requestTime
+
+      // check and save max ms
+      if (monitorsState.monitors[monitor.id].checks[checkDay].res[checkLocation].msMax < requestTime)
+        monitorsState.monitors[monitor.id].checks[checkDay].res[checkLocation].msMax = requestTime
 
       // increment number of checks and sum of ms
       const no = ++monitorsState.monitors[monitor.id].checks[checkDay].res[
@@ -253,6 +266,10 @@ export async function processCronTrigger(event: ScheduledEvent, env: unknown) {
     else if (!monitorOperational) {
       // Save allOperational to false
       monitorsState.lastUpdate.allOperational = false
+
+      monitorsState.monitors[monitor.id].checks[checkDay].failData[
+        Date.now()
+      ].loc = checkLocation
 
       // Increment failed checks on status change or first fail of the day (maybe call it .incidents instead?)
       if (monitorStatusChanged || monitorsState.monitors[monitor.id].checks[checkDay].fails === 0)

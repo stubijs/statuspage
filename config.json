@@ -3,7 +3,7 @@
     "title": "Status Page",
     "url": "https://status-page.eidam.dev",
     "logo": "logo-192x192.png",
-    "daysInHistogram": 90,
+    "daysInHistogram": 30,
     "collectResponseTimes": true,
     "user_agent": "cf-worker-status-page",
     "allmonitorsOperational": "All Systems Operational",
