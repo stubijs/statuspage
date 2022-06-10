@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { locations } from '../utils/locations'
+import locations from './../../../../../locations/locations.json'
 
 interface monitorStatusHeader {
   cfKvStatus?: boolean
@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<monitorStatusHeader>(), {
 })
 
 const time = computed(() => { return Math.round((Date.now() - props.cfKvNumber) / 1000) })
-const location = computed(() => { return locations[props.cfKvLoc] || 'unknown' })
+const location = computed(() => { return locations[props.cfKvLoc].city || 'unknown' })
 </script>
 
 <template>

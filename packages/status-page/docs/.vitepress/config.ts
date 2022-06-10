@@ -39,6 +39,14 @@ export default defineConfig({
     logo: '/icon.svg',
     sidebar: [],
     nav: [
+      {
+        text: 'Docs',
+        activeMatch: '^/(setup|known-issues)/',
+        items: [
+          { text: 'Setup', link: '/setup/' },
+          { text: 'Known Issus', link: '/known-issues/' },
+        ],
+      },
     ],
     footer: {
       message: 'Released under the MIT License.',

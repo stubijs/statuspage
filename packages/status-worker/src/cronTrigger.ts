@@ -162,6 +162,7 @@ export async function processCronTrigger(event: ScheduledEvent, env: unknown) {
       headers: {
         'User-Agent': config.settings.user_agent || 'cf-worker-status-page',
       },
+      cache: 'no-store',
     }
 
     // Perform a check and measure time

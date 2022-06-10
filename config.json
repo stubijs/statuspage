@@ -1,8 +1,8 @@
 {
   "settings": {
     "title": "Status Page",
-    "url": "https://status-page.eidam.dev",
-    "logo": "logo-192x192.png",
+    "url": "https://status.jstubenrauch.de",
+    "logo": "favicon.png",
     "daysInHistogram": 30,
     "collectResponseTimes": true,
     "user_agent": "cf-worker-status-page",
