@@ -156,13 +156,12 @@ export async function processCronTrigger(event: ScheduledEvent, env: unknown) {
     }
 
     // Fetch the monitors URL
-    const init = {
+    const init: RequestInit = {
       method: monitor.method || 'GET',
       redirect: monitor.followRedirect ? 'follow' : 'manual',
       headers: {
         'User-Agent': config.settings.user_agent || 'cf-worker-status-page',
       },
-      cache: 'no-store',
     }
 
     // Perform a check and measure time
