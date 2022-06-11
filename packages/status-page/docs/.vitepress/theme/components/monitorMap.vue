@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import type { GeoGeometryObjects } from 'd3'
-import { geoEquirectangular, geoPath, pointer, select } from 'd3'
 import geojson from './../utils/ne_110m_admin_0_countries.json'
 import config from './../../../../../../config.json'
 import locations from './../../../../../locations/locations.json'
@@ -52,7 +51,8 @@ daysHistogram.forEach((currentValue) => {
   }
 })
 
-onMounted(() => {
+const generateWorld = async () => {
+  const { geoEquirectangular, geoPath, pointer, select } = await import('d3')
   // create a tooltip
   const Tooltip = select(tooltip.value)
 
@@ -105,7 +105,9 @@ onMounted(() => {
     const link = { type: 'LineString', coordinates: [[finData[key].lon, finData[key].lat], [props.svgOrgLon, props.svgOrgLat]] } // Change these data to see ho the great circle reacts
     svg.append('path').attr('d', path(link)).style('fill', 'none').style('stroke', 'orange').style('stroke-width', 3)
   })
-})
+}
+
+onMounted(generateWorld)
 </script>
 
 <template>
