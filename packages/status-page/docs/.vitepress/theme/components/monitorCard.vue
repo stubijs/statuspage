@@ -51,5 +51,8 @@ const daysHistogram = [...Array(config.settings.daysInHistogram)].map((_, i) => 
       <div>{{ config.settings.daysInHistogram }} days ago</div>
       <div>Today</div>
     </div>
+    <div>
+      <monitor-map :svg-data="props.cardItem" :svg-org-lon="cardMonitor.lon" :svg-org-lat="cardMonitor.lat" />
+    </div>
   </div>
 </template>

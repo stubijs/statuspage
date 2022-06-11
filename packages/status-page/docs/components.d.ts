@@ -8,6 +8,8 @@ declare module '@vue/runtime-core' {
     MonitorCard: typeof import('./.vitepress/theme/components/monitorCard.vue')['default']
     MonitorDayAverage: typeof import('./.vitepress/theme/components/monitorDayAverage.vue')['default']
     MonitorHistogram: typeof import('./.vitepress/theme/components/monitorHistogram.vue')['default']
+    MonitorMap: typeof import('./.vitepress/theme/components/monitorMap.vue')['default']
+    MonitorModal: typeof import('./.vitepress/theme/components/monitorModal.vue')['default']
     MonitorStatusHeader: typeof import('./.vitepress/theme/components/monitorStatusHeader.vue')['default']
     MonitorStatusLabel: typeof import('./.vitepress/theme/components/monitorStatusLabel.vue')['default']
     StatusPage: typeof import('./.vitepress/theme/components/statusPage.vue')['default']

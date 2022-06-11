@@ -25,7 +25,9 @@
       "method": "GET",
       "expectStatus": 200,
       "followRedirect": false,
-      "linkable": true
+      "linkable": true,
+      "lon": 8.682127,
+      "lat": 50.110924
     },
     {
       "id": "status-jstubenrauch-de",
@@ -35,7 +37,9 @@
       "method": "GET",
       "expectStatus": 200,
       "followRedirect": false,
-      "linkable": true
+      "linkable": true,                            
+      "lon": 8.682127,
+      "lat": 50.110924
     }
   ]
 }

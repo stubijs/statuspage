@@ -63,10 +63,16 @@
     @apply relative;
 }
 
+.modal-content {
+    @apply absolute z-50 opacity-0;
+    @apply rounded-lg py-1 px-2 bg-gray-100 dark:bg-gray-800 shadow;
+    @apply text-center text-xs;
+}
+
 .tooltip .content {
-@apply invisible absolute z-50 inline-block;
-@apply rounded-lg py-1 px-2 bg-gray-100 dark:bg-gray-800 shadow;
-@apply opacity-0 transition-all duration-200 scale-50;
+    @apply invisible absolute z-50 inline-block;
+    @apply rounded-lg py-1 px-2 bg-gray-100 dark:bg-gray-800 shadow;
+    @apply opacity-0 transition-all duration-200 scale-50;
 }
 
 .tooltip:hover .content {
