@@ -61,11 +61,11 @@ function changeDataView(dataValue: string) {
       <div>{{ config.settings.daysInHistogram }} days ago</div>
       <div>Today</div>
     </div>
-    <div class="flex items-center justify-center">
-      <div class="pill leading-5 status-label-green" @onClick="changeDataView('map')">
+    <div class="flex items-center justify-center gap-4 mt-6">
+      <div class="pill leading-5 status-label-green" @click="changeDataView('map')">
         Show Map
       </div>
-      <div class="pill leading-5 status-label-green" @onClick="changeDataView('table')">
+      <div class="pill leading-5 status-label-green" @click="changeDataView('table')">
         Show Table
       </div>
     </div>

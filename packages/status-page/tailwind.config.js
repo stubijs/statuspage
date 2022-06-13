@@ -13,8 +13,7 @@ module.exports = {
     './docs/.vitepress/**/*.js',
     './docs/.vitepress/**/*.vue',
     './docs/.vitepress/**/*.ts',
+    './docs/**/*.md',
   ],
-  options: {
-    safelist: ['html', 'body'],
-  },
+  safelist: ['html', 'body', 'VPPage'],
 }

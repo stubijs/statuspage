@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { AgGridVue } from '@ag-grid-community/vue3' // the AG Grid Vue Component
-import { reactive, ref } from 'vue'
+import { ModuleRegistry } from '@ag-grid-community/core'
+import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model'
+import { ref } from 'vue'
 import '@ag-grid-community/core/dist/styles/ag-grid.css' // Core grid CSS, always needed
 import '@ag-grid-community/core/dist/styles/ag-theme-alpine.css' // Optional theme CSS
 import { dataTable } from './../utils/data'
@@ -8,6 +10,8 @@ import { dataTable } from './../utils/data'
 const props = defineProps({
   svgData: Object,
 })
+
+ModuleRegistry.registerModules([ClientSideRowModelModule])
 
 const finData = dataTable(props.svgData)
 
@@ -18,19 +22,18 @@ const onGridReady = (params) => {
   gridApi.value = params.api
 }
 
-const rowData = finData // Set rowData to Array of Objects, one Object per Row
+// Set rowData to Array of Objects, one Object per Row - here it is an object
+const rowData = Object.values(finData)
 
 // Each Column Definition results in one Column.
-const columnDefs = reactive({
-  value: [
-    { field: 'region', headerName: 'Region' },
-    { field: 'city', headerName: 'City' },
-    { field: 'a', headerName: 'avg. TTFB' },
-    { field: 'msMin', headerName: 'min. TTFB' },
-    { field: 'msMax', headerName: 'max. TTFB' },
-    { field: 'n', headerName: 'Number of Tests' },
-  ],
-})
+const columnDefs = [
+  { field: 'city', headerName: 'City' },
+  { field: 'region', headerName: 'Region' },
+  { field: 'a', headerName: 'avg. TTFB' },
+  { field: 'msMin', headerName: 'min. TTFB' },
+  { field: 'msMax', headerName: 'max. TTFB' },
+  { field: 'n', headerName: 'Number of Tests' },
+]
 
 // DefaultColDef sets props common to all Columns
 const defaultColDef = {
@@ -41,12 +44,11 @@ const defaultColDef = {
 
 <template>
   <ag-grid-vue
-    class="ag-theme-alpine"
-    style="height: 500px"
-    :column-defs="columnDefs.value"
+    class="ag-theme-alpine mt-8"
+    style="width: 100%; height: 500px;"
+    :column-defs="columnDefs"
     :row-data="rowData"
     :default-col-def="defaultColDef"
-    row-selection="multiple"
     animate-rows="true"
     @grid-ready="onGridReady"
   />

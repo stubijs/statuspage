@@ -23,6 +23,7 @@ onMounted(() => {
       console.log(error)
     }
   })
+
   // loading.value = false
 })
 </script>
@@ -36,7 +37,7 @@ onMounted(() => {
       ERROR
     </template>
     <template v-else>
-      <div class="container mx-auto px-8 mt-4" style="min-height: calc(100vh - 220px);">
+      <div class="mt-8" style="min-height: calc(100vh - 220px);">
         <monitor-status-header :cf-kv-status="data.lastUpdate.allOperational" :cf-kv-number="data.lastUpdate.time" :cf-kv-loc="data.lastUpdate.loc" />
         <template v-for="(item, index) in config.monitors" :key="index">
           <monitor-card :card-item="data.monitors[item.id]" :card-monitor="item" />

@@ -78,14 +78,7 @@ onMounted(generateWorld)
   <div ref="tooltip" class="modal-content">
     Test
   </div>
-  <details>
-    <summary class="flex items-center justify-center">
-      <div class="pill leading-5 status-label-green">
-        More details
-      </div>
-    </summary>
-    <div class="mt-4 leading-normal text-md">
-      <div ref="data" />
-    </div>
-  </details>
+  <div class="mt-4 leading-normal text-md">
+    <div ref="data" />
+  </div>
 </template>

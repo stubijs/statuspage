@@ -29,6 +29,7 @@ importers:
 
   packages/status-page:
     specifiers:
+      '@ag-grid-community/client-side-row-model': ^27.3.0
       '@ag-grid-community/core': ^27.3.0
       '@ag-grid-community/vue3': ^27.3.0
       '@antfu/eslint-config': ^0.25.0
@@ -51,6 +52,7 @@ importers:
       vue: 3.2.36
       vue-i18n: 9.1.10_vue@3.2.36
     devDependencies:
+      '@ag-grid-community/client-side-row-model': 27.3.0
       '@antfu/eslint-config': 0.25.0_xztl6dhthcahlo6akmb2bmjmle
       '@types/d3': 7.4.0
       '@vueuse/core': 8.6.0_vue@3.2.36
@@ -82,9 +84,14 @@ importers:
 
 packages:
 
+  /@ag-grid-community/client-side-row-model/27.3.0:
+    resolution: {integrity: sha512-t6ggg/SvESsGEC75z62rD/zFeo2DZCKFxw5e0qKweHR106CjBUNMlnfXIIG81qOSXUWGnbbWlrijBbKbyt8aTA==}
+    dependencies:
+      '@ag-grid-community/core': 27.3.0
+    dev: true
+
   /@ag-grid-community/core/27.3.0:
     resolution: {integrity: sha512-77/bE2KdFlFI/ywEP46aSspXtgBteY/OPQyzU/lWqYrG2wC6cLfPSUB60t9e0FiqElwM/Vdcjz0TAjRwhZOPkw==}
-    dev: false
 
   /@ag-grid-community/vue3/27.3.0:
     resolution: {integrity: sha512-erp6HOMYKv6ySfSr8N6kqBzdgK86ORFoEfaJBC+0j7/tezZFMUOb7/dJqKzTO7U61uEXAUlNrKBj8qYXd1qVWQ==}
