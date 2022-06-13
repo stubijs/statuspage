@@ -22,7 +22,8 @@ const location = computed(() => { return locations[props.cfKvLoc].city || 'unkno
     <div class="flex flex-row justify-between items-center">
       <div>Operational: {{ props.cfKvStatus }}</div>
       <div class="text-xs font-light">
-        checked {{ time }} sec ago from {{ location }}
+        checked {{ time }} sec ago from {{ location }} <br>
+        {{ new Date().toUTCString() }}
       </div>
     </div>
   </div>
