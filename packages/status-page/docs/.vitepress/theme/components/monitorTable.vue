@@ -29,10 +29,10 @@ const rowData = Object.values(finData)
 const columnDefs = [
   { field: 'city', headerName: 'City' },
   { field: 'region', headerName: 'Region' },
-  { field: 'a', headerName: 'avg. TTFB' },
-  { field: 'msMin', headerName: 'min. TTFB' },
-  { field: 'msMax', headerName: 'max. TTFB' },
-  { field: 'n', headerName: 'Number of Tests' },
+  { field: 'a', headerName: 'avg. TTFB', type: 'numberColumn' },
+  { field: 'msMin', headerName: 'min. TTFB', type: 'numberColumn' },
+  { field: 'msMax', headerName: 'max. TTFB', type: 'numberColumn' },
+  { field: 'n', headerName: 'Number of Tests', type: 'numberColumn' },
 ]
 
 // DefaultColDef sets props common to all Columns
