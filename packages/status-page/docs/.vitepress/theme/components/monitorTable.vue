@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { AgGridVue } from 'ag-grid-vue3' // the AG Grid Vue Component
+import { AgGridVue } from '@ag-grid-community/vue3' // the AG Grid Vue Component
 import { reactive, ref } from 'vue'
-import 'ag-grid-community/dist/styles/ag-grid.css' // Core grid CSS, always needed
-import 'ag-grid-community/dist/styles/ag-theme-alpine.css' // Optional theme CSS
+import '@ag-grid-community/core/dist/styles/ag-grid.css' // Core grid CSS, always needed
+import '@ag-grid-community/core/dist/styles/ag-theme-alpine.css' // Optional theme CSS
 import { dataTable } from './../utils/data'
 
 const props = defineProps({

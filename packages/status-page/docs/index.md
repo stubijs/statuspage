@@ -11,4 +11,4 @@ jstubenrauch provides and uses numerous services that should be permanently moni
 
 ## What else?
 
-Are you interested in creating your own status page? Read our [setup guide](/setup)
+Are you interested in creating your own status page? Read our [setup guide](/setup/)
