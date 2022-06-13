@@ -2,8 +2,7 @@
 import { onMounted, ref } from 'vue'
 import type { GeoGeometryObjects } from 'd3'
 import geojson from './../utils/ne_110m_admin_0_countries.json'
-import config from './../../../../../../config.json'
-import locations from './../../../../../locations/locations.json'
+import { dataTable } from './../utils/data'
 
 const props = defineProps({
   svgData: Object,
@@ -14,42 +13,7 @@ const props = defineProps({
 const data = ref()
 const tooltip = ref()
 
-const daysHistogram = [...Array(config.settings.daysInHistogram)].map((_, i) => i)
-const finData = {}
-
-daysHistogram.forEach((currentValue) => {
-  const date = new Date()
-  date.setDate(date.getDate() - currentValue)
-  const dayIndex = date.toISOString().split('T')[0]
-  if (props.svgData.checks[dayIndex] && Object.prototype.hasOwnProperty.call(props.svgData.checks[dayIndex], 'res') && Object.keys(props.svgData.checks[dayIndex].res).length > 0) {
-    Object.keys(props.svgData.checks[dayIndex].res).forEach((key) => {
-      if (!Object.prototype.hasOwnProperty.call(finData, key)) {
-        finData[key] = {
-          msMin: 1000000,
-          msMax: 0,
-          ms: 0,
-          n: 0,
-          a: 0,
-          lon: locations[key].lon,
-          lat: locations[key].lat,
-          city: locations[key].city,
-          region: locations[key].region,
-        }
-      }
-
-      if (finData[key].msMin > props.svgData.checks[dayIndex].res[key].msMin)
-        finData[key].msMin = props.svgData.checks[dayIndex].res[key].msMin
-
-      if (finData[key].msMax < props.svgData.checks[dayIndex].res[key].msMax)
-        finData[key].msMax = props.svgData.checks[dayIndex].res[key].msMax
-
-      finData[key].ms += props.svgData.checks[dayIndex].res[key].ms
-      finData[key].n += props.svgData.checks[dayIndex].res[key].n
-
-      finData[key].a = Math.round(finData[key].ms / finData[key].n)
-    })
-  }
-})
+const finData = dataTable(props.svgData)
 
 const generateWorld = async () => {
   const { geoEquirectangular, geoPath, pointer, select } = await import('d3')

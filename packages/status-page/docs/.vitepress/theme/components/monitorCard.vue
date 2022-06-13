@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import config from './../../../../../../config.json'
 
 const props = defineProps({
@@ -7,6 +8,15 @@ const props = defineProps({
 })
 
 const daysHistogram = [...Array(config.settings.daysInHistogram)].map((_, i) => i)
+
+const showData = ref('')
+
+function changeDataView(dataValue: string) {
+  if (showData.value === dataValue)
+    showData.value = ''
+  else
+    showData.value = dataValue
+}
 </script>
 
 <template>
@@ -51,8 +61,19 @@ const daysHistogram = [...Array(config.settings.daysInHistogram)].map((_, i) => 
       <div>{{ config.settings.daysInHistogram }} days ago</div>
       <div>Today</div>
     </div>
-    <div>
-      <monitor-map :svg-data="props.cardItem" :svg-org-lon="cardMonitor.lon" :svg-org-lat="cardMonitor.lat" />
+    <div class="flex items-center justify-center">
+      <div class="pill leading-5 status-label-green" @onClick="changeDataView('map')">
+        Show Map
+      </div>
+      <div class="pill leading-5 status-label-green" @onClick="changeDataView('table')">
+        Show Table
+      </div>
     </div>
+    <template v-if="showData === 'map'">
+      <monitor-map :svg-data="props.cardItem" :svg-org-lon="cardMonitor.lon" :svg-org-lat="cardMonitor.lat" />
+    </template>
+    <template v-if="showData === 'table'">
+      <monitor-table :svg-data="props.cardItem" />
+    </template>
   </div>
 </template>

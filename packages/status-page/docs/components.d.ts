@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     MonitorMap: typeof import('./.vitepress/theme/components/monitorMap.vue')['default']
     MonitorStatusHeader: typeof import('./.vitepress/theme/components/monitorStatusHeader.vue')['default']
     MonitorStatusLabel: typeof import('./.vitepress/theme/components/monitorStatusLabel.vue')['default']
+    MonitorTable: typeof import('./.vitepress/theme/components/monitorTable.vue')['default']
     StatusPage: typeof import('./.vitepress/theme/components/statusPage.vue')['default']
   }
 }

@@ -29,9 +29,11 @@ importers:
 
   packages/status-page:
     specifiers:
+      '@ag-grid-community/vue3': ^27.3.0
       '@antfu/eslint-config': ^0.25.0
       '@types/d3': ^7.4.0
       '@vueuse/core': ^8.6.0
+      ag-grid-vue3: ^27.3.0
       autoprefixer: ^10.4.7
       d3: ^7.4.4
       eslint: ^8.16.0
@@ -47,9 +49,11 @@ importers:
       vue: 3.2.36
       vue-i18n: 9.1.10_vue@3.2.36
     devDependencies:
+      '@ag-grid-community/vue3': 27.3.0
       '@antfu/eslint-config': 0.25.0_xztl6dhthcahlo6akmb2bmjmle
       '@types/d3': 7.4.0
       '@vueuse/core': 8.6.0_vue@3.2.36
+      ag-grid-vue3: 27.3.0
       autoprefixer: 10.4.7_postcss@8.4.14
       d3: 7.4.4
       eslint: 8.16.0
@@ -77,6 +81,17 @@ importers:
       wrangler: 2.0.5
 
 packages:
+
+  /@ag-grid-community/core/27.3.0:
+    resolution: {integrity: sha512-77/bE2KdFlFI/ywEP46aSspXtgBteY/OPQyzU/lWqYrG2wC6cLfPSUB60t9e0FiqElwM/Vdcjz0TAjRwhZOPkw==}
+    dev: true
+
+  /@ag-grid-community/vue3/27.3.0:
+    resolution: {integrity: sha512-erp6HOMYKv6ySfSr8N6kqBzdgK86ORFoEfaJBC+0j7/tezZFMUOb7/dJqKzTO7U61uEXAUlNrKBj8qYXd1qVWQ==}
+    dependencies:
+      '@ag-grid-community/core': 27.3.0
+      vue: 3.2.36
+    dev: true
 
   /@algolia/autocomplete-core/1.6.3:
     resolution: {integrity: sha512-dqQqRt01fX3YuVFrkceHsoCnzX0bLhrrg8itJI1NM68KjrPYQPYsE+kY8EZTCM4y8VDnhqJErR73xe/ZsV+qAA==}
@@ -1175,6 +1190,17 @@ packages:
     resolution: {integrity: sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: true
+
+  /ag-grid-community/27.3.0:
+    resolution: {integrity: sha512-R5oZMXEHXnOLrmhn91J8lR0bv6IAnRcU6maO+wKLMJxffRWaAYFAuw1jt7bdmcKCv8c65F6LEBx4ykSOALa9vA==}
+    dev: true
+
+  /ag-grid-vue3/27.3.0:
+    resolution: {integrity: sha512-hZ49uJ839Wun3TJbgZLhPDJd+AkkpHIMB97GFgVU5HBBYAeyYLat6D8ePXmU7usCp99Bz1/iaulvMSEgqGV4hw==}
+    dependencies:
+      ag-grid-community: 27.3.0
+      vue: 3.2.36
     dev: true
 
   /ajv/6.12.6:
