@@ -8,6 +8,13 @@
 /* cspell:words gradientbg */
 
 module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        vp: 'var(--vp-c-brand-dark)',
+      },
+    },
+  },
   darkMode: 'class',
   content: [
     './docs/.vitepress/**/*.js',
@@ -15,5 +22,5 @@ module.exports = {
     './docs/.vitepress/**/*.ts',
     './docs/**/*.md',
   ],
-  safelist: ['html', 'body', 'VPPage'],
+  safelist: ['html', 'body', 'VPPage', 'fill-vp', 'stroke-vp'],
 }

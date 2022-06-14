@@ -21,7 +21,7 @@ function changeDataView(dataValue: string) {
 
 <template>
   <div class="card">
-    <div class="flex flex-row justify-between items-center mb-2">
+    <div class="flex flex-row justify-between items-center m-6 mb-4">
       <div class="flex flex-row items-center align-center">
         <template v-if="cardMonitor.description">
           <div class="tooltip">
@@ -51,29 +51,46 @@ function changeDataView(dataValue: string) {
       </div>
       <monitor-status-label :status-label="cardItem.lastCheck.operational" />
     </div>
-    <div class="flex flex-row items-center histogram">
-      <template v-for="index in daysHistogram" :key="index">
-        <MonitorHistogram :monitor-data="props.cardItem" :monitor-day="index" />
+    <div class="mx-6 mb-1">
+      <div class="flex flex-row items-center histogram">
+        <template v-for="index in daysHistogram" :key="index">
+          <MonitorHistogram :monitor-data="props.cardItem" :monitor-day="index" />
+        </template>
+      </div>
+    </div>
+    <div class="m-6 mt-0">
+      <div class="flex flex-row justify-between items-center text-gray-400 text-sm">
+        <div>{{ config.settings.daysInHistogram }} days ago</div>
+        <div>Today</div>
+      </div>
+    </div>
+    <div class="px-6 border-t">
+      <div class="flex items-center justify-center gap-4 my-4">
+        <div class="button-card" @click="changeDataView('map')">
+          <template v-if="showData === 'map'">
+            Hide
+          </template>
+          <template v-else>
+            Show
+          </template>
+          Map
+        </div>
+        <div class="button-card" @click="changeDataView('table')">
+          <template v-if="showData === 'table'">
+            Hide
+          </template>
+          <template v-else>
+            Show
+          </template>
+          Table
+        </div>
+      </div>
+      <template v-if="showData === 'map'">
+        <monitor-map :svg-data="props.cardItem" :svg-org-lon="cardMonitor.lon" :svg-org-lat="cardMonitor.lat" />
+      </template>
+      <template v-if="showData === 'table'">
+        <monitor-table :svg-data="props.cardItem" />
       </template>
     </div>
-
-    <div class="flex flex-row justify-between items-center text-gray-400 text-sm">
-      <div>{{ config.settings.daysInHistogram }} days ago</div>
-      <div>Today</div>
-    </div>
-    <div class="flex items-center justify-center gap-4 mt-6">
-      <div class="pill leading-5 status-label-green" @click="changeDataView('map')">
-        Show Map
-      </div>
-      <div class="pill leading-5 status-label-green" @click="changeDataView('table')">
-        Show Table
-      </div>
-    </div>
-    <template v-if="showData === 'map'">
-      <monitor-map :svg-data="props.cardItem" :svg-org-lon="cardMonitor.lon" :svg-org-lat="cardMonitor.lat" />
-    </template>
-    <template v-if="showData === 'table'">
-      <monitor-table :svg-data="props.cardItem" />
-    </template>
   </div>
 </template>

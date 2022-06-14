@@ -11,8 +11,9 @@ const location = computed(() => { return locations[props.dataResIndex].city || '
 </script>
 
 <template>
-  <br>
-  <small>
-    {{ location }}: {{ props.dataResItem.a }} ms ({{ props.dataResItem.n }})
-  </small>
+  <p>
+    <small>
+      {{ location }}: {{ props.dataResItem.a }} ms ({{ props.dataResItem.n }})
+    </small>
+  </p>
 </template>

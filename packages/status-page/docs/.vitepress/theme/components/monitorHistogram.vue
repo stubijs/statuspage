@@ -68,10 +68,9 @@ const showPings = computed(() => {
     <div :class="colorbar" />
     <div class="content text-center py-1 px-2 mt-2 left-1/2 -ml-20 w-32 text-xs">
       {{ dayIndex }}
-      <br>
-      <span class="font-semibold text-sm">
+      <p class="my-1 font-semibold text-sm">
         {{ operationLabel }}
-      </span>
+      </p>
       <template v-if="showPings">
         <template v-for="(item, key) in props.monitorData.checks[dayIndex].res" :key="key">
           <Monitor-day-average :data-res-item="item" :data-res-index="key" />

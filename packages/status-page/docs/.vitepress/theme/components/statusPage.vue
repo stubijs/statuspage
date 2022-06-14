@@ -23,7 +23,6 @@ onMounted(() => {
       console.log(error)
     }
   })
-
   // loading.value = false
 })
 </script>
