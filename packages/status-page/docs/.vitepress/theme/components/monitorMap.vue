@@ -53,14 +53,16 @@ const generateWorld = async () => {
   const path = geoPath().projection(projection)
 
   projection.fitSize([1920, 1080], geojson as GeoGeometryObjects) // adjust the projection to the features
-  svg.append('path').attr('d', path(geojson as GeoGeometryObjects)).attr('fill', 'rgb(209 213 219)').style('stroke', '#fff') // draw the features
+  // draw the features
+  svg.append('path')
+    .attr('d', path(geojson as GeoGeometryObjects))
+    .attr('fill', 'rgb(209 213 219)')
+    .style('stroke', '#fff')
 
   Object.keys(finData).forEach((key) => {
     svg.append('circle')
       .attr('r', 15)
       .attr('class', 'fill-vp stroke-vp')
-      // .style('fill', '#213547')
-      // .attr('stroke', '#213547')
       .attr('stroke-width', 3)
       .attr('fill-opacity', 0.4)
       .attr('transform', () => { return `translate(${projection([finData[key].lon, finData[key].lat])})` })
@@ -73,7 +75,6 @@ const generateWorld = async () => {
       .attr('d', path(link))
       .attr('class', 'stroke-vp')
       .style('fill', 'none')
-      // .style('stroke', '#213547')
       .style('stroke-width', 3)
   })
 }
