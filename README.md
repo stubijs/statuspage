@@ -20,3 +20,8 @@ See [Contributing Guide](https://github.com/stubijs/statuspage/blob/main/CONTRIB
 ## License
 
 MIT
+
+## Based on
+
+[https://github.com/eidam/cf-workers-status-page](https://github.com/eidam/cf-workers-status-page)
+
