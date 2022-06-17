@@ -27,7 +27,8 @@
       "followRedirect": false,
       "linkable": true,
       "lon": 8.682127,
-      "lat": 50.110924
+      "lat": 50.110924,
+      "shouldAnalyze": true
     },
     {
       "id": "status-jstubenrauch-de",
@@ -39,7 +40,8 @@
       "followRedirect": false,
       "linkable": true,                            
       "lon": 8.682127,
-      "lat": 50.110924
+      "lat": 50.110924,
+      "shouldAnalyze": true
     }
   ]
 }

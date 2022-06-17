@@ -146,6 +146,9 @@ export async function processCronTrigger(event: ScheduledEvent, env: unknown) {
   monitorsState.lastUpdate.allOperational = true
 
   for (const monitor of config.monitors) {
+    if (!monitor.shouldAnalyze)
+      continue
+
     // Create default monitor state if does not exist yet
     if (typeof monitorsState.monitors[monitor.id] === 'undefined') {
       monitorsState.monitors[monitor.id] = {
@@ -170,13 +173,21 @@ export async function processCronTrigger(event: ScheduledEvent, env: unknown) {
     let monitorStatus = 0
     let monitorStatusText = 'error'
 
-    await fetch(monitor.url, init).then((response) => {
-      monitorOperational = response.status === (monitor.expectStatus || 200)
-      monitorStatus = response.status
-      monitorStatusText = response.statusText
-    }).catch((/* error */) => {
-      // console.log('found error', error)
-    })
+    // Attention: try catch and fetch catch instruction is to catch 502 etc. errors
+    try {
+      await fetch(monitor.url, init).then((response) => {
+        monitorOperational = response.status === (monitor.expectStatus || 200)
+        monitorStatus = response.status
+        monitorStatusText = response.statusText
+      }).catch((error) => {
+      // eslint-disable-next-line no-console
+        console.log('found error', error)
+      })
+    }
+    catch (e) {
+      // eslint-disable-next-line no-console
+      console.log('found error', e)
+    }
 
     const requestTime = Math.round(Date.now() - requestStartTime)
 
