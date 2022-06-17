@@ -34,7 +34,7 @@ importers:
       '@ag-grid-community/vue3': 27.3.0
       '@antfu/eslint-config': 0.25.1
       '@types/d3': 7.4.0
-      '@vueuse/core': 8.6.0
+      '@vueuse/core': 8.7.3
       autoprefixer: 10.4.7
       d3: 7.4.4
       eslint: 8.17.0
@@ -55,7 +55,7 @@ importers:
       '@ag-grid-community/client-side-row-model': 27.3.0
       '@antfu/eslint-config': 0.25.1_n4lrrl552kqf5nk4rgej5xdcha
       '@types/d3': 7.4.0
-      '@vueuse/core': 8.6.0_vue@3.2.37
+      '@vueuse/core': 8.7.3_vue@3.2.37
       autoprefixer: 10.4.7_postcss@8.4.14
       d3: 7.4.4
       eslint: 8.17.0
@@ -1131,8 +1131,8 @@ packages:
   /@vue/shared/3.2.37:
     resolution: {integrity: sha512-4rSJemR2NQIo9Klm1vabqWjD8rs/ZaJSzMxkMNeJS6lHiUjjUeYFbooN19NgFjztubEKh3WlZUeOLVdbbUWHsw==}
 
-  /@vueuse/core/8.6.0_vue@3.2.37:
-    resolution: {integrity: sha512-VirzExCm/N+QdrEWT7J4uSrvJ5hquKIAU9alQ37kUvIJk9XxCLxmfRnmekYc1kz2+6BnoyuKYXVmrMV351CB4w==}
+  /@vueuse/core/8.7.3_vue@3.2.37:
+    resolution: {integrity: sha512-jpBnyG9b4wXgk0Dz3I71lfhD0o53t1tZR+NoAQ+17zJy7MP/VDfGIkq8GcqpDwmptLCmGiGVipkPbWmDGMic8Q==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
       vue: ^2.6.0 || ^3.2.0
@@ -1142,18 +1142,18 @@ packages:
       vue:
         optional: true
     dependencies:
-      '@vueuse/metadata': 8.6.0
-      '@vueuse/shared': 8.6.0_vue@3.2.37
+      '@vueuse/metadata': 8.7.3
+      '@vueuse/shared': 8.7.3_vue@3.2.37
       vue: 3.2.37
       vue-demi: 0.13.1_vue@3.2.37
     dev: true
 
-  /@vueuse/metadata/8.6.0:
-    resolution: {integrity: sha512-F+CKPvaExsm7QgRr8y+ZNJFwXasn89rs5wth/HeX9lJ1q8XEt+HJ16Q5Sxh4rfG5YSKXrStveVge8TKvPjMjFA==}
+  /@vueuse/metadata/8.7.3:
+    resolution: {integrity: sha512-spf9kgCsBEFbQb90I6SIqAWh1yP5T1JoJGj+/04+VTMIHXKzn3iecmHUalg8QEOCPNtnFQGNEw5OLg0L39eizg==}
     dev: true
 
-  /@vueuse/shared/8.6.0_vue@3.2.37:
-    resolution: {integrity: sha512-Y/IVywZo7IfEoSSEtCYpkVEmPV7pU35mEIxV7PbD/D3ly18B3mEsBaPbtDkNM/QP3zAZ5mn4nEkOfddX4uwuIA==}
+  /@vueuse/shared/8.7.3_vue@3.2.37:
+    resolution: {integrity: sha512-PMc/h6cEakJ4+5VuNUGi7RnbA6CkLvtG2230x8w3zYJpW1P6Qphh9+dFFvHn7TX+RlaicF5ND0RX1NxWmAoW7w==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
       vue: ^2.6.0 || ^3.2.0
@@ -4452,7 +4452,7 @@ packages:
       '@docsearch/js': 3.1.0
       '@vitejs/plugin-vue': 2.3.3_vite@2.9.12+vue@3.2.37
       '@vue/devtools-api': 6.1.4
-      '@vueuse/core': 8.6.0_vue@3.2.37
+      '@vueuse/core': 8.7.3_vue@3.2.37
       body-scroll-lock: 4.0.0-beta.0
       shiki: 0.10.1
       vite: 2.9.12
