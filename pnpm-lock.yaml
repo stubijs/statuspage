@@ -73,14 +73,14 @@ importers:
       '@types/node': 17.0.42
       eslint: 8.17.0
       typescript: 4.7.4
-      wrangler: 2.0.12
+      wrangler: 2.0.14
     devDependencies:
       '@antfu/eslint-config': 0.25.1_n4lrrl552kqf5nk4rgej5xdcha
       '@cloudflare/workers-types': 3.11.0
       '@types/node': 17.0.42
       eslint: 8.17.0
       typescript: 4.7.4
-      wrangler: 2.0.12
+      wrangler: 2.0.14
 
 packages:
 
@@ -4567,8 +4567,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /wrangler/2.0.12:
-    resolution: {integrity: sha512-Dnzqxl3vW5J16Lt3gEbl/teNnTuAqMwsuMexR7BFSHWTwfWjHT9Sc7B6bPIKw0O01zDU/hUscw8nkyhMMM3xDw==}
+  /wrangler/2.0.14:
+    resolution: {integrity: sha512-uPfz2yJ13nbhEdSqdXBoXBANB60cwZ77KkHcP8AIUWHj2GJovQFvvfbBZwO1Ok8JWPhfpkICnIiGU6IBrT7p/w==}
     engines: {node: '>=16.7.0'}
     hasBin: true
     dependencies:
