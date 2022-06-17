@@ -19,7 +19,7 @@
     "@ag-grid-community/client-side-row-model": "27.3.0",
     "@antfu/eslint-config": "0.25.1",
     "@types/d3": "7.4.0",
-    "@vueuse/core": "8.6.0",
+    "@vueuse/core": "8.7.3",
     "autoprefixer": "10.4.7",
     "d3": "7.4.4",
     "eslint": "8.17.0",
