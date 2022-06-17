@@ -69,14 +69,14 @@ importers:
   packages/status-worker:
     specifiers:
       '@antfu/eslint-config': 0.25.1
-      '@cloudflare/workers-types': 3.11.0
+      '@cloudflare/workers-types': 3.13.0
       '@types/node': 17.0.42
       eslint: 8.17.0
       typescript: 4.7.4
       wrangler: 2.0.14
     devDependencies:
       '@antfu/eslint-config': 0.25.1_n4lrrl552kqf5nk4rgej5xdcha
-      '@cloudflare/workers-types': 3.11.0
+      '@cloudflare/workers-types': 3.13.0
       '@types/node': 17.0.42
       eslint: 8.17.0
       typescript: 4.7.4
@@ -345,8 +345,8 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudflare/workers-types/3.11.0:
-    resolution: {integrity: sha512-XmKgZZHrCdPsoVQkdd365R7GvwTwDVJsMyEG3Dq/Tgxz6vgrps2c8PXBqEutguwvl0zDAF0AL0e2Z8WG9Dffjw==}
+  /@cloudflare/workers-types/3.13.0:
+    resolution: {integrity: sha512-oyhzfYlWBLgd9odJ/WHcsD/8B+IaAjSD+OcPEGLzX5kGRONjwcW3NY0WQfsVIhQzZ6AbPzjwkmj4D2VFwU1xRQ==}
     dev: true
 
   /@cspotcode/source-map-support/0.8.1:
