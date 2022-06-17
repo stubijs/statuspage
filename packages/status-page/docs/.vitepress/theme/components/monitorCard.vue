@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { defineAsyncComponent, ref } from 'vue'
 import config from './../../../../../../config.json'
 
 const props = defineProps({
@@ -17,6 +17,9 @@ function changeDataView(dataValue: string) {
   else
     showData.value = dataValue
 }
+
+const monitorMap = defineAsyncComponent(() => import('./monitorMap.vue'))
+const monitorTable = defineAsyncComponent(() => import('./monitorTable.vue'))
 </script>
 
 <template>
@@ -86,10 +89,10 @@ function changeDataView(dataValue: string) {
         </div>
       </div>
       <template v-if="showData === 'map'">
-        <monitor-map :svg-data="props.cardItem" :svg-org-lon="cardMonitor.lon" :svg-org-lat="cardMonitor.lat" />
+        <monitorMap :svg-data="props.cardItem" :svg-org-lon="cardMonitor.lon" :svg-org-lat="cardMonitor.lat" />
       </template>
       <template v-if="showData === 'table'">
-        <monitor-table :svg-data="props.cardItem" />
+        <monitorTable :svg-data="props.cardItem" />
       </template>
     </div>
   </div>
