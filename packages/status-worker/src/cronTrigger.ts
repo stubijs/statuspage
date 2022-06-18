@@ -134,10 +134,18 @@ function getDate() {
   return new Date().toISOString().split('T')[0]
 }
 
+function getCleanUpDate() {
+  // delete dates older than config.settings.daysInHistogram
+  const date = new Date()
+  date.setDate(date.getDate() - config.settings.daysSavedForHistogram)
+  return date.toISOString().split('T')[0]
+}
+
 export async function processCronTrigger(event: ScheduledEvent, env: unknown) {
   // Get Worker PoP and save it to monitorsStateMetadata
   const checkLocation = await getCheckLocation()
   const checkDay = getDate()
+  const cleanUpDate = getCleanUpDate()
 
   // Get monitors state from KV
   const monitorsState: WorkerMonitorState = await getKVMonitors(env)
@@ -146,6 +154,15 @@ export async function processCronTrigger(event: ScheduledEvent, env: unknown) {
   monitorsState.lastUpdate.allOperational = true
 
   for (const monitor of config.monitors) {
+    // Monitor: remove days from KV
+    if (config.settings.daysSavedForHistogram && config.settings.daysSavedForHistogram > 0) {
+      Object.keys(monitorsState.monitors[monitor.id].checks).forEach((checkDay) => {
+        if (checkDay < cleanUpDate)
+          delete monitorsState.monitors[monitor.id].checks[checkDay]
+      })
+    }
+
+    // Monitor not active - go on
     if (!monitor.shouldAnalyze)
       continue
 

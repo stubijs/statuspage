@@ -4,6 +4,7 @@
     "url": "https://status.jstubenrauch.de",
     "logo": "favicon.png",
     "daysInHistogram": 30,
+    "daysSavedForHistogram": 90,
     "collectResponseTimes": true,
     "user_agent": "cf-worker-status-page",
     "allmonitorsOperational": "All Systems Operational",
