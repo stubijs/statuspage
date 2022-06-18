@@ -9,13 +9,13 @@
     "allmonitorsOperational": "All Systems Operational",
     "notAllmonitorsOperational": "Not All Systems Operational",
     "monitorLabelOperational": "Operational",
-    "monitorLabelPartOperational": "Partial Operational",    
+    "monitorLabelPartOperational": "Partial Operational",
     "monitorLabelNotOperational": "Not Operational",
     "monitorLabelNoData": "No data",
     "dayInHistogramNoData": "No data",
     "dayInHistogramOperational": "All good",
     "dayInHistogramNotOperational": " incident(s)"
-  },  
+  },
   "monitors": [
     {
       "id": "cms-jstubenrauch-de",
@@ -38,7 +38,7 @@
       "method": "GET",
       "expectStatus": 200,
       "followRedirect": false,
-      "linkable": true,                            
+      "linkable": true,
       "lon": 8.682127,
       "lat": 50.110924,
       "shouldAnalyze": true

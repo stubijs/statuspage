@@ -10,35 +10,35 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - uses: pnpm/action-setup@v2.2.2
-      with:
-        version: 7    
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
 
-    - name: Install dependencies
-      run: | 
-        pnpm install
-        pnpm i -g wrangler
-        sudo apt-get update && sudo apt-get install -y jq
+      - name: Install dependencies
+        run: |
+          pnpm install
+          pnpm i -g wrangler
+          sudo apt-get update && sudo apt-get install -y jq
 
-    - name: Publish
-      run: | 
-        cd packages/status-worker/
-        [ -z ${{secrets.SECRET_SLACK_WEBHOOK_URL}} ] && echo ${{secrets.SECRET_SLACK_WEBHOOK_URL}} | wrangler secret put "SECRET_SLACK_WEBHOOK_URL"
-        [ -z ${{secrets.SECRET_TELEGRAM_API_TOKEN}} ] && echo ${{secrets.SECRET_TELEGRAM_API_TOKEN}} | wrangler secret put "SECRET_TELEGRAM_API_TOKEN"
-        [ -z ${{secrets.SECRET_TELEGRAM_CHAT_ID}} ] && echo ${{secrets.SECRET_TELEGRAM_CHAT_ID}} | wrangler secret put "SECRET_TELEGRAM_CHAT_ID"
-        [ -z ${{secrets.SECRET_DISCORD_WEBHOOK_URL}} ] && echo ${{secrets.SECRET_DISCORD_WEBHOOK_URL}} | wrangler secret put "SECRET_DISCORD_WEBHOOK_URL"
-        export KV_NAMESPACE_STATUS=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
-        [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE
-        [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE --preview
-        export KV_NAMESPACE_ID=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
-        export KV_NAMESPACE_ID_PREVIEW=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE_preview")))' | jq -r ".[0].id")
-        echo "kv_namespaces = [{binding=\"KV_STATUS_PAGE\", id=\"${KV_NAMESPACE_ID}\", preview_id=\"${KV_NAMESPACE_ID_PREVIEW}\"}]" >> wrangler.toml
-        echo "[triggers]" >> wrangler.toml
-        echo "crons = [\"*/5 * * * *\"]" >> wrangler.toml
-        wrangler publish
-      env: 
-        CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-        CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+      - name: Publish
+        run: |
+          cd packages/status-worker/
+          [ -z ${{secrets.SECRET_SLACK_WEBHOOK_URL}} ] && echo ${{secrets.SECRET_SLACK_WEBHOOK_URL}} | wrangler secret put "SECRET_SLACK_WEBHOOK_URL"
+          [ -z ${{secrets.SECRET_TELEGRAM_API_TOKEN}} ] && echo ${{secrets.SECRET_TELEGRAM_API_TOKEN}} | wrangler secret put "SECRET_TELEGRAM_API_TOKEN"
+          [ -z ${{secrets.SECRET_TELEGRAM_CHAT_ID}} ] && echo ${{secrets.SECRET_TELEGRAM_CHAT_ID}} | wrangler secret put "SECRET_TELEGRAM_CHAT_ID"
+          [ -z ${{secrets.SECRET_DISCORD_WEBHOOK_URL}} ] && echo ${{secrets.SECRET_DISCORD_WEBHOOK_URL}} | wrangler secret put "SECRET_DISCORD_WEBHOOK_URL"
+          export KV_NAMESPACE_STATUS=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
+          [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE
+          [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE --preview
+          export KV_NAMESPACE_ID=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
+          export KV_NAMESPACE_ID_PREVIEW=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE_preview")))' | jq -r ".[0].id")
+          echo "kv_namespaces = [{binding=\"KV_STATUS_PAGE\", id=\"${KV_NAMESPACE_ID}\", preview_id=\"${KV_NAMESPACE_ID_PREVIEW}\"}]" >> wrangler.toml
+          echo "[triggers]" >> wrangler.toml
+          echo "crons = [\"*/5 * * * *\"]" >> wrangler.toml
+          wrangler publish
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}

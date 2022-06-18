@@ -1,13 +1,11 @@
 {
   "name": "statuspage",
   "version": "0.0.1",
-  "description": "Monorepo for a Cloudflare based Statuspage. ",
-  "homepage": "http(s)://stubijs.github.io/statuspage",
   "private": true,
-  "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Monorepo for a Cloudflare based Statuspage. ",
+  "author": "Jan Stubenrauch <info@jstubenrauch.de>",
+  "license": "MIT",
+  "homepage": "http(s)://stubijs.github.io/statuspage",
   "keywords": [
     "cloudflare",
     "vite",
@@ -17,6 +15,15 @@
     "cloudflare worker",
     "cloudflare pages"
   ],
-  "author": "Jan Stubenrauch <info@jstubenrauch.de>",
-  "license": "MIT"
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "0.25.1",
+    "eslint": "8.17.0",
+    "typescript": "4.7.4"
+  }
 }
