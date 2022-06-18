@@ -2,7 +2,7 @@ import config from './../../../config.json'
 
 const kvDataKey = 'monitor-data-v1'
 
-export interface WorkerMonitor { id?: string; name: any; description?: string; url: any; method: any; expectStatus?: number; followRedirect?: boolean; linkable?: boolean }
+export interface WorkerMonitor { id?: string; name: string; description?: string; url: string; method: string; expectStatus?: number; followRedirect?: boolean; linkable?: boolean }
 
 export type MonitorRes = Record<string, { n: number; ms: number; a: number; msMin: number; msMax: number }>
 

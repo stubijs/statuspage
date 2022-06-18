@@ -46,7 +46,7 @@ data.forEach((obj) => {
   }
 })
 
-writeJson('./locations.json', finData, (err: any) => {
+writeJson('./locations.json', finData, (err: unknown) => {
   if (err)
 
     return console.error(err)
