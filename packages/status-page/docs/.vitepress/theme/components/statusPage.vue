@@ -29,11 +29,11 @@ onMounted(() => {
 
 <template>
   <template v-if="loading">
-    Loading...
+    <loading-comp />
   </template>
   <template v-else>
     <template v-if="error">
-      ERROR
+      <error-comp />
     </template>
     <template v-else>
       <div class="mt-8" style="min-height: calc(100vh - 220px);">

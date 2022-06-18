@@ -5,6 +5,8 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ErrorComp: typeof import('./.vitepress/theme/components/errorComp.vue')['default']
+    LoadingComp: typeof import('./.vitepress/theme/components/loadingComp.vue')['default']
     MonitorCard: typeof import('./.vitepress/theme/components/monitorCard.vue')['default']
     MonitorDayAverage: typeof import('./.vitepress/theme/components/monitorDayAverage.vue')['default']
     MonitorHistogram: typeof import('./.vitepress/theme/components/monitorHistogram.vue')['default']

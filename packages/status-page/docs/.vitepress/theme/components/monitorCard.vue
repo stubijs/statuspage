@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { defineAsyncComponent, ref } from 'vue'
 import config from './../../../../../../config.json'
+import loadingComp from './loadingComp.vue'
+import errorComp from './errorComp.vue'
 
 const props = defineProps({
   cardItem: Object,
@@ -18,8 +20,37 @@ function changeDataView(dataValue: string) {
     showData.value = dataValue
 }
 
-const monitorMap = defineAsyncComponent(() => import('./monitorMap.vue'))
-const monitorTable = defineAsyncComponent(() => import('./monitorTable.vue'))
+const monitorMap = defineAsyncComponent({
+  // the loader function
+  loader: () => import('./monitorMap.vue'),
+
+  // A component to use while the async component is loading
+  loadingComponent: loadingComp,
+  // Delay before showing the loading component. Default: 200ms.
+  delay: 200,
+
+  // A component to use if the load fails
+  errorComponent: errorComp,
+  // The error component will be displayed if a timeout is
+  // provided and exceeded. Default: Infinity.
+  timeout: 3000,
+})
+
+const monitorTable = defineAsyncComponent({
+  // the loader function
+  loader: () => import('./monitorTable.vue'),
+
+  // A component to use while the async component is loading
+  loadingComponent: loadingComp,
+  // Delay before showing the loading component. Default: 200ms.
+  delay: 200,
+
+  // A component to use if the load fails
+  errorComponent: errorComp,
+  // The error component will be displayed if a timeout is
+  // provided and exceeded. Default: Infinity.
+  timeout: 3000,
+})
 </script>
 
 <template>
