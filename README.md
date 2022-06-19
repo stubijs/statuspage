@@ -15,10 +15,13 @@
 > Cloudflare based Statuspage
 
 Build with:
-- 💡 Cloudflare
-- ⚡️ Vite
-- 🛠️ Wrangler
-- 📦 pnpm
+- 💡 [Cloudflare Pages and Workers](https://www.cloudflare.com/)
+- ⚡️ [Vite](https://vitejs.dev/)
+- ⚡️ [Vue 3](https://github.com/vuejs/vue-next)
+- 🛠️ [Wrangler](https://github.com/cloudflare/wrangler)
+- 📦 [pnpm](https://pnpm.io/)
+- ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest), E2E Testing with [Cypress](https://cypress.io/) on [GitHub Actions](https://github.com/features/actions)
+- 🦾 TypeScript, of course
 
 ## Documentation
 
