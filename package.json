@@ -24,6 +24,16 @@
   "devDependencies": {
     "@antfu/eslint-config": "0.25.1",
     "eslint": "8.18.0",
+    "lint-staged": "^13.0.2",
+    "simple-git-hooks": "^2.8.0",
     "typescript": "4.7.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "eslint --fix",
+    "*.{md,yaml,toml}": "eslint --fix",
+    "*.{json}": "eslint --fix"
   }
 }
