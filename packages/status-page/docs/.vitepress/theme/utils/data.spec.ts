@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import KVDefault from './../../../../test/data/KV_default.json'
+import KVDefault from './../../../../../../test/data/KV_default.json'
 import { dataTable } from './data'
 
 const defaultKeys = Object.keys(KVDefault.monitors)
@@ -24,7 +24,7 @@ describe('purchasing flow', () => {
     const data = dataTable(KVDefault.monitors[defaultKeys[0]])
 
     // access Date.now() will result in the date set above
-     expect(data).exist
+    expect(data).exist
   })
 
   it('check output of data transformation -> has key', () => {
@@ -35,7 +35,7 @@ describe('purchasing flow', () => {
     const dataKeys = Object.keys(data)
 
     // access Date.now() will result in the date set above
-     expect(dataKeys.length).toBeGreaterThan(0)
+    expect(dataKeys.length).toBeGreaterThan(0)
   })
 
   it('check output of data transformation -> key has msMin not equal to 1000000', () => {
@@ -46,7 +46,6 @@ describe('purchasing flow', () => {
     const dataKeys = Object.keys(data)
 
     // access Date.now() will result in the date set above
-     expect(data[dataKeys[0]].msMin).toBeLessThan(1000000)
+    expect(data[dataKeys[0]].msMin).toBeLessThan(1000000)
   })
-
 })

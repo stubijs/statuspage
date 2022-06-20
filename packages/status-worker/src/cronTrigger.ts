@@ -17,8 +17,6 @@ export type Monitors = Record<string, Monitor>
 export interface WorkerMonitorState { lastUpdate: { allOperational: boolean; time?: number; loc?: string }; monitors: Monitors }
 
 export async function getKVMonitors(env: unknown) {
-  // trying both to see performance difference
-
   const data = await env.KV_STATUS_PAGE.get(kvDataKey, { type: 'json' })
   // const data = JSON.parse(await KV_STATUS_PAGE.get(kvDataKey, 'text'))
   const defaultData: WorkerMonitorState = { lastUpdate: { allOperational: true }, monitors: {} }
@@ -28,7 +26,7 @@ export async function getKVMonitors(env: unknown) {
   else return data as unknown as WorkerMonitorState
 }
 
-const getOperationalLabel = (operational: boolean) => {
+export const getOperationalLabel = (operational: boolean) => {
   return operational
     ? config.settings.monitorLabelOperational
     : config.settings.monitorLabelNotOperational
@@ -130,18 +128,22 @@ export async function getCheckLocation() {
     return 'unknown'
 }
 
-function getDate() {
+export function getDate() {
   return new Date().toISOString().split('T')[0]
 }
 
-function getCleanUpDate() {
+export function getCleanUpDate() {
   // delete dates older than config.settings.daysInHistogram
   const date = new Date()
   date.setDate(date.getDate() - config.settings.daysSavedForHistogram)
   return date.toISOString().split('T')[0]
 }
 
-export async function processCronTrigger(event: ScheduledEvent, env: unknown) {
+function getConfig() {
+  return config
+}
+
+export async function processCronTrigger(event: ScheduledEvent, env: unknown, config = getConfig()) {
   // Get Worker PoP and save it to monitorsStateMetadata
   const checkLocation = await getCheckLocation()
   const checkDay = getDate()
@@ -155,7 +157,7 @@ export async function processCronTrigger(event: ScheduledEvent, env: unknown) {
 
   for (const monitor of config.monitors) {
     // Monitor: remove days from KV
-    if (config.settings.daysSavedForHistogram && config.settings.daysSavedForHistogram > 0) {
+    if (config.settings.daysSavedForHistogram && config.settings.daysSavedForHistogram > 0 && monitorsState.monitors[monitor.id]) {
       Object.keys(monitorsState.monitors[monitor.id].checks).forEach((checkDay) => {
         if (checkDay < cleanUpDate)
           delete monitorsState.monitors[monitor.id].checks[checkDay]
@@ -297,7 +299,7 @@ export async function processCronTrigger(event: ScheduledEvent, env: unknown) {
 
       monitorsState.monitors[monitor.id].checks[checkDay].failData[
         Date.now()
-      ].loc = checkLocation
+      ] = { loc: checkLocation }
 
       // Increment failed checks on status change or first fail of the day (maybe call it .incidents instead?)
       if (monitorStatusChanged || monitorsState.monitors[monitor.id].checks[checkDay].fails === 0)
