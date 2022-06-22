@@ -4,10 +4,15 @@ import KVData from './../../../test/data/KV_default.json'
 import config from './../../../config.json'
 import config_1 from './../../../test/data/config_1.json'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const env1 = { KV_STATUS_PAGE: { get(_var1: unknown, _var2: unknown) { return null } } }
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 const env2 = { KV_STATUS_PAGE: { get(_var1: unknown, _var2: unknown) { return KVData } } }
+
+const fetchMock = vi.fn(() =>
+  Promise.resolve({
+    spy: this,
+  }),
+)
 
 function isJson(str: string) {
   try {
@@ -43,12 +48,6 @@ describe('getOperationalLabel', () => {
 })
 
 describe('notifySlack', () => {
-  const fetchMock = vi.fn(() =>
-    Promise.resolve({
-      spy: this,
-    }),
-  )
-
   process.env.SECRET_SLACK_WEBHOOK_URL = 'https://test.test.de'
   vi.stubGlobal('fetch', fetchMock)
 
@@ -72,12 +71,6 @@ describe('notifySlack', () => {
 })
 
 describe('notifyTelegram', () => {
-  const fetchMock = vi.fn(() =>
-    Promise.resolve({
-      spy: this,
-    }),
-  )
-
   function FormDataMock() {
     // @ts-expect-error: this
     this.append = vi.fn()
@@ -110,12 +103,6 @@ describe('notifyTelegram', () => {
 })
 
 describe('notifyDiscord', () => {
-  const fetchMock = vi.fn(() =>
-    Promise.resolve({
-      spy: this,
-    }),
-  )
-
   process.env.SECRET_DISCORD_WEBHOOK_URL = 'https://test.test.de'
   vi.stubGlobal('fetch', fetchMock)
 
@@ -144,7 +131,7 @@ describe('getCheckLocation', () => {
   })
 
   it('location found', async () => {
-    const fetchMock = vi.fn(() =>
+    const fetchMockCfRay = vi.fn(() =>
       Promise.resolve({
         headers: {
           'cf-ray': 'data-test',
@@ -155,12 +142,12 @@ describe('getCheckLocation', () => {
       }),
     )
 
-    vi.stubGlobal('fetch', fetchMock)
+    vi.stubGlobal('fetch', fetchMockCfRay)
     expect(await getCheckLocation()).toEqual('test')
   })
 
   it('location not found', async () => {
-    const fetchMock = vi.fn(() =>
+    const fetchMockCfRayNot = vi.fn(() =>
       Promise.resolve({
         headers: {
           get: () => {
@@ -170,7 +157,7 @@ describe('getCheckLocation', () => {
       }),
     )
 
-    vi.stubGlobal('fetch', fetchMock)
+    vi.stubGlobal('fetch', fetchMockCfRayNot)
     expect(await getCheckLocation()).toEqual('unknown')
   })
 })
