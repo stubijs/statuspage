@@ -24,7 +24,8 @@
     "tsc": "npm-run-all tsc:*",
     "tsc:status-worker": "pnpm --dir ./packages/status-worker/ ts-check",
     "tsc:status-page": "pnpm --dir ./packages/status-page/ ts-check",
-    "tsc:locations": "pnpm --dir ./packages/locations/ ts-check"
+    "tsc:locations": "pnpm --dir ./packages/locations/ ts-check",
+    "tsc:status-page/cypress": "tsc --noEmit -p ./packages/status-page/cypress/ && echo ok || echo not ok"
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.25.1",

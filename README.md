@@ -20,7 +20,7 @@ Build with:
 - ⚡️ [Vue 3](https://github.com/vuejs/vue-next)
 - 🛠️ [Wrangler](https://github.com/cloudflare/wrangler)
 - 📦 [pnpm](https://pnpm.io/)
-- ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest), E2E Testing with [Cypress](https://cypress.io/) on [GitHub Actions](https://github.com/features/actions)
+- ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest), E2E Testing with [Cypress](https://cypress.io/) on [GitHub Actions](https://github.com/features/actions), first a11y tests [Cypress Axe](https://github.com/component-driven/cypress-axe)
 - 🦾 TypeScript, of course
 
 ## Documentation
