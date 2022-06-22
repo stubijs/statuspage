@@ -188,7 +188,7 @@ describe('getDate', () => {
     const date = new Date(Date.UTC(2000, 1, 1))
     vi.setSystemTime(date)
     // match yyyy-mm-dd
-    expect(getDate()).toMatch(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)
+    expect(getDate()).toMatch(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/)
   })
 })
 
@@ -207,7 +207,7 @@ describe('getCleanUpDate', () => {
     const date = new Date(Date.UTC(2000, 1, 1))
     vi.setSystemTime(date)
     // match yyyy-mm-dd
-    expect(getCleanUpDate()).toMatch(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)
+    expect(getCleanUpDate()).toMatch(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/)
   })
 })
 
