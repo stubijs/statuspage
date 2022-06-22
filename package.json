@@ -25,7 +25,13 @@
     "tsc:status-worker": "pnpm --dir ./packages/status-worker/ ts-check",
     "tsc:status-page": "pnpm --dir ./packages/status-page/ ts-check",
     "tsc:locations": "pnpm --dir ./packages/locations/ ts-check",
-    "tsc:status-page/cypress": "tsc --noEmit -p ./packages/status-page/cypress/ && echo ok || echo not ok"
+    "tsc:status-page/cypress": "tsc --noEmit -p ./packages/status-page/cypress/ && echo ok || echo not ok",
+    "taze:patch": "npx taze patch -r",
+    "taze:patch:w": "npx taze patch -r -w",
+    "taze:minor": "npx taze minor -r",
+    "taze:minor:w": "npx taze minor -r -w",
+    "taze:major": "npx taze major -r",
+    "taze:major:w": "npx taze major -r -w"
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.25.1",
