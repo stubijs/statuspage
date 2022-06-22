@@ -1,3 +1,14 @@
 {
-    "extends": ["@antfu"]
+    "extends": ["@antfu"],
+    "overrides": [
+        {
+            "files": "./packages/status-page/cypress**/*.ts",
+            "plugins": [
+              "cypress",
+            ],
+            "extends": [
+                "plugin:cypress/recommended"
+              ],
+          },
+    ]
 }

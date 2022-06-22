@@ -19,13 +19,13 @@ function isJson(str: string) {
 
 describe('getKVMonitors', () => {
   it('KV does not exist', async () => {
-    const data = await getKVMonitors(env1)
+    const data = await getKVMonitors(env1 as env)
     const defaultValue = { lastUpdate: { allOperational: true }, monitors: {} }
     expect(data).toEqual(defaultValue)
   })
 
   it('KV exist', async () => {
-    const data = await getKVMonitors(env2)
+    const data = await getKVMonitors(env2 as env)
     expect(data).toEqual(KVData)
   })
 })
@@ -245,7 +245,7 @@ const testEvent: ScheduledEvent = {
 }
 
 const KVDemoData = { lastUpdate: { allOperational: true }, monitors: {} }
-const env = {
+const env: env = {
   KV_STATUS_PAGE: {
     data: {},
     get(_var1: unknown, _var2: unknown) { return this.data },

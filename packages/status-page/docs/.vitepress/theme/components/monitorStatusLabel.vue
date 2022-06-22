@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import config from './../../../../../../config.json'
 
 interface monitorStatusLabel {
-  statusLabel?: boolean
+  statusLabel: boolean
 }
 
 const props = withDefaults(defineProps<monitorStatusLabel>(), {

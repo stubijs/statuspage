@@ -10,54 +10,19 @@
 
 import { getKVMonitors, processCronTrigger } from './cronTrigger'
 
-/*
-const testEvent: ScheduledEvent = {
-  cron: '',
-  scheduledTime: 0,
-  noRetry(): void {
-    throw new Error('Function not implemented.')
-  },
-  waitUntil(): void {
-    throw new Error('Function not implemented.')
-  },
-  type: '',
-  eventPhase: 0,
-  composed: false,
-  bubbles: false,
-  cancelable: false,
-  defaultPrevented: false,
-  returnValue: false,
-  timeStamp: 0,
-  isTrusted: false,
-  cancelBubble: false,
-  stopImmediatePropagation(): void {
-    throw new Error('Function not implemented.')
-  },
-  preventDefault(): void {
-    throw new Error('Function not implemented.')
-  },
-  stopPropagation(): void {
-    throw new Error('Function not implemented.')
-  },
-  composedPath(): EventTarget<Record<string, Event>>[] {
-    throw new Error('Function not implemented.')
-  },
-}
-*/
-
 export default {
 
-  async fetch(request: Request, env: unknown, ctx: ExecutionContext): Promise<Response> {
+  async fetch(request: Request, env: env, ctx: ExecutionContext): Promise<Response> {
     ctx.waitUntil(getKVMonitors(env))
     return new Response('Statuspage Worker!')
   },
 
-  async scheduled(event: ScheduledEvent, env: unknown, ctx: ExecutionContext) {
+  async scheduled(event: ScheduledEvent, env: env, ctx: ExecutionContext) {
     ctx.waitUntil(triggerEvent(event, env))
   },
 }
 
-async function triggerEvent(event: ScheduledEvent, env: unknown) {
+async function triggerEvent(event: ScheduledEvent, env: env) {
   // Write code for updating your API
   switch (event.cron) {
     // You can set up to three schedules maximum.

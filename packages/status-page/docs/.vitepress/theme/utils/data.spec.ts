@@ -1,6 +1,9 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import KVDefault from './../../../../../../test/data/KV_default.json'
+import _KVDefault from './../../../../../../test/data/KV_default.json'
 import { dataTable } from './data'
+
+// fix: Typescript does set wrong type
+const KVDefault: WorkerMonitorState = _KVDefault
 
 const defaultKeys = Object.keys(KVDefault.monitors)
 const getFirstDateOfEntry = Object.keys(KVDefault.monitors[defaultKeys[0]].checks)

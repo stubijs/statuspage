@@ -1,19 +1,20 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import type { GeoGeometryObjects } from 'd3'
+import type { PropType } from 'vue'
+import type { GeoGeometryObjects, GeoPermissibleObjects } from 'd3'
 import geojson from './../utils/ne_110m_admin_0_countries.json'
 import { dataTable } from './../utils/data'
 
 const props = defineProps({
-  svgData: Object,
-  svgOrgLon: Number,
-  svgOrgLat: Number,
+  svgData: { type: Object as PropType<Monitor>, required: true },
+  svgOrgLon: { type: Number, required: true },
+  svgOrgLat: { type: Number, required: true },
 })
 
 const data = ref()
 const tooltip = ref()
 
-const finData = dataTable(props.svgData)
+const finData: svgData = dataTable(props.svgData)
 
 const generateWorld = async () => {
   const { geoEquirectangular, geoPath, pointer, select } = await import('d3')
@@ -25,7 +26,7 @@ const generateWorld = async () => {
     Tooltip.classed('opacity-0 ', false).classed('opacity-100 ', true)
   }
 
-  function mousemove(event, d) {
+  function mousemove(event: { layerX: number; layerY: number }, d: svgDataOne) {
     const coords = pointer(event)
     Tooltip
       .html(`<p class="font-bold mb-2">${d.city} (${d.region})</p>`
@@ -72,7 +73,7 @@ const generateWorld = async () => {
 
     const link = { type: 'LineString', coordinates: [[finData[key].lon, finData[key].lat], [props.svgOrgLon, props.svgOrgLat]] } // Change these data to see ho the great circle reacts
     svg.append('path')
-      .attr('d', path(link))
+      .attr('d', path(link as GeoPermissibleObjects))
       .attr('class', 'stroke-vp')
       .style('fill', 'none')
       .style('stroke-width', 3)

@@ -8,7 +8,8 @@
   "keywords": [],
   "main": "main.ts",
   "scripts": {
-    "get": "node --loader ts-node/esm ./main.ts"
+    "get": "node --loader ts-node/esm ./main.ts",
+    "ts-check": "tsc --noEmit && echo ok || echo not ok"
   },
   "devDependencies": {
     "@types/fs-extra": "9.0.13",

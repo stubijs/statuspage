@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { defineAsyncComponent, ref } from 'vue'
+import type { PropType } from 'vue'
 import config from './../../../../../../config.json'
 import loadingComp from './loadingComp.vue'
 import errorComp from './errorComp.vue'
 
 const props = defineProps({
-  cardItem: Object,
-  cardMonitor: Object,
+  cardItem: { type: Object as PropType<Monitor>, required: true },
+  cardMonitor: { type: Object as PropType<configMonitor>, required: true },
 })
 
 const daysHistogram = [...Array(config.settings.daysInHistogram)].map((_, i) => i)
@@ -57,7 +58,7 @@ const monitorTable = defineAsyncComponent({
   <div class="card">
     <div class="flex flex-row justify-between items-center m-6 mb-4">
       <div class="flex flex-row items-center align-center">
-        <template v-if="cardMonitor.description">
+        <template v-if="props.cardMonitor.description">
           <div class="tooltip">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,32 +69,32 @@ const monitorTable = defineAsyncComponent({
               <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
             </svg>
             <div class="content text-center transform -translate-y-1/2 top-1/2 ml-8 w-72 text-sm object-left">
-              {{ cardMonitor.description }}
+              {{ props.cardMonitor.description }}
             </div>
           </div>
         </template>
-        <template v-if="cardMonitor.linkable === true || cardMonitor.linkable === undefined">
-          <a :href="cardMonitor.url" target="_blank">
-            <div class="text-base md:text-xl">{{ cardMonitor.name }}</div>
+        <template v-if="props.cardMonitor.linkable === true || props.cardMonitor.linkable === undefined">
+          <a :href="props.cardMonitor.url" target="_blank">
+            <div class="text-base md:text-xl">{{ props.cardMonitor.name }}</div>
           </a>
         </template>
         <template v-else>
           <span>
-            <div class="text-base md:text-xl">{{ cardMonitor.name }}</div>
+            <div class="text-base md:text-xl">{{ props.cardMonitor.name }}</div>
           </span>
         </template>
       </div>
-      <monitor-status-label :status-label="cardItem.lastCheck.operational" />
+      <monitor-status-label :status-label="props.cardItem.lastCheck.operational" />
     </div>
     <div class="mx-6 mb-1">
       <div class="flex flex-row items-center histogram">
         <template v-for="index in daysHistogram" :key="index">
-          <MonitorHistogram :monitor-data="props.cardItem" :monitor-day="index" />
+          <Monitor-histogram :monitor-data="props.cardItem" :monitor-day="index" />
         </template>
       </div>
     </div>
     <div class="m-6 mt-0">
-      <div class="flex flex-row justify-between items-center text-gray-400 text-sm">
+      <div class="flex flex-row justify-between items-center text-gray-600 dark:text-gray-200 text-sm">
         <div>{{ config.settings.daysInHistogram }} days ago</div>
         <div>Today</div>
       </div>
@@ -120,7 +121,7 @@ const monitorTable = defineAsyncComponent({
         </div>
       </div>
       <template v-if="showData === 'map'">
-        <monitorMap :svg-data="props.cardItem" :svg-org-lon="cardMonitor.lon" :svg-org-lat="cardMonitor.lat" />
+        <monitorMap :svg-data="props.cardItem" :svg-org-lon="props.cardMonitor.lon" :svg-org-lat="props.cardMonitor.lat" />
       </template>
       <template v-if="showData === 'table'">
         <monitorTable :svg-data="props.cardItem" />

@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "wrangler dev",
-    "publish": "wrangler publish"
+    "publish": "wrangler publish",
+    "ts-check": "tsc --noEmit && echo ok || echo not ok"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "3.13.0",

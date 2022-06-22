@@ -3,12 +3,13 @@ import { AgGridVue } from '@ag-grid-community/vue3' // the AG Grid Vue Component
 import { ModuleRegistry } from '@ag-grid-community/core'
 import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model'
 import { ref } from 'vue'
+import type { PropType } from 'vue'
 import '@ag-grid-community/core/dist/styles/ag-grid.css' // Core grid CSS, always needed
 import '@ag-grid-community/core/dist/styles/ag-theme-alpine.css' // Optional theme CSS
 import { dataTable } from './../utils/data'
 
 const props = defineProps({
-  svgData: Object,
+  svgData: { type: Object as PropType<Monitor>, required: true },
 })
 
 ModuleRegistry.registerModules([ClientSideRowModelModule])
@@ -18,7 +19,7 @@ const finData = dataTable(props.svgData)
 const gridApi = ref(null) // Optional - for accessing Grid's API
 
 // Obtain API from grid's onGridReady event
-const onGridReady = (params) => {
+const onGridReady = (params: { api: null }) => {
   gridApi.value = params.api
 }
 

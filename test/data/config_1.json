@@ -1,49 +1,48 @@
 {
-    "settings": {
-      "title": "Status Page",
-      "url": "https://status.jstubenrauch.de",
-      "logo": "favicon.png",
-      "daysInHistogram": 30,
-      "daysSavedForHistogram": 90,
-      "collectResponseTimes": true,
-      "user_agent": "cf-worker-status-page",
-      "allmonitorsOperational": "All Systems Operational",
-      "notAllmonitorsOperational": "Not All Systems Operational",
-      "monitorLabelOperational": "Operational",
-      "monitorLabelPartOperational": "Partial Operational",
-      "monitorLabelNotOperational": "Not Operational",
-      "monitorLabelNoData": "No data",
-      "dayInHistogramNoData": "No data",
-      "dayInHistogramOperational": "All good",
-      "dayInHistogramNotOperational": " incident(s)"
+  "settings": {
+    "title": "Status Page",
+    "url": "https://status.jstubenrauch.de",
+    "logo": "favicon.png",
+    "daysInHistogram": 30,
+    "daysSavedForHistogram": 90,
+    "collectResponseTimes": true,
+    "user_agent": "cf-worker-status-page",
+    "allmonitorsOperational": "All Systems Operational",
+    "notAllmonitorsOperational": "Not All Systems Operational",
+    "monitorLabelOperational": "Operational",
+    "monitorLabelPartOperational": "Partial Operational",
+    "monitorLabelNotOperational": "Not Operational",
+    "monitorLabelNoData": "No data",
+    "dayInHistogramNoData": "No data",
+    "dayInHistogramOperational": "All good",
+    "dayInHistogramNotOperational": " incident(s)"
+  },
+  "monitors": [
+    {
+      "id": "test1",
+      "name": "cms.jstubenrauch.de",
+      "description": "CMS jstubenrauch.",
+      "url": "https://cms.jstubenrauch.de/admin/login",
+      "method": "GET",
+      "expectStatus": 200,
+      "followRedirect": false,
+      "linkable": true,
+      "lon": 8.682127,
+      "lat": 50.110924,
+      "shouldAnalyze": true
     },
-    "monitors": [
-      {
-        "id": "test1",
-        "name": "cms.jstubenrauch.de",
-        "description": "CMS jstubenrauch.",
-        "url": "https://cms.jstubenrauch.de/admin/login",
-        "method": "GET",
-        "expectStatus": 200,
-        "followRedirect": false,
-        "linkable": true,
-        "lon": 8.682127,
-        "lat": 50.110924,
-        "shouldAnalyze": true
-      },
-      {
-        "id": "test2",
-        "name": "cms.jstubenrauch.de",
-        "description": "CMS jstubenrauch.",
-        "url": "https://cms.jstubenrauch.de/admin/login",
-        "method": "GET",
-        "expectStatus": 200,
-        "followRedirect": false,
-        "linkable": true,
-        "lon": 8.682127,
-        "lat": 50.110924,
-        "shouldAnalyze": false
-      }
-    ]
-  }
-  
+    {
+      "id": "test2",
+      "name": "cms.jstubenrauch.de",
+      "description": "CMS jstubenrauch.",
+      "url": "https://cms.jstubenrauch.de/admin/login",
+      "method": "GET",
+      "expectStatus": 200,
+      "followRedirect": false,
+      "linkable": true,
+      "lon": 8.682127,
+      "lat": 50.110924,
+      "shouldAnalyze": false
+    }
+  ]
+}

@@ -1,4 +1,8 @@
 export default {
+  /**
+   * @param {Request} request
+   * @param {{ KV_STATUS_PAGE: any; ASSETS: any; }} env
+   */
   async fetch(request, env) {
     const url = new URL(request.url)
     if (url.pathname.startsWith('/api/statuspage/')) {

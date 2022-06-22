@@ -1,9 +1,12 @@
 import config from './../../../../../../config.json'
-import locations from './../../../../../locations/locations.json'
+import _locations from './../../../../../locations/locations.json'
 
-export function dataTable(svgData) {
+// fix: Typescript does set wrong type
+const locations: locations = _locations
+
+export function dataTable(svgData: Monitor) {
   const daysHistogram = [...Array(config.settings.daysInHistogram)].map((_, i) => i)
-  const finData = {}
+  const finData: svgData = {}
 
   daysHistogram.forEach((currentValue) => {
     const date = new Date()

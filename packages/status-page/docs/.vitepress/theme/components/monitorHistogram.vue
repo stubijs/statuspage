@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import type { PropType } from 'vue'
 import config from './../../../../../../config.json'
 
 const props = defineProps({
-  monitorData: Object,
-  monitorDay: Number,
+  monitorData: { type: Object as PropType<Monitor>, required: true },
+  monitorDay: { type: Number, required: true },
 })
 
 const date = new Date()
-date.setDate(date.getDate() - config.settings.daysInHistogram + props.monitorDay + 1)
+date.setDate(date.getDate() - config.settings.daysInHistogram + props.monitorDay! + 1)
 const dayIndex = date.toISOString().split('T')[0]
 
 const colorbar = computed(() => {
@@ -73,7 +74,7 @@ const showPings = computed(() => {
       </p>
       <template v-if="showPings">
         <template v-for="(item, key) in props.monitorData.checks[dayIndex].res" :key="key">
-          <Monitor-day-average :data-res-item="item" :data-res-index="key" />
+          <monitor-day-average :data-res-item="item" :data-res-index="key" />
         </template>
       </template>
     </div>

@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "zixuanchen.vitest-explorer",
+    "Vue.volar"
+  ]
+}

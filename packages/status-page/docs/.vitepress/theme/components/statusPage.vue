@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import config from './../../../../../../config.json'
-// import data from './../../../../test/data/KV_default.json'
+// import data from './../../../../../../test/data/KV_default.json'
 
 const loading = ref(true)
 const error = ref(false)
 
-let data = {}
+let data: WorkerMonitorState = { lastUpdate: { allOperational: true }, monitors: {} }
 
 onMounted(() => {
   fetch('/api/statuspage/').then(async (response) => {
@@ -14,13 +14,13 @@ onMounted(() => {
       data = await response.json()
       loading.value = false
     }
-    catch (error) {
+    catch (errorData) {
       loading.value = false
       error.value = true
       // eslint-disable-next-line no-console
       console.log('Error happened here!')
       // eslint-disable-next-line no-console
-      console.log(error)
+      console.log(errorData)
     }
   })
   // loading.value = false

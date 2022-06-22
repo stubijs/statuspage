@@ -16,7 +16,7 @@ export type Monitors = Record<string, Monitor>
 
 export interface WorkerMonitorState { lastUpdate: { allOperational: boolean; time?: number; loc?: string }; monitors: Monitors }
 
-export async function getKVMonitors(env: unknown) {
+export async function getKVMonitors(env: env) {
   const data = await env.KV_STATUS_PAGE.get(kvDataKey, { type: 'json' })
   // const data = JSON.parse(await KV_STATUS_PAGE.get(kvDataKey, 'text'))
   const defaultData: WorkerMonitorState = { lastUpdate: { allOperational: true }, monitors: {} }
@@ -143,7 +143,7 @@ function getConfig() {
   return config
 }
 
-export async function processCronTrigger(event: ScheduledEvent, env: unknown, config = getConfig()) {
+export async function processCronTrigger(event: ScheduledEvent, env: env, config = getConfig()) {
   // Get Worker PoP and save it to monitorsStateMetadata
   const checkLocation = await getCheckLocation()
   const checkDay = getDate()
