@@ -94,12 +94,12 @@ importers:
       '@cloudflare/workers-types': 3.13.0
       '@types/node': 17.0.42
       typescript: 4.7.4
-      wrangler: 2.0.14
+      wrangler: 2.0.15
     devDependencies:
       '@cloudflare/workers-types': 3.13.0
       '@types/node': 17.0.42
       typescript: 4.7.4
-      wrangler: 2.0.14
+      wrangler: 2.0.15
 
 packages:
 
@@ -5639,7 +5639,7 @@ packages:
     dev: true
 
   /stack-trace/0.0.10:
-    resolution: {integrity: sha1-VHxws0fo0ytOEI6hoqFZ5f3eGcA=}
+    resolution: {integrity: sha512-KGzahc7puUKkzyMt+IqAep+TVNbKP+k2Lmwhub39m1AsTSkaDutx56aDCo+HLDzf/D26BIHTJWNiTG1KAJiQCg==}
     dev: true
 
   /streamsearch/1.1.0:
@@ -6389,8 +6389,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /wrangler/2.0.14:
-    resolution: {integrity: sha512-uPfz2yJ13nbhEdSqdXBoXBANB60cwZ77KkHcP8AIUWHj2GJovQFvvfbBZwO1Ok8JWPhfpkICnIiGU6IBrT7p/w==}
+  /wrangler/2.0.15:
+    resolution: {integrity: sha512-iBigg/qR1U74wJSR81njVNG69h/tcAGxXoBS1iKeLu1WIhTR/jfBbZdXWcspgkFaex4J6roJnhbFNy7Ob7caUA==}
     engines: {node: '>=16.7.0'}
     hasBin: true
     dependencies:
