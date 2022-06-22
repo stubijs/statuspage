@@ -17,8 +17,9 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "test": "vitest",
-    "coverage": "vitest run --coverage",
+    "unit": "vitest run",
+    "unit:test": "vitest",
+    "unit:coverage": "vitest run --coverage",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "tsc": "npm-run-all tsc:*",
