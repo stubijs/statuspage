@@ -17,13 +17,13 @@
   },
   "devDependencies": {
     "@ag-grid-community/client-side-row-model": "27.3.0",
-    "@testing-library/cypress": "^8.0.3",
+    "@testing-library/cypress": "8.0.3",
     "@types/d3": "7.4.0",
     "@vueuse/core": "8.7.5",
     "autoprefixer": "10.4.7",
-    "axe-core": "^4.4.2",
-    "cypress": "^10.2.0",
-    "cypress-axe": "^1.0.0",
+    "axe-core": "4.4.2",
+    "cypress": "10.2.0",
+    "cypress-axe": "1.0.0",
     "d3": "7.4.4",
     "postcss": "8.4.14",
     "tailwindcss": "3.1.4",
@@ -31,7 +31,7 @@
     "unplugin-vue-components": "0.19.6",
     "vite": "2.9.12",
     "vitepress": "1.0.0-alpha.4",
-    "vue-tsc": "^0.38.1"
+    "vue-tsc": "0.38.1"
   },
   "pnpm": {
     "peerDependencyRules": {
