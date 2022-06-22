@@ -4,7 +4,9 @@ import KVData from './../../../test/data/KV_default.json'
 import config from './../../../config.json'
 import config_1 from './../../../test/data/config_1.json'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const env1 = { KV_STATUS_PAGE: { get(_var1: unknown, _var2: unknown) { return null } } }
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const env2 = { KV_STATUS_PAGE: { get(_var1: unknown, _var2: unknown) { return KVData } } }
 
 function isJson(str: string) {
