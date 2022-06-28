@@ -54,7 +54,7 @@ importers:
       '@vueuse/core': 8.7.5
       autoprefixer: 10.4.7
       axe-core: 4.4.2
-      cypress: 10.2.0
+      cypress: 10.3.0
       cypress-axe: 1.0.0
       d3: 7.5.0
       postcss: 8.4.14
@@ -73,13 +73,13 @@ importers:
       vue-i18n: 9.1.10_vue@3.2.37
     devDependencies:
       '@ag-grid-community/client-side-row-model': 27.3.0
-      '@testing-library/cypress': 8.0.3_cypress@10.2.0
+      '@testing-library/cypress': 8.0.3_cypress@10.3.0
       '@types/d3': 7.4.0
       '@vueuse/core': 8.7.5_vue@3.2.37
       autoprefixer: 10.4.7_postcss@8.4.14
       axe-core: 4.4.2
-      cypress: 10.2.0
-      cypress-axe: 1.0.0_pyrwujgl4lnrbjkr7fi5lr4i7y
+      cypress: 10.3.0
+      cypress-axe: 1.0.0_mz5cfofjqg5lulxs3ybhgerozi
       d3: 7.5.0
       postcss: 8.4.14
       tailwindcss: 3.1.4
@@ -765,7 +765,7 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@testing-library/cypress/8.0.3_cypress@10.2.0:
+  /@testing-library/cypress/8.0.3_cypress@10.3.0:
     resolution: {integrity: sha512-nY2YaSbmuPo5k6kL0iLj/pGPPfka3iwb3kpTx8QN/vOCns92Saz9wfACqB8FJzcR7+lfA4d5HUOWqmTddBzczg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -773,7 +773,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.3
       '@testing-library/dom': 8.14.0
-      cypress: 10.2.0
+      cypress: 10.3.0
     dev: true
 
   /@testing-library/dom/8.14.0:
@@ -2020,7 +2020,7 @@ packages:
   /csstype/2.6.20:
     resolution: {integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==}
 
-  /cypress-axe/1.0.0_pyrwujgl4lnrbjkr7fi5lr4i7y:
+  /cypress-axe/1.0.0_mz5cfofjqg5lulxs3ybhgerozi:
     resolution: {integrity: sha512-QBlNMAd5eZoyhG8RGGR/pLtpHGkvgWXm2tkP68scJ+AjYiNNOlJihxoEwH93RT+rWOLrefw4iWwEx8kpEcrvJA==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -2028,11 +2028,11 @@ packages:
       cypress: ^10
     dependencies:
       axe-core: 4.4.2
-      cypress: 10.2.0
+      cypress: 10.3.0
     dev: true
 
-  /cypress/10.2.0:
-    resolution: {integrity: sha512-+i9lY5ENlfi2mJwsggzR+XASOIgMd7S/Gd3/13NCpv596n3YSplMAueBTIxNLcxDpTcIksp+9pM3UaDrJDpFqA==}
+  /cypress/10.3.0:
+    resolution: {integrity: sha512-txkQWKzvBVnWdCuKs5Xc08gjpO89W2Dom2wpZgT9zWZT5jXxqPIxqP/NC1YArtkpmp3fN5HW8aDjYBizHLUFvg==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     requiresBuild: true
