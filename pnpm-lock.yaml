@@ -60,7 +60,7 @@ importers:
       postcss: 8.4.14
       tailwindcss: 3.1.4
       typescript: 4.7.4
-      unplugin-vue-components: 0.20.1
+      unplugin-vue-components: 0.21.0
       vite: 2.9.13
       vitepress: 1.0.0-alpha.4
       vue: 3.2.37
@@ -84,7 +84,7 @@ importers:
       postcss: 8.4.14
       tailwindcss: 3.1.4
       typescript: 4.7.4
-      unplugin-vue-components: 0.20.1_vite@2.9.13+vue@3.2.37
+      unplugin-vue-components: 0.21.0_vite@2.9.13+vue@3.2.37
       vite: 2.9.13
       vitepress: 1.0.0-alpha.4
       vue-tsc: 0.38.2_typescript@4.7.4
@@ -6027,8 +6027,8 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unplugin-vue-components/0.20.1_vite@2.9.13+vue@3.2.37:
-    resolution: {integrity: sha512-I70rKUvnJXxBvvTvKhjMV6jXh48BdiUNn2jcQiTdZjqBA3Xgkze31tdc4KBX46yryIy0y6pVaZ9gVBNPrF785g==}
+  /unplugin-vue-components/0.21.0_vite@2.9.13+vue@3.2.37:
+    resolution: {integrity: sha512-U7uOMNmRJ2eAv9CNjP8QRvxs6nAe3FVQUEIUphC1FGguBp3BWSLgGAcSHaX2nQy0gFoDY2mLF2M52W/t/eDaKg==}
     engines: {node: '>=14'}
     peerDependencies:
       '@babel/parser': ^7.15.8
@@ -6046,7 +6046,7 @@ packages:
       magic-string: 0.26.2
       minimatch: 5.1.0
       resolve: 1.22.1
-      unplugin: 0.7.0_vite@2.9.13
+      unplugin: 0.7.1_vite@2.9.13
       vue: 3.2.37
     transitivePeerDependencies:
       - esbuild
@@ -6056,12 +6056,12 @@ packages:
       - webpack
     dev: true
 
-  /unplugin/0.7.0_vite@2.9.13:
-    resolution: {integrity: sha512-OsiFrgybmqm5bGuaodvbLYhqUrvGuRHRMZDhddKEXTDbuQ1x+hR7M1WpQguXj03whVYjEYChhFo738cZH5RNig==}
+  /unplugin/0.7.1_vite@2.9.13:
+    resolution: {integrity: sha512-Z6hNDXDNh9aimMkPU1mEjtk+2ova8gh0y7rJeJdGH1vWZOHwF2lLQiQ/R97rv9ymmzEQXsR2fyMet72T8jy6ew==}
     peerDependencies:
       esbuild: '>=0.13'
       rollup: ^2.50.0
-      vite: ^2.3.0
+      vite: ^2.3.0 || ^3.0.0-0
       webpack: 4 || 5
     peerDependenciesMeta:
       esbuild:
@@ -6077,7 +6077,7 @@ packages:
       chokidar: 3.5.3
       vite: 2.9.13
       webpack-sources: 3.2.3
-      webpack-virtual-modules: 0.4.3
+      webpack-virtual-modules: 0.4.4
     dev: true
 
   /untildify/4.0.0:
@@ -6358,8 +6358,8 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: true
 
-  /webpack-virtual-modules/0.4.3:
-    resolution: {integrity: sha512-5NUqC2JquIL2pBAAo/VfBP6KuGkHIZQXW/lNKupLPfhViwh8wNsu0BObtl09yuKZszeEUfbXz8xhrHvSG16Nqw==}
+  /webpack-virtual-modules/0.4.4:
+    resolution: {integrity: sha512-h9atBP/bsZohWpHnr+2sic8Iecb60GxftXsWNLLLSqewgIsGzByd2gcIID4nXcG+3tNe4GQG3dLcff3kXupdRA==}
     dev: true
 
   /whatwg-encoding/2.0.0:
