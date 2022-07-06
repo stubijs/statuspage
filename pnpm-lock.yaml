@@ -51,7 +51,7 @@ importers:
       '@ag-grid-community/vue3': 27.3.0
       '@testing-library/cypress': 8.0.3
       '@types/d3': 7.4.0
-      '@vueuse/core': 8.7.5
+      '@vueuse/core': 8.8.0
       autoprefixer: 10.4.7
       axe-core: 4.4.2
       cypress: 10.3.0
@@ -75,7 +75,7 @@ importers:
       '@ag-grid-community/client-side-row-model': 27.3.0
       '@testing-library/cypress': 8.0.3_cypress@10.3.0
       '@types/d3': 7.4.0
-      '@vueuse/core': 8.7.5_vue@3.2.37
+      '@vueuse/core': 8.8.0_vue@3.2.37
       autoprefixer: 10.4.7_postcss@8.4.14
       axe-core: 4.4.2
       cypress: 10.3.0
@@ -1315,8 +1315,8 @@ packages:
   /@vue/shared/3.2.37:
     resolution: {integrity: sha512-4rSJemR2NQIo9Klm1vabqWjD8rs/ZaJSzMxkMNeJS6lHiUjjUeYFbooN19NgFjztubEKh3WlZUeOLVdbbUWHsw==}
 
-  /@vueuse/core/8.7.5_vue@3.2.37:
-    resolution: {integrity: sha512-tqgzeZGoZcXzoit4kOGLWJibDMLp0vdm6ZO41SSUQhkhtrPhAg6dbIEPiahhUu6sZAmSYvVrZgEr5aKD51nrLA==}
+  /@vueuse/core/8.8.0_vue@3.2.37:
+    resolution: {integrity: sha512-TyvcNuA6O9WGkT8oQB4ERt8aBxe/e0fUs3SnibaxtLOr4eVXq42m3sLZgwgWOrJi4s9/8pTsMaJNn/6BUefwpQ==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
       vue: ^2.6.0 || ^3.2.0
@@ -1327,18 +1327,18 @@ packages:
         optional: true
     dependencies:
       '@types/web-bluetooth': 0.0.14
-      '@vueuse/metadata': 8.7.5
-      '@vueuse/shared': 8.7.5_vue@3.2.37
+      '@vueuse/metadata': 8.8.0
+      '@vueuse/shared': 8.8.0_vue@3.2.37
       vue: 3.2.37
       vue-demi: 0.13.1_vue@3.2.37
     dev: true
 
-  /@vueuse/metadata/8.7.5:
-    resolution: {integrity: sha512-emJZKRQSaEnVqmlu39NpNp8iaW+bPC2kWykWoWOZMSlO/0QVEmO/rt8A5VhOEJTKLX3vwTevqbiRy9WJRwVOQg==}
+  /@vueuse/metadata/8.8.0:
+    resolution: {integrity: sha512-bRF+QPrw/RtP0al3nT/DtJ7CN0a6y6tEEO6hQ4CuJcGuUqd15eCOF6WKqQnC5DRaGFhsq/YwnQYsLTdJsW8f1A==}
     dev: true
 
-  /@vueuse/shared/8.7.5_vue@3.2.37:
-    resolution: {integrity: sha512-THXPvMBFmg6Gf6AwRn/EdTh2mhqwjGsB2Yfp374LNQSQVKRHtnJ0I42bsZTn7nuEliBxqUrGQm/lN6qUHmhJLw==}
+  /@vueuse/shared/8.8.0_vue@3.2.37:
+    resolution: {integrity: sha512-DNZEs5Wy8hxxjAyWni6UK4BX/OGa8R7g0GX1tid5+AvmRbUwvUXL+0lVmGEuWPSQY4OZdYef1lvuFCi4Bfd59A==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
       vue: ^2.6.0 || ^3.2.0
@@ -5980,7 +5980,7 @@ packages:
       '@docsearch/js': 3.1.0
       '@vitejs/plugin-vue': 2.3.3_vite@2.9.13+vue@3.2.37
       '@vue/devtools-api': 6.1.4
-      '@vueuse/core': 8.7.5_vue@3.2.37
+      '@vueuse/core': 8.8.0_vue@3.2.37
       body-scroll-lock: 4.0.0-beta.0
       shiki: 0.10.1
       vite: 2.9.13
