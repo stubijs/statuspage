@@ -31,7 +31,7 @@
     "unplugin-vue-components": "0.21.1",
     "vite": "2.9.14",
     "vitepress": "1.0.0-alpha.4",
-    "vue-tsc": "0.38.3"
+    "vue-tsc": "0.38.4"
   },
   "pnpm": {
     "peerDependencyRules": {
