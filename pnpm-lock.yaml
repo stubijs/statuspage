@@ -31,7 +31,7 @@ importers:
       '@types/fs-extra': 9.0.13
       '@types/node': 18.0.0
       fs-extra: 10.1.0
-      node-fetch: 3.2.7
+      node-fetch: 3.2.8
       ts-node: 10.8.2
       tslib: 2.4.0
       typescript: 4.7.4
@@ -39,7 +39,7 @@ importers:
       '@types/fs-extra': 9.0.13
       '@types/node': 18.0.0
       fs-extra: 10.1.0
-      node-fetch: 3.2.7
+      node-fetch: 3.2.8
       ts-node: 10.8.2_qiyc72axg2v44xl4yovan2v55u
       tslib: 2.4.0
       typescript: 4.7.4
@@ -4542,8 +4542,8 @@ packages:
     engines: {node: '>=10.5.0'}
     dev: true
 
-  /node-fetch/3.2.7:
-    resolution: {integrity: sha512-xRYIBUEoMvzvLt0FT2mAKAGXps1Wm0GpswR63pPJC4Hp5EubeigGYJJge34f3mPApap4+2B3sTKyUygsZrkmyg==}
+  /node-fetch/3.2.8:
+    resolution: {integrity: sha512-KtpD1YhGszhntMpBDyp5lyagk8KIMopC1LEb7cQUAh7zcosaX5uK8HnbNb2i3NTQK3sIawCItS0uFC3QzcLHdg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       data-uri-to-buffer: 4.0.0
