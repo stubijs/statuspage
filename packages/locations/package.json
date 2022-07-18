@@ -15,7 +15,7 @@
     "@types/fs-extra": "9.0.13",
     "@types/node": "18.0.0",
     "fs-extra": "10.1.0",
-    "node-fetch": "3.2.8",
+    "node-fetch": "3.2.9",
     "ts-node": "10.9.1",
     "tslib": "2.4.0",
     "typescript": "4.7.4"
