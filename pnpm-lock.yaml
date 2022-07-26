@@ -46,9 +46,9 @@ importers:
 
   packages/status-page:
     specifiers:
-      '@ag-grid-community/client-side-row-model': 27.3.0
-      '@ag-grid-community/core': 27.3.0
-      '@ag-grid-community/vue3': 27.3.0
+      '@ag-grid-community/client-side-row-model': 28.0.2
+      '@ag-grid-community/core': 28.0.2
+      '@ag-grid-community/vue3': 28.0.0
       '@testing-library/cypress': 8.0.3
       '@types/d3': 7.4.0
       '@vueuse/core': 8.9.4
@@ -67,12 +67,12 @@ importers:
       vue-i18n: 9.1.10
       vue-tsc: 0.39.0
     dependencies:
-      '@ag-grid-community/core': 27.3.0
-      '@ag-grid-community/vue3': 27.3.0
+      '@ag-grid-community/core': 28.0.2
+      '@ag-grid-community/vue3': 28.0.0
       vue: 3.2.37
       vue-i18n: 9.1.10_vue@3.2.37
     devDependencies:
-      '@ag-grid-community/client-side-row-model': 27.3.0
+      '@ag-grid-community/client-side-row-model': 28.0.2
       '@testing-library/cypress': 8.0.3_cypress@10.3.1
       '@types/d3': 7.4.0
       '@vueuse/core': 8.9.4_vue@3.2.37
@@ -103,19 +103,19 @@ importers:
 
 packages:
 
-  /@ag-grid-community/client-side-row-model/27.3.0:
-    resolution: {integrity: sha512-t6ggg/SvESsGEC75z62rD/zFeo2DZCKFxw5e0qKweHR106CjBUNMlnfXIIG81qOSXUWGnbbWlrijBbKbyt8aTA==}
+  /@ag-grid-community/client-side-row-model/28.0.2:
+    resolution: {integrity: sha512-LSP1HlIZ/40GLxoEV7+YRP6e1fJiGNfaSFO7ud0F7VWn8RsMgAbrvWReDxSShi0NgAj9OmX2JPdH/KZ655m1qg==}
     dependencies:
-      '@ag-grid-community/core': 27.3.0
+      '@ag-grid-community/core': 28.0.2
     dev: true
 
-  /@ag-grid-community/core/27.3.0:
-    resolution: {integrity: sha512-77/bE2KdFlFI/ywEP46aSspXtgBteY/OPQyzU/lWqYrG2wC6cLfPSUB60t9e0FiqElwM/Vdcjz0TAjRwhZOPkw==}
+  /@ag-grid-community/core/28.0.2:
+    resolution: {integrity: sha512-RIg2BJ4iqSvh5bvWEXgPwdARjnOEkTuqQObSFmZp8tVi1a4tpnMKkgIqKO4pK5s1uUVI2bBkr30v2oirD0P32A==}
 
-  /@ag-grid-community/vue3/27.3.0:
-    resolution: {integrity: sha512-erp6HOMYKv6ySfSr8N6kqBzdgK86ORFoEfaJBC+0j7/tezZFMUOb7/dJqKzTO7U61uEXAUlNrKBj8qYXd1qVWQ==}
+  /@ag-grid-community/vue3/28.0.0:
+    resolution: {integrity: sha512-xSlrGqLRMsIK72XRBCsNeUUnnuSq2U6Qwk7xOr2YePMq5TxUQgDcIwBx11xd3rcm0veGFnlMfnzkbsc4hgvPLw==}
     dependencies:
-      '@ag-grid-community/core': 27.3.0
+      '@ag-grid-community/core': 28.0.2
       vue: 3.2.37
     dev: false
 
