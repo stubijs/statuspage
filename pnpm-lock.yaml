@@ -61,7 +61,7 @@ importers:
       tailwindcss: 3.1.6
       typescript: 4.7.4
       unplugin-vue-components: 0.21.2
-      vite: 2.9.14
+      vite: 3.0.3
       vitepress: 1.0.0-alpha.4
       vue: 3.2.37
       vue-i18n: 9.1.10
@@ -84,8 +84,8 @@ importers:
       postcss: 8.4.14
       tailwindcss: 3.1.6
       typescript: 4.7.4
-      unplugin-vue-components: 0.21.2_vite@2.9.14+vue@3.2.37
-      vite: 2.9.14
+      unplugin-vue-components: 0.21.2_vite@3.0.3+vue@3.2.37
+      vite: 3.0.3
       vitepress: 1.0.0-alpha.4
       vue-tsc: 0.39.0_typescript@4.7.4
 
@@ -5849,7 +5849,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unplugin-vue-components/0.21.2_vite@2.9.14+vue@3.2.37:
+  /unplugin-vue-components/0.21.2_vite@3.0.3+vue@3.2.37:
     resolution: {integrity: sha512-HBU+EuesDj/HRs7EtYH7gBACljVhqLylltrCLModRmCToIIrrNvMh54aylUt4AD4qiwylgOx4Vgb9sBlrIcRDw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -5868,7 +5868,7 @@ packages:
       magic-string: 0.26.2
       minimatch: 5.1.0
       resolve: 1.22.1
-      unplugin: 0.7.2_vite@2.9.14
+      unplugin: 0.7.2_vite@3.0.3
       vue: 3.2.37
     transitivePeerDependencies:
       - esbuild
@@ -5878,7 +5878,7 @@ packages:
       - webpack
     dev: true
 
-  /unplugin/0.7.2_vite@2.9.14:
+  /unplugin/0.7.2_vite@3.0.3:
     resolution: {integrity: sha512-m7thX4jP8l5sETpLdUASoDOGOcHaOVtgNyrYlToyQUvILUtEzEnngRBrHnAX3IKqooJVmXpoa/CwQ/QqzvGaHQ==}
     peerDependencies:
       esbuild: '>=0.13'
@@ -5897,7 +5897,7 @@ packages:
     dependencies:
       acorn: 8.7.1
       chokidar: 3.5.3
-      vite: 2.9.14
+      vite: 3.0.3
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.4.4
     dev: true
@@ -5984,6 +5984,33 @@ packages:
       sass:
         optional: true
       stylus:
+        optional: true
+    dependencies:
+      esbuild: 0.14.47
+      postcss: 8.4.14
+      resolve: 1.22.1
+      rollup: 2.75.7
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vite/3.0.3:
+    resolution: {integrity: sha512-sDIpIcl3mv1NUaSzZwiXGEy1ZoWwwC2vkxUHY6yiDacR6zf//ZFuBJrozO62gedpE43pmxnLATNR5IYUdAEkMQ==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      terser:
         optional: true
     dependencies:
       esbuild: 0.14.47
