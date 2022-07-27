@@ -44,7 +44,7 @@ const defaultColDef = {
 </script>
 
 <template>
-  <ag-grid-vue
+  <AgGridVue
     class="ag-theme-alpine mt-8"
     style="width: 100%; height: 500px;"
     :column-defs="columnDefs"
