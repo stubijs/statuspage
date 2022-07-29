@@ -51,7 +51,7 @@ importers:
       '@ag-grid-community/vue3': 28.0.0
       '@testing-library/cypress': 8.0.3
       '@types/d3': 7.4.0
-      '@vueuse/core': 9.0.0
+      '@vueuse/core': 9.0.1
       autoprefixer: 10.4.8
       axe-core: 4.4.3
       cypress: 10.3.1
@@ -74,7 +74,7 @@ importers:
       '@ag-grid-community/client-side-row-model': 28.0.2
       '@testing-library/cypress': 8.0.3_cypress@10.3.1
       '@types/d3': 7.4.0
-      '@vueuse/core': 9.0.0_vue@3.2.37
+      '@vueuse/core': 9.0.1_vue@3.2.37
       autoprefixer: 10.4.8_postcss@8.4.14
       axe-core: 4.4.3
       cypress: 10.3.1
@@ -1380,12 +1380,12 @@ packages:
       vue-demi: 0.13.6_vue@3.2.37
     dev: true
 
-  /@vueuse/core/9.0.0_vue@3.2.37:
-    resolution: {integrity: sha512-hMMc2ajuVknkL7Z39JdP9gFFND2OgnDTSS5mmuinWGAE1Vxy1AwDvTHm3+juyk+GzJjYRAktnBIPy7Fq53iOnw==}
+  /@vueuse/core/9.0.1_vue@3.2.37:
+    resolution: {integrity: sha512-1ChG/wR5Rz8R0Rixu22+PGywqE2z0EE2HRDCin2btCOZGmULJZBbos/JZkLi7ehJ/IXhfwmPBrNVBuUH8jlQKg==}
     dependencies:
       '@types/web-bluetooth': 0.0.15
-      '@vueuse/metadata': 9.0.0
-      '@vueuse/shared': 9.0.0_vue@3.2.37
+      '@vueuse/metadata': 9.0.1
+      '@vueuse/shared': 9.0.1_vue@3.2.37
       vue-demi: 0.13.6_vue@3.2.37
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -1396,8 +1396,8 @@ packages:
     resolution: {integrity: sha512-IwSfzH80bnJMzqhaapqJl9JRIiyQU0zsRGEgnxN6jhq7992cPUJIRfV+JHRIZXjYqbwt07E1gTEp0R0zPJ1aqw==}
     dev: true
 
-  /@vueuse/metadata/9.0.0:
-    resolution: {integrity: sha512-79YVIsAP1bbWm5GdQuG7jDVF/9uuExzhkO0Sd4/TLuSfzH2uZOrHvGwy+ZNJHjbyRn3uf56rKINWLJdBuTLSqQ==}
+  /@vueuse/metadata/9.0.1:
+    resolution: {integrity: sha512-VJqMHDCvdAUYesxz5rjUAglbcrJzbKaENpM3WVtAljiM+FqUVB8PgsfrDaq6ZRQT5fBAcZhPoWNFSWxIPTfJww==}
     dev: true
 
   /@vueuse/shared/8.9.4_vue@3.2.37:
@@ -1415,8 +1415,8 @@ packages:
       vue-demi: 0.13.6_vue@3.2.37
     dev: true
 
-  /@vueuse/shared/9.0.0_vue@3.2.37:
-    resolution: {integrity: sha512-WRCyr/wIz5e/2gR/+qFucbCUcGMyJKkQZAzlECl3e71ebQQ9X/w3aBWT9FbnogJX+DNZ/t3Pj+TqPbC7TH1Yog==}
+  /@vueuse/shared/9.0.1_vue@3.2.37:
+    resolution: {integrity: sha512-Szk39QSk0/AAy8GH5J6A3MJ1MMUWCqiDl6l9cA0NahNTHZVW7YYxTPod797vhjYtEkDG7oa8HR7/xI9oPTSspg==}
     dependencies:
       vue-demi: 0.13.6_vue@3.2.37
     transitivePeerDependencies:
