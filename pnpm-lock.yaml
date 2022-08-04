@@ -60,7 +60,7 @@ importers:
       postcss: 8.4.14
       tailwindcss: 3.1.7
       typescript: 4.7.4
-      unplugin-vue-components: 0.21.2
+      unplugin-vue-components: 0.22.0
       vitepress: 1.0.0-alpha.4
       vue: 3.2.37
       vue-i18n: 9.2.0
@@ -83,7 +83,7 @@ importers:
       postcss: 8.4.14
       tailwindcss: 3.1.7
       typescript: 4.7.4
-      unplugin-vue-components: 0.21.2_vue@3.2.37
+      unplugin-vue-components: 0.22.0_vue@3.2.37
       vitepress: 1.0.0-alpha.4
       vue-tsc: 0.39.4_typescript@4.7.4
 
@@ -6110,8 +6110,8 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unplugin-vue-components/0.21.2_vue@3.2.37:
-    resolution: {integrity: sha512-HBU+EuesDj/HRs7EtYH7gBACljVhqLylltrCLModRmCToIIrrNvMh54aylUt4AD4qiwylgOx4Vgb9sBlrIcRDw==}
+  /unplugin-vue-components/0.22.0_vue@3.2.37:
+    resolution: {integrity: sha512-MpGcrnHgFLUK94Jf46UuiMOPQ4hVAijriR6bPbCGSBygiEDJbPXqy2C1d1k6PkixESFacKkipeuPhme+8F7gHQ==}
     engines: {node: '>=14'}
     peerDependencies:
       '@babel/parser': ^7.15.8
@@ -6129,7 +6129,7 @@ packages:
       magic-string: 0.26.2
       minimatch: 5.1.0
       resolve: 1.22.1
-      unplugin: 0.7.2
+      unplugin: 0.8.1
       vue: 3.2.37
     transitivePeerDependencies:
       - esbuild
@@ -6139,8 +6139,8 @@ packages:
       - webpack
     dev: true
 
-  /unplugin/0.7.2:
-    resolution: {integrity: sha512-m7thX4jP8l5sETpLdUASoDOGOcHaOVtgNyrYlToyQUvILUtEzEnngRBrHnAX3IKqooJVmXpoa/CwQ/QqzvGaHQ==}
+  /unplugin/0.8.1:
+    resolution: {integrity: sha512-o7rUZoPLG1fH4LKinWgb77gDtTE6mw/iry0Pq0Z5UPvZ9+HZ1/4+7fic7t58s8/CGkPrDpGq+RltO+DmswcR4g==}
     peerDependencies:
       esbuild: '>=0.13'
       rollup: ^2.50.0
