@@ -60,7 +60,7 @@ importers:
       postcss: 8.4.16
       tailwindcss: 3.1.8
       typescript: 4.7.4
-      unplugin-vue-components: 0.22.3
+      unplugin-vue-components: 0.22.4
       vitepress: 1.0.0-alpha.4
       vue: 3.2.37
       vue-i18n: 9.2.2
@@ -83,7 +83,7 @@ importers:
       postcss: 8.4.16
       tailwindcss: 3.1.8
       typescript: 4.7.4
-      unplugin-vue-components: 0.22.3_vue@3.2.37
+      unplugin-vue-components: 0.22.4_vue@3.2.37
       vitepress: 1.0.0-alpha.4
       vue-tsc: 0.39.5_typescript@4.7.4
 
@@ -6101,8 +6101,8 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unplugin-vue-components/0.22.3_vue@3.2.37:
-    resolution: {integrity: sha512-f31VCJF0K9oXCzKizJqNpmQz2XYTA0gjq+E5zM3hB8JxZ6cy5sXxO91fK2pI1TFGeM3JCe6yC9BJDymkMbXnNg==}
+  /unplugin-vue-components/0.22.4_vue@3.2.37:
+    resolution: {integrity: sha512-2rRZcM9OnJGXnYxQNfaceEYuPeVACcWySIjy8WBwIiN3onr980TmA3XE5pRJFt8zoQrUA+c46oyIq96noLqrEQ==}
     engines: {node: '>=14'}
     peerDependencies:
       '@babel/parser': ^7.15.8
