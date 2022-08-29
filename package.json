@@ -35,7 +35,7 @@
     "taze:major:w": "npx taze major -r -w"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.26.1",
+    "@antfu/eslint-config": "0.26.2",
     "c8": "7.12.0",
     "eslint": "8.23.0",
     "eslint-plugin-cypress": "2.12.1",
