@@ -54,7 +54,7 @@ importers:
       '@vueuse/core': 9.2.0
       autoprefixer: 10.4.10
       axe-core: 4.4.3
-      cypress: 10.7.0
+      cypress: 10.8.0
       cypress-axe: 1.0.0
       d3: 7.6.1
       postcss: 8.4.16
@@ -72,13 +72,13 @@ importers:
       vue-i18n: 9.2.2_vue@3.2.39
     devDependencies:
       '@ag-grid-community/client-side-row-model': 28.1.1
-      '@testing-library/cypress': 8.0.3_cypress@10.7.0
+      '@testing-library/cypress': 8.0.3_cypress@10.8.0
       '@types/d3': 7.4.0
       '@vueuse/core': 9.2.0_vue@3.2.39
       autoprefixer: 10.4.10_postcss@8.4.16
       axe-core: 4.4.3
-      cypress: 10.7.0
-      cypress-axe: 1.0.0_g25gmcnzryen5aewdssslmg6fq
+      cypress: 10.8.0
+      cypress-axe: 1.0.0_ghdcbu3gpoongnnkktf42uagze
       d3: 7.6.1
       postcss: 8.4.16
       tailwindcss: 3.1.8_postcss@8.4.16
@@ -800,7 +800,7 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@testing-library/cypress/8.0.3_cypress@10.7.0:
+  /@testing-library/cypress/8.0.3_cypress@10.8.0:
     resolution: {integrity: sha512-nY2YaSbmuPo5k6kL0iLj/pGPPfka3iwb3kpTx8QN/vOCns92Saz9wfACqB8FJzcR7+lfA4d5HUOWqmTddBzczg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -808,7 +808,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.9
       '@testing-library/dom': 8.16.0
-      cypress: 10.7.0
+      cypress: 10.8.0
     dev: true
 
   /@testing-library/dom/8.16.0:
@@ -2068,7 +2068,7 @@ packages:
   /csstype/2.6.20:
     resolution: {integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==}
 
-  /cypress-axe/1.0.0_g25gmcnzryen5aewdssslmg6fq:
+  /cypress-axe/1.0.0_ghdcbu3gpoongnnkktf42uagze:
     resolution: {integrity: sha512-QBlNMAd5eZoyhG8RGGR/pLtpHGkvgWXm2tkP68scJ+AjYiNNOlJihxoEwH93RT+rWOLrefw4iWwEx8kpEcrvJA==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -2076,11 +2076,11 @@ packages:
       cypress: ^10
     dependencies:
       axe-core: 4.4.3
-      cypress: 10.7.0
+      cypress: 10.8.0
     dev: true
 
-  /cypress/10.7.0:
-    resolution: {integrity: sha512-gTFvjrUoBnqPPOu9Vl5SBHuFlzx/Wxg/ZXIz2H4lzoOLFelKeF7mbwYUOzgzgF0oieU2WhJAestQdkgwJMMTvQ==}
+  /cypress/10.8.0:
+    resolution: {integrity: sha512-QVse0dnLm018hgti2enKMVZR9qbIO488YGX06nH5j3Dg1isL38DwrBtyrax02CANU6y8F4EJUuyW6HJKw1jsFA==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     requiresBuild: true
@@ -2104,7 +2104,7 @@ packages:
       dayjs: 1.11.4
       debug: 4.3.4_supports-color@8.1.1
       enquirer: 2.3.6
-      eventemitter2: 6.4.6
+      eventemitter2: 6.4.7
       execa: 4.1.0
       executable: 4.1.1
       extract-zip: 2.0.1_supports-color@8.1.1
@@ -3302,8 +3302,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /eventemitter2/6.4.6:
-    resolution: {integrity: sha512-OHqo4wbHX5VbvlbB6o6eDwhYmiTjrpWACjF8Pmof/GTD6rdBNdZFNck3xlhqOiQFGCOoq3uzHvA0cQpFHIGVAQ==}
+  /eventemitter2/6.4.7:
+    resolution: {integrity: sha512-tYUSVOGeQPKt/eC1ABfhHy5Xd96N3oIijJvN3O9+TsC28T5V9yX9oEfEK5faP0EFSNVOG97qtAS68GBrQB2hDg==}
     dev: true
 
   /execa/4.1.0:
