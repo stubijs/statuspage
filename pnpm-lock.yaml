@@ -52,7 +52,7 @@ importers:
       '@testing-library/cypress': 8.0.3
       '@types/d3': 7.4.0
       '@vueuse/core': 9.2.0
-      autoprefixer: 10.4.10
+      autoprefixer: 10.4.11
       axe-core: 4.4.3
       cypress: 10.8.0
       cypress-axe: 1.0.0
@@ -75,7 +75,7 @@ importers:
       '@testing-library/cypress': 8.0.3_cypress@10.8.0
       '@types/d3': 7.4.0
       '@vueuse/core': 9.2.0_vue@3.2.39
-      autoprefixer: 10.4.10_postcss@8.4.16
+      autoprefixer: 10.4.11_postcss@8.4.16
       axe-core: 4.4.3
       cypress: 10.8.0
       cypress-axe: 1.0.0_ghdcbu3gpoongnnkktf42uagze
@@ -1647,8 +1647,8 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: true
 
-  /autoprefixer/10.4.10_postcss@8.4.16:
-    resolution: {integrity: sha512-nMaiDARyp1e74c8IeAXkr+BmFKa8By4Zak7tyaNPF09Iu39WFpNXOWrVirmXjKr+5cOyERwvtbMOLYz6iBJYgQ==}
+  /autoprefixer/10.4.11_postcss@8.4.16:
+    resolution: {integrity: sha512-5lHp6DgRodxlBLSkzHOTcufWFflH1ewfy2hvFQyjrblBFlP/0Yh4O/Wrg4ow8WRlN3AAUFFLAQwX8hTptzqVHg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
