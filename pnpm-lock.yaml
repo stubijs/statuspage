@@ -92,12 +92,12 @@ importers:
       '@cloudflare/workers-types': 3.16.0
       '@types/node': 18.6.1
       typescript: 4.8.3
-      wrangler: 2.1.5
+      wrangler: 2.1.6
     devDependencies:
       '@cloudflare/workers-types': 3.16.0
       '@types/node': 18.6.1
       typescript: 4.8.3
-      wrangler: 2.1.5
+      wrangler: 2.1.6
 
 packages:
 
@@ -6366,8 +6366,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /wrangler/2.1.5:
-    resolution: {integrity: sha512-j8nTCSygWdsPwPBytZj0oUSAAUCt8sh6K8ZTewHMNzT8yGGAb5aXIdSfzyGYTfp6dnMqaafz4Khyf34XmHcXGQ==}
+  /wrangler/2.1.6:
+    resolution: {integrity: sha512-gwIdA5UPNA/u6U2vCVit3t75ldWmBiN11OQOK48G0u1xN/gdH/ktHWR/C8blDXTAM4c53mLJJw5u5X55ZR1LLw==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     dependencies:
