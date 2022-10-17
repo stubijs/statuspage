@@ -19,7 +19,7 @@
     "@ag-grid-community/client-side-row-model": "28.2.0",
     "@testing-library/cypress": "8.0.3",
     "@types/d3": "7.4.0",
-    "@vueuse/core": "9.3.0",
+    "@vueuse/core": "9.3.1",
     "autoprefixer": "10.4.12",
     "axe-core": "4.4.3",
     "cypress": "10.10.0",
