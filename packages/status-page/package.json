@@ -21,7 +21,7 @@
     "@types/d3": "7.4.0",
     "@vueuse/core": "9.3.1",
     "autoprefixer": "10.4.12",
-    "axe-core": "4.4.3",
+    "axe-core": "4.5.0",
     "cypress": "10.10.0",
     "cypress-axe": "1.0.0",
     "d3": "7.6.1",
