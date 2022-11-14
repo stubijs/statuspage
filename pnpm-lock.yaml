@@ -53,7 +53,7 @@ importers:
       '@types/d3': 7.4.0
       '@vueuse/core': 9.5.0
       autoprefixer: 10.4.13
-      axe-core: 4.5.1
+      axe-core: 4.5.2
       cypress: 10.11.0
       cypress-axe: 1.0.0
       d3: 7.6.1
@@ -76,9 +76,9 @@ importers:
       '@types/d3': 7.4.0
       '@vueuse/core': 9.5.0_vue@3.2.45
       autoprefixer: 10.4.13_postcss@8.4.19
-      axe-core: 4.5.1
+      axe-core: 4.5.2
       cypress: 10.11.0
-      cypress-axe: 1.0.0_zbyslzparjzi42gvvujtlkgxya
+      cypress-axe: 1.0.0_j66uk6fxq5hphal2gmdzq5ute4
       d3: 7.6.1
       postcss: 8.4.19
       tailwindcss: 3.2.4_postcss@8.4.19
@@ -1710,8 +1710,8 @@ packages:
     resolution: {integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==}
     dev: true
 
-  /axe-core/4.5.1:
-    resolution: {integrity: sha512-1exVbW0X1O/HSr/WMwnaweyqcWOgZgLiVxdLG34pvSQk4NlYQr9OUy0JLwuhFfuVNQzzqgH57eYzkFBCb3bIsQ==}
+  /axe-core/4.5.2:
+    resolution: {integrity: sha512-u2MVsXfew5HBvjsczCv+xlwdNnB1oQR9HlAcsejZttNjKKSkeDNVwB1vMThIUIFI9GoT57Vtk8iQLwqOfAkboA==}
     engines: {node: '>=4'}
     dev: true
 
@@ -2112,14 +2112,14 @@ packages:
   /csstype/2.6.20:
     resolution: {integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==}
 
-  /cypress-axe/1.0.0_zbyslzparjzi42gvvujtlkgxya:
+  /cypress-axe/1.0.0_j66uk6fxq5hphal2gmdzq5ute4:
     resolution: {integrity: sha512-QBlNMAd5eZoyhG8RGGR/pLtpHGkvgWXm2tkP68scJ+AjYiNNOlJihxoEwH93RT+rWOLrefw4iWwEx8kpEcrvJA==}
     engines: {node: '>=10'}
     peerDependencies:
       axe-core: ^3 || ^4
       cypress: ^10
     dependencies:
-      axe-core: 4.5.1
+      axe-core: 4.5.2
       cypress: 10.11.0
     dev: true
 
