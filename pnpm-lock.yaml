@@ -49,7 +49,7 @@ importers:
       '@ag-grid-community/client-side-row-model': 28.2.1
       '@ag-grid-community/core': 28.2.1
       '@ag-grid-community/vue3': 28.2.1
-      '@testing-library/cypress': 8.0.3
+      '@testing-library/cypress': 8.0.7
       '@types/d3': 7.4.0
       '@vueuse/core': 9.5.0
       autoprefixer: 10.4.13
@@ -72,7 +72,7 @@ importers:
       vue-i18n: 9.2.2_vue@3.2.45
     devDependencies:
       '@ag-grid-community/client-side-row-model': 28.2.1
-      '@testing-library/cypress': 8.0.3_cypress@10.11.0
+      '@testing-library/cypress': 8.0.7_cypress@10.11.0
       '@types/d3': 7.4.0
       '@vueuse/core': 9.5.0_vue@3.2.45
       autoprefixer: 10.4.13_postcss@8.4.19
@@ -818,11 +818,11 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@testing-library/cypress/8.0.3_cypress@10.11.0:
-    resolution: {integrity: sha512-nY2YaSbmuPo5k6kL0iLj/pGPPfka3iwb3kpTx8QN/vOCns92Saz9wfACqB8FJzcR7+lfA4d5HUOWqmTddBzczg==}
+  /@testing-library/cypress/8.0.7_cypress@10.11.0:
+    resolution: {integrity: sha512-3HTV725rOS+YHve/gD9coZp/UcPK5xhr4H0GMnq/ni6USdtzVtSOG9WBFtd8rYnrXk8rrGD+0toRFYouJNIG0Q==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
-      cypress: ^2.1.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
+      cypress: ^2.1.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0
     dependencies:
       '@babel/runtime': 7.18.9
       '@testing-library/dom': 8.16.0
