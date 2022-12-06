@@ -22,7 +22,7 @@
     "@vueuse/core": "9.6.0",
     "autoprefixer": "10.4.13",
     "axe-core": "4.5.2",
-    "cypress": "10.11.0",
+    "cypress": "11.2.0",
     "cypress-axe": "1.1.0",
     "d3": "7.7.0",
     "postcss": "8.4.19",

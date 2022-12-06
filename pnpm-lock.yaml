@@ -54,7 +54,7 @@ importers:
       '@vueuse/core': 9.6.0
       autoprefixer: 10.4.13
       axe-core: 4.5.2
-      cypress: 10.11.0
+      cypress: 11.2.0
       cypress-axe: 1.1.0
       d3: 7.7.0
       postcss: 8.4.19
@@ -72,13 +72,13 @@ importers:
       vue-i18n: 9.2.2_vue@3.2.45
     devDependencies:
       '@ag-grid-community/client-side-row-model': 28.2.1
-      '@testing-library/cypress': 8.0.7_cypress@10.11.0
+      '@testing-library/cypress': 8.0.7_cypress@11.2.0
       '@types/d3': 7.4.0
       '@vueuse/core': 9.6.0_vue@3.2.45
       autoprefixer: 10.4.13_postcss@8.4.19
       axe-core: 4.5.2
-      cypress: 10.11.0
-      cypress-axe: 1.1.0_j66uk6fxq5hphal2gmdzq5ute4
+      cypress: 11.2.0
+      cypress-axe: 1.1.0_2xwfshf72hkiietrzhisimjrhq
       d3: 7.7.0
       postcss: 8.4.19
       tailwindcss: 3.2.4_postcss@8.4.19
@@ -818,7 +818,7 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@testing-library/cypress/8.0.7_cypress@10.11.0:
+  /@testing-library/cypress/8.0.7_cypress@11.2.0:
     resolution: {integrity: sha512-3HTV725rOS+YHve/gD9coZp/UcPK5xhr4H0GMnq/ni6USdtzVtSOG9WBFtd8rYnrXk8rrGD+0toRFYouJNIG0Q==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -826,7 +826,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.9
       '@testing-library/dom': 8.16.0
-      cypress: 10.11.0
+      cypress: 11.2.0
     dev: true
 
   /@testing-library/dom/8.16.0:
@@ -2112,7 +2112,7 @@ packages:
   /csstype/2.6.20:
     resolution: {integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==}
 
-  /cypress-axe/1.1.0_j66uk6fxq5hphal2gmdzq5ute4:
+  /cypress-axe/1.1.0_2xwfshf72hkiietrzhisimjrhq:
     resolution: {integrity: sha512-4LsLHdjtIRHdOeiiRMk+Yf04UQjpuQ20paOi1x71z8wnL/47n73DBJ9AEdLQkptlljtsDj+DgLtysl7BeCL4Hg==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -2120,11 +2120,11 @@ packages:
       cypress: ^10 || ^11
     dependencies:
       axe-core: 4.5.2
-      cypress: 10.11.0
+      cypress: 11.2.0
     dev: true
 
-  /cypress/10.11.0:
-    resolution: {integrity: sha512-lsaE7dprw5DoXM00skni6W5ElVVLGAdRUUdZjX2dYsGjbY/QnpzWZ95Zom1mkGg0hAaO/QVTZoFVS7Jgr/GUPA==}
+  /cypress/11.2.0:
+    resolution: {integrity: sha512-u61UGwtu7lpsNWLUma/FKNOsrjcI6wleNmda/TyKHe0dOBcVjbCPlp1N6uwFZ0doXev7f/91YDpU9bqDCFeBLA==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     requiresBuild: true
@@ -2166,7 +2166,7 @@ packages:
       pretty-bytes: 5.6.0
       proxy-from-env: 1.0.0
       request-progress: 3.0.0
-      semver: 7.3.7
+      semver: 7.3.8
       supports-color: 8.1.1
       tmp: 0.2.1
       untildify: 4.0.0
@@ -5519,14 +5519,6 @@ packages:
   /semver/6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
     hasBin: true
-    dev: true
-
-  /semver/7.3.7:
-    resolution: {integrity: sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dependencies:
-      lru-cache: 6.0.0
     dev: true
 
   /semver/7.3.8:
