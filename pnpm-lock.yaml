@@ -56,7 +56,7 @@ importers:
       axe-core: 4.6.1
       cypress: 10.11.0
       cypress-axe: 1.2.0
-      d3: 7.7.0
+      d3: 7.8.0
       postcss: 8.4.20
       tailwindcss: 3.2.4
       typescript: 4.9.4
@@ -79,7 +79,7 @@ importers:
       axe-core: 4.6.1
       cypress: 10.11.0
       cypress-axe: 1.2.0_a3uvos7bywufslc24dcg46gt2e
-      d3: 7.7.0
+      d3: 7.8.0
       postcss: 8.4.20
       tailwindcss: 3.2.4_postcss@8.4.20
       typescript: 4.9.4
@@ -2561,8 +2561,8 @@ packages:
       d3-transition: 3.0.1_d3-selection@3.0.0
     dev: true
 
-  /d3/7.7.0:
-    resolution: {integrity: sha512-VEwHCMgMjD2WBsxeRGUE18RmzxT9Bn7ghDpzvTEvkLSBAKgTMydJjouZTjspgQfRHpPt/PB3EHWBa6SSyFQq4g==}
+  /d3/7.8.0:
+    resolution: {integrity: sha512-a5rNemRadWkEfqnY5NsD4RdCP9vn8EIJ4I5Rl14U0uKH1SXqcNmk/h9aGaAF1O98lz6L9M0IeUcuPa9GUYbI5A==}
     engines: {node: '>=12'}
     dependencies:
       d3-array: 3.2.0
