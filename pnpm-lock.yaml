@@ -89,12 +89,12 @@ importers:
 
   packages/status-worker:
     specifiers:
-      '@cloudflare/workers-types': 3.18.0
+      '@cloudflare/workers-types': 3.19.0
       '@types/node': 18.11.18
       typescript: 4.9.4
       wrangler: 2.8.0
     devDependencies:
-      '@cloudflare/workers-types': 3.18.0
+      '@cloudflare/workers-types': 3.19.0
       '@types/node': 18.11.18
       typescript: 4.9.4
       wrangler: 2.8.0
@@ -371,8 +371,8 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudflare/workers-types/3.18.0:
-    resolution: {integrity: sha512-ehKOJVLMeR+tZkYhWEaLYQxl0TaIZu/kE86HF3/RidR8Xv5LuQxpbh+XXAoKVqsaphWLhIgBhgnlN5HGdheXSQ==}
+  /@cloudflare/workers-types/3.19.0:
+    resolution: {integrity: sha512-0FRcsz7Ea3jT+gc5gKPIYciykm1bbAaTpygdzpCwGt0RL+V83zWnYN30NWDW4rIHj/FHtz+MIuBKS61C8l7AzQ==}
     dev: true
 
   /@colors/colors/1.5.0:
