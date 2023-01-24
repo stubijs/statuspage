@@ -10,13 +10,13 @@
     "test:e2e": "cypress open"
   },
   "dependencies": {
-    "@ag-grid-community/core": "28.2.1",
-    "@ag-grid-community/vue3": "28.2.1",
+    "@ag-grid-community/core": "29.0.0",
+    "@ag-grid-community/vue3": "29.0.0",
     "vue": "3.2.45",
     "vue-i18n": "9.2.2"
   },
   "devDependencies": {
-    "@ag-grid-community/client-side-row-model": "28.2.1",
+    "@ag-grid-community/client-side-row-model": "29.0.0",
     "@testing-library/cypress": "8.0.7",
     "@types/d3": "7.4.0",
     "@vueuse/core": "9.11.1",
