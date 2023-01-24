@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@ag-grid-community/client-side-row-model": "28.2.1",
-    "@testing-library/cypress": "8.0.7",
+    "@testing-library/cypress": "9.0.0",
     "@types/d3": "7.4.0",
     "@vueuse/core": "9.11.1",
     "autoprefixer": "10.4.13",
