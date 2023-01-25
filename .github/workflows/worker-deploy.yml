@@ -26,6 +26,8 @@ jobs:
       - name: Publish
         run: |
           cd packages/status-worker/
+          wrangler kv:namespace list
+          wrangler kv:namespace list | jq '.[] | select(.title=="KV_STATUS_PAGE") .id'
           [ -z ${{secrets.SECRET_SLACK_WEBHOOK_URL}} ] && echo ${{secrets.SECRET_SLACK_WEBHOOK_URL}} | wrangler secret put "SECRET_SLACK_WEBHOOK_URL"
           [ -z ${{secrets.SECRET_TELEGRAM_API_TOKEN}} ] && echo ${{secrets.SECRET_TELEGRAM_API_TOKEN}} | wrangler secret put "SECRET_TELEGRAM_API_TOKEN"
           [ -z ${{secrets.SECRET_TELEGRAM_CHAT_ID}} ] && echo ${{secrets.SECRET_TELEGRAM_CHAT_ID}} | wrangler secret put "SECRET_TELEGRAM_CHAT_ID"
