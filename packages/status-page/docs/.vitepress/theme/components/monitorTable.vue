@@ -4,8 +4,8 @@ import { ModuleRegistry } from '@ag-grid-community/core'
 import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model'
 import { ref } from 'vue'
 import type { PropType } from 'vue'
-import '@ag-grid-community/core/dist/styles/ag-grid.css' // Core grid CSS, always needed
-import '@ag-grid-community/core/dist/styles/ag-theme-alpine.css' // Optional theme CSS
+import 'ag-grid-community/styles/ag-grid.css' // Core grid CSS, always needed
+import 'ag-grid-community/styles/ag-theme-alpine.css' // Optional theme CSS
 import { dataTable } from './../utils/data'
 
 const props = defineProps({

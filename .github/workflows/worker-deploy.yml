@@ -30,15 +30,12 @@ jobs:
           [ -z ${{secrets.SECRET_TELEGRAM_API_TOKEN}} ] && echo ${{secrets.SECRET_TELEGRAM_API_TOKEN}} | wrangler secret put "SECRET_TELEGRAM_API_TOKEN"
           [ -z ${{secrets.SECRET_TELEGRAM_CHAT_ID}} ] && echo ${{secrets.SECRET_TELEGRAM_CHAT_ID}} | wrangler secret put "SECRET_TELEGRAM_CHAT_ID"
           [ -z ${{secrets.SECRET_DISCORD_WEBHOOK_URL}} ] && echo ${{secrets.SECRET_DISCORD_WEBHOOK_URL}} | wrangler secret put "SECRET_DISCORD_WEBHOOK_URL"
-          # export KV_NAMESPACE_STATUS=$(wrangler kv:namespace list | tail -n +2 | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
-          export KV_NAMESPACE_STATUS=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
+          export KV_NAMESPACE_STATUS=$(wrangler kv:namespace list | jq '.[] | select(.title=="KV_STATUS_PAGE") .id')
           [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE
           [ -z "$KV_NAMESPACE_STATUS" ] && wrangler kv:namespace create KV_STATUS_PAGE --preview
-          # export KV_NAMESPACE_ID=$(wrangler kv:namespace list | tail -n +2 | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
-          # export KV_NAMESPACE_ID_PREVIEW=$(wrangler kv:namespace list | tail -n +2 | jq -c 'map(select(.title | contains("KV_STATUS_PAGE_preview")))' | jq -r ".[0].id")
-          export KV_NAMESPACE_ID=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE")))' | jq -r ".[0].id")
-          export KV_NAMESPACE_ID_PREVIEW=$(wrangler kv:namespace list | jq -c 'map(select(.title | contains("KV_STATUS_PAGE_preview")))' | jq -r ".[0].id")
-           echo "kv_namespaces = [{binding=\"KV_STATUS_PAGE\", id=\"${KV_NAMESPACE_ID}\", preview_id=\"${KV_NAMESPACE_ID_PREVIEW}\"}]" >> wrangler.toml
+          export KV_NAMESPACE_ID=$(wrangler kv:namespace list | jq '.[] | select(.title=="KV_STATUS_PAGE") .id')
+          export KV_NAMESPACE_ID_PREVIEW=$(wrangler kv:namespace list | jq '.[] | select(.title=="KV_STATUS_PAGE_preview") .id')
+          echo "kv_namespaces = [{binding=\"KV_STATUS_PAGE\", id=\"${KV_NAMESPACE_ID}\", preview_id=\"${KV_NAMESPACE_ID_PREVIEW}\"}]" >> wrangler.toml
           echo "[triggers]" >> wrangler.toml
           echo "crons = [\"*/5 * * * *\"]" >> wrangler.toml
           wrangler publish

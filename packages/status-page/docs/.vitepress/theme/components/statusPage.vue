@@ -10,6 +10,7 @@ const {
   data,
   error,
   isFetching,
+  isFinished,
 } = useFetch(url).get()
 
 const dataReturn: WorkerMonitorState = computed(() => {
@@ -30,13 +31,14 @@ const dataReturn: WorkerMonitorState = computed(() => {
     <template v-if="error">
       <error-comp />
     </template>
-    <template v-else>
-      <div class="mt-8" style="min-height: calc(100vh - 220px);">
-        <monitor-status-header :cf-kv-status="dataReturn.lastUpdate.allOperational" :cf-kv-number="dataReturn.lastUpdate.time" :cf-kv-loc="dataReturn.lastUpdate.loc" />
-        <template v-for="(item, index) in config.monitors" :key="index">
-          <monitor-card :card-item="dataReturn.monitors[item.id]" :card-monitor="item" />
-        </template>
-      </div>
-    </template>
+  </template>
+
+  <template v-if="isFinished">
+    <div class="mt-8" style="min-height: calc(100vh - 220px);">
+      <monitor-status-header :cf-kv-status="dataReturn.lastUpdate.allOperational" :cf-kv-number="dataReturn.lastUpdate.time" :cf-kv-loc="dataReturn.lastUpdate.loc" />
+      <template v-for="(item, index) in config.monitors" :key="index">
+        <monitor-card :card-item="dataReturn.monitors[item.id]" :card-monitor="item" />
+      </template>
+    </div>
   </template>
 </template>
