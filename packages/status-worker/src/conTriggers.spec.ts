@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { getCheckLocation, getCleanUpDate, getDate, getKVMonitors, getOperationalLabel, notifyDiscord, notifySlack, notifyTelegram, processCronTrigger } from './cronTrigger'
+import { getCheckLocation, getCleanUpDate, getDate, getKVMonitors, getOperationalLabel, processCronTrigger } from './cronTrigger'
 import KVData from './../../../test/data/KV_default.json'
 import config from './../../../config.json'
 import config_1 from './../../../test/data/config_1.json'
@@ -17,22 +17,6 @@ const env2 = {
       return KVData
     },
   },
-}
-
-const fetchMock = vi.fn(() =>
-  Promise.resolve({
-    spy: this,
-  }),
-)
-
-function isJson(str: string) {
-  try {
-    JSON.parse(str)
-  }
-  catch (e) {
-    return false
-  }
-  return true
 }
 
 describe('getKVMonitors', () => {
@@ -55,84 +39,6 @@ describe('getOperationalLabel', () => {
 
   it('false', async () => {
     expect(getOperationalLabel(false)).toEqual(config.settings.monitorLabelNotOperational)
-  })
-})
-
-describe('notifySlack', () => {
-  process.env.SECRET_SLACK_WEBHOOK_URL = 'https://test.test.de'
-  vi.stubGlobal('fetch', fetchMock)
-
-  afterEach(() => {
-    vi.restoreAllMocks()
-  })
-
-  it('test fetch', async () => {
-    const monitor = { name: 'test', method: 'GET', url: 'https://test.test.de' }
-    const data = await notifySlack(monitor, true)
-    const orgRequestParams = await data.spy.fetch.calls.pop()
-    const orgRequestParamsUrl = orgRequestParams[0]
-    const orgRequestParamsBody = orgRequestParams[1]
-    expect(orgRequestParamsUrl).toMatch(process.env.SECRET_SLACK_WEBHOOK_URL as string)
-    expect(await data.spy.fetch.called).equal(true)
-    expect(await data.spy.fetch.callCount).equal(1)
-    expect(isJson(orgRequestParamsBody.body)).equal(true)
-    expect(orgRequestParamsBody.method).toMatch('POST')
-    expect(orgRequestParamsBody.headers).toStrictEqual({ 'Content-Type': 'application/json' })
-  })
-})
-
-describe('notifyTelegram', () => {
-  function FormDataMock() {
-    // @ts-expect-error: this
-    this.append = vi.fn()
-  }
-
-  // @ts-expect-error: mock FormData
-  global.FormData = FormDataMock
-
-  process.env.SECRET_TELEGRAM_API_TOKEN = 'TestTestTest'
-  process.env.SECRET_TELEGRAM_CHAT_ID = 'TestTestTest'
-  vi.stubGlobal('fetch', fetchMock)
-
-  afterEach(() => {
-    vi.restoreAllMocks()
-  })
-
-  it('test fetch', async () => {
-    const monitor = { name: 'test', method: 'GET', url: 'https://test.test.de' }
-    const data = await notifyTelegram(monitor, true)
-    const orgRequestParams = await data.spy.fetch.calls.pop()
-    const orgRequestParamsUrl = orgRequestParams[0]
-    const orgRequestParamsBody = orgRequestParams[1]
-    // console.log(orgRequestParamsBody)
-    expect(orgRequestParamsUrl).contain(process.env.SECRET_TELEGRAM_API_TOKEN)
-    expect(await data.spy.fetch.called).equal(true)
-    expect(await data.spy.fetch.callCount).equal(1)
-    expect(orgRequestParamsBody.method).toMatch('POST')
-    expect(orgRequestParamsBody.body.append.calls.length).equal(3)
-  })
-})
-
-describe('notifyDiscord', () => {
-  process.env.SECRET_DISCORD_WEBHOOK_URL = 'https://test.test.de'
-  vi.stubGlobal('fetch', fetchMock)
-
-  afterEach(() => {
-    vi.restoreAllMocks()
-  })
-
-  it('test fetch', async () => {
-    const monitor = { name: 'test', method: 'GET', url: 'https://test.test.de' }
-    const data = await notifyDiscord(monitor, true)
-    const orgRequestParams = await data.spy.fetch.calls.pop()
-    const orgRequestParamsUrl = orgRequestParams[0]
-    const orgRequestParamsBody = orgRequestParams[1]
-    expect(orgRequestParamsUrl).toMatch(process.env.SECRET_DISCORD_WEBHOOK_URL as string)
-    expect(await data.spy.fetch.called).equal(true)
-    expect(await data.spy.fetch.callCount).equal(1)
-    expect(isJson(orgRequestParamsBody.body)).equal(true)
-    expect(orgRequestParamsBody.method).toMatch('POST')
-    expect(orgRequestParamsBody.headers).toStrictEqual({ 'Content-Type': 'application/json' })
   })
 })
 
