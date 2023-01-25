@@ -8,12 +8,12 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
-import { getKVMonitors, processCronTrigger } from './cronTrigger'
+import { processCronTrigger } from './cronTrigger'
 
 export default {
 
   async fetch(request: Request, env: env, ctx: ExecutionContext): Promise<Response> {
-    ctx.waitUntil(getKVMonitors(env))
+    ctx.waitUntil(undefined)
     return new Response('Statuspage Worker!')
   },
 

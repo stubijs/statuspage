@@ -65,7 +65,7 @@ export async function notifySlack(monitor: WorkerMonitor, operational: boolean) 
       },
     ],
   }
-  return fetch(process.env.SECRET_SLACK_WEBHOOK_URL as string, {
+  await fetch(process.env.SECRET_SLACK_WEBHOOK_URL as string, {
     body: JSON.stringify(payload),
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -86,7 +86,7 @@ export async function notifyTelegram(monitor: WorkerMonitor, operational: boolea
   payload.append('text', text)
 
   const telegramUrl = `https://api.telegram.org/bot${process.env.SECRET_TELEGRAM_API_TOKEN}/sendMessage`
-  return fetch(telegramUrl, {
+  await fetch(telegramUrl, {
     body: payload,
     method: 'POST',
   })
@@ -109,7 +109,7 @@ export async function notifyDiscord(monitor: WorkerMonitor, operational: boolean
       },
     ],
   }
-  return fetch(process.env.SECRET_DISCORD_WEBHOOK_URL as string, {
+  await fetch(process.env.SECRET_DISCORD_WEBHOOK_URL as string, {
     body: JSON.stringify(payload),
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -178,7 +178,7 @@ export async function processCronTrigger(event: ScheduledEvent, env: env, config
     }
 
     // Fetch the monitors URL
-    const init: RequestInit = {
+    const init: RequestInit<RequestInitCfProperties> = {
       method: monitor.method || 'GET',
       redirect: monitor.followRedirect ? 'follow' : 'manual',
       headers: {
