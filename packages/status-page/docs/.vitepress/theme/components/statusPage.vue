@@ -1,34 +1,29 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { computed } from 'vue'
+import { useFetch } from '@vueuse/core'
 import config from './../../../../../../config.json'
 // import data from './../../../../../../test/data/KV_default.json'
 
-const loading = ref(true)
-const error = ref(false)
+const url = '/api/statuspage/'
 
-let data: WorkerMonitorState = { lastUpdate: { allOperational: true }, monitors: {} }
+const {
+  data,
+  error,
+  isFetching,
+} = useFetch(url).get()
 
-onMounted(() => {
-  fetch('/api/statuspage/').then(async (response) => {
-    try {
-      data = await response.json()
-      loading.value = false
-    }
-    catch (errorData) {
-      loading.value = false
-      error.value = true
-      // eslint-disable-next-line no-console
-      console.log('Error happened here!')
-      // eslint-disable-next-line no-console
-      console.log(errorData)
-    }
-  })
-  // loading.value = false
-})
+const dataReturn: WorkerMonitorState = computed(() => {
+  try {
+    return JSON.parse(data.value as string)
+  }
+  catch (e) {
+    return { lastUpdate: { allOperational: true }, monitors: {} }
+  }
+}) as unknown as WorkerMonitorState
 </script>
 
 <template>
-  <template v-if="loading">
+  <template v-if="isFetching">
     <loading-comp />
   </template>
   <template v-else>
@@ -37,9 +32,9 @@ onMounted(() => {
     </template>
     <template v-else>
       <div class="mt-8" style="min-height: calc(100vh - 220px);">
-        <monitor-status-header :cf-kv-status="data.lastUpdate.allOperational" :cf-kv-number="data.lastUpdate.time" :cf-kv-loc="data.lastUpdate.loc" />
+        <monitor-status-header :cf-kv-status="dataReturn.lastUpdate.allOperational" :cf-kv-number="dataReturn.lastUpdate.time" :cf-kv-loc="dataReturn.lastUpdate.loc" />
         <template v-for="(item, index) in config.monitors" :key="index">
-          <monitor-card :card-item="data.monitors[item.id]" :card-monitor="item" />
+          <monitor-card :card-item="dataReturn.monitors[item.id]" :card-monitor="item" />
         </template>
       </div>
     </template>

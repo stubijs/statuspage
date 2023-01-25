@@ -10,7 +10,9 @@ const props = withDefaults(defineProps<monitorStatusLabel>(), {
   statusLabel: false,
 })
 
-const color = computed(() => { return props.statusLabel ? 'status-label-green' : 'status-label-yellow' })
+const color = computed(() => {
+  return props.statusLabel ? 'status-label-green' : 'status-label-yellow'
+})
 </script>
 
 <template>

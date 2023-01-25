@@ -4,8 +4,20 @@ import KVData from './../../../test/data/KV_default.json'
 import config from './../../../config.json'
 import config_1 from './../../../test/data/config_1.json'
 
-const env1 = { KV_STATUS_PAGE: { get(_var1: unknown, _var2: unknown) { return null } } }
-const env2 = { KV_STATUS_PAGE: { get(_var1: unknown, _var2: unknown) { return KVData } } }
+const env1 = {
+  KV_STATUS_PAGE: {
+    get(_var1: unknown, _var2: unknown) {
+      return null
+    },
+  },
+}
+const env2 = {
+  KV_STATUS_PAGE: {
+    get(_var1: unknown, _var2: unknown) {
+      return KVData
+    },
+  },
+}
 
 const fetchMock = vi.fn(() =>
   Promise.resolve({

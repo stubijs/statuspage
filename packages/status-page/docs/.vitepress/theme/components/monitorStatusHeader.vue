@@ -16,8 +16,12 @@ const props = withDefaults(defineProps<monitorStatusHeader>(), {
 // fix: Typescript does set wrong type
 const locations: locations = _locations
 
-const time = computed(() => { return Math.round((Date.now() - props.cfKvNumber) / 1000) })
-const location = computed(() => { return locations[props.cfKvLoc].city || 'unknown' })
+const time = computed(() => {
+  return Math.round((Date.now() - props.cfKvNumber) / 1000)
+})
+const location = computed(() => {
+  return locations[props.cfKvLoc].city || 'unknown'
+})
 </script>
 
 <template>

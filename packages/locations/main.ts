@@ -26,7 +26,7 @@ interface locDataFin {
 // Fetch the cloudflare locations
 const init = {
   method: 'GET',
-  cache: <RequestCache>'no-store',
+  cache: 'no-store',
 }
 
 const monitorUrl = 'https://speed.cloudflare.com/locations'

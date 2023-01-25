@@ -11,7 +11,9 @@ const props = defineProps({
 // fix: Typescript does set wrong type
 const locations: locations = _locations
 
-const location = computed(() => { return locations[props.dataResIndex].city || 'unknown' })
+const location = computed(() => {
+  return locations[props.dataResIndex].city || 'unknown'
+})
 </script>
 
 <template>
