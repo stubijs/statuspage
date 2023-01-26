@@ -28,7 +28,7 @@ jobs:
           cd packages/status-worker/
           [ -z ${{secrets.SECRET_SLACK_WEBHOOK_URL}} ] && echo ${{secrets.SECRET_SLACK_WEBHOOK_URL}} | npx wrangler secret put "SECRET_SLACK_WEBHOOK_URL"
           [ -z ${{secrets.SECRET_TELEGRAM_API_TOKEN}} ] && echo ${{secrets.SECRET_TELEGRAM_API_TOKEN}} | npx wrangler secret put "SECRET_TELEGRAM_API_TOKEN"
-          [ -z ${{secrets.SECRET_TELEGRAM_CHAT_ID}} ] && echo ${{secrets.SECRET_TELEGRAM_CHAT_ID}} | npy wrangler secret put "SECRET_TELEGRAM_CHAT_ID"
+          [ -z ${{secrets.SECRET_TELEGRAM_CHAT_ID}} ] && echo ${{secrets.SECRET_TELEGRAM_CHAT_ID}} | npx wrangler secret put "SECRET_TELEGRAM_CHAT_ID"
           [ -z ${{secrets.SECRET_DISCORD_WEBHOOK_URL}} ] && echo ${{secrets.SECRET_DISCORD_WEBHOOK_URL}} | npx wrangler secret put "SECRET_DISCORD_WEBHOOK_URL"
           export KV_NAMESPACE_STATUS=$(npx wrangler kv:namespace list | jq '.[] | select(.title=="KV_STATUS_PAGE") .id')
           [ -z "$KV_NAMESPACE_STATUS" ] && npx wrangler kv:namespace create KV_STATUS_PAGE
