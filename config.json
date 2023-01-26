@@ -43,6 +43,19 @@
       "lon": 8.682127,
       "lat": 50.110924,
       "shouldAnalyze": true
+    },
+    {
+      "id": "circuits-jstubenrauch-de",
+      "name": "https://circuits.jstubenrauch.de/",
+      "description": "OpenCircuits MOD by Jan Stubenrauch.",
+      "url": "https://circuits.jstubenrauch.de/",
+      "method": "GET",
+      "expectStatus": 200,
+      "followRedirect": false,
+      "linkable": true,
+      "lon": 8.682127,
+      "lat": 50.110924,
+      "shouldAnalyze": true
     }
   ]
 }
