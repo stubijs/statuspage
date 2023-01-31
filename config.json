@@ -46,7 +46,7 @@
     },
     {
       "id": "circuits-jstubenrauch-de",
-      "name": "https://circuits.jstubenrauch.de/",
+      "name": "circuits.jstubenrauch.de",
       "description": "OpenCircuits MOD by Jan Stubenrauch.",
       "url": "https://circuits.jstubenrauch.de/",
       "method": "GET",
