@@ -55,7 +55,7 @@ importers:
       ag-grid-community: ^29.0.0
       autoprefixer: 10.4.13
       axe-core: 4.6.3
-      cypress: 12.5.0
+      cypress: 12.5.1
       cypress-axe: 1.3.0
       d3: 7.8.2
       postcss: 8.4.21
@@ -73,14 +73,14 @@ importers:
       vue-i18n: 9.2.2_vue@3.2.47
     devDependencies:
       '@ag-grid-community/client-side-row-model': 29.0.0
-      '@testing-library/cypress': 9.0.0_cypress@12.5.0
+      '@testing-library/cypress': 9.0.0_cypress@12.5.1
       '@types/d3': 7.4.0
       '@vueuse/core': 9.12.0_vue@3.2.47
       ag-grid-community: 29.0.0
       autoprefixer: 10.4.13_postcss@8.4.21
       axe-core: 4.6.3
-      cypress: 12.5.0
-      cypress-axe: 1.3.0_7hyz2pp3kwj62tttpaxejwkhoq
+      cypress: 12.5.1
+      cypress-axe: 1.3.0_2d7ak6lksbfu3d7zhyugtuyoiu
       d3: 7.8.2
       postcss: 8.4.21
       tailwindcss: 3.2.4_postcss@8.4.21
@@ -1248,7 +1248,7 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@testing-library/cypress/9.0.0_cypress@12.5.0:
+  /@testing-library/cypress/9.0.0_cypress@12.5.1:
     resolution: {integrity: sha512-c1XiCGeHGGTWn0LAU12sFUfoX3qfId5gcSE2yHode+vsyHDWraxDPALjVnHd4/Fa3j4KBcc5k++Ccy6A9qnkMA==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -1256,7 +1256,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.9
       '@testing-library/dom': 8.16.0
-      cypress: 12.5.0
+      cypress: 12.5.1
     dev: true
 
   /@testing-library/dom/8.16.0:
@@ -2604,7 +2604,7 @@ packages:
   /csstype/2.6.20:
     resolution: {integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==}
 
-  /cypress-axe/1.3.0_7hyz2pp3kwj62tttpaxejwkhoq:
+  /cypress-axe/1.3.0_2d7ak6lksbfu3d7zhyugtuyoiu:
     resolution: {integrity: sha512-b2zAva1+uRwGA7r/JzP7C/64YHu9Fa8RsHRIrapUDzJeGLEQImz86FbwRW/lBamrEt7YHzGRwuJizXKTyQBsfQ==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -2612,11 +2612,11 @@ packages:
       cypress: ^10 || ^11 || ^12
     dependencies:
       axe-core: 4.6.3
-      cypress: 12.5.0
+      cypress: 12.5.1
     dev: true
 
-  /cypress/12.5.0:
-    resolution: {integrity: sha512-CRo1DIr0LoCE3SNb/kJ0TZM9dIdiy7fNlRp/YoPfAv+XOKZV27LQ7zZUi4lMmHIEo3K0dAN5+tJ/8eZc/Jmbyg==}
+  /cypress/12.5.1:
+    resolution: {integrity: sha512-ZmCmJ3lsyeOpBfh410m5+AO2CO1AxAzFBt7k6/uVbNcrNZje1vdiwYTpj2ksPKg9mjr9lR6V8tmlDNMvr4H/YQ==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     hasBin: true
     requiresBuild: true
