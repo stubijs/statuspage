@@ -56,7 +56,7 @@ importers:
       autoprefixer: 10.4.13
       axe-core: 4.6.3
       cypress: 12.6.0
-      cypress-axe: 1.3.0
+      cypress-axe: 1.4.0
       d3: 7.8.2
       postcss: 8.4.21
       tailwindcss: 3.2.7
@@ -80,7 +80,7 @@ importers:
       autoprefixer: 10.4.13_postcss@8.4.21
       axe-core: 4.6.3
       cypress: 12.6.0
-      cypress-axe: 1.3.0_ckmhsyyo6a45sne2ehgtfystte
+      cypress-axe: 1.4.0_ckmhsyyo6a45sne2ehgtfystte
       d3: 7.8.2
       postcss: 8.4.21
       tailwindcss: 3.2.7_postcss@8.4.21
@@ -2803,8 +2803,8 @@ packages:
   /csstype/2.6.20:
     resolution: {integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==}
 
-  /cypress-axe/1.3.0_ckmhsyyo6a45sne2ehgtfystte:
-    resolution: {integrity: sha512-b2zAva1+uRwGA7r/JzP7C/64YHu9Fa8RsHRIrapUDzJeGLEQImz86FbwRW/lBamrEt7YHzGRwuJizXKTyQBsfQ==}
+  /cypress-axe/1.4.0_ckmhsyyo6a45sne2ehgtfystte:
+    resolution: {integrity: sha512-Ut7NKfzjyKm0BEbt2WxuKtLkIXmx6FD2j0RwdvO/Ykl7GmB/qRQkwbKLk3VP35+83hiIr8GKD04PDdrTK5BnyA==}
     engines: {node: '>=10'}
     peerDependencies:
       axe-core: ^3 || ^4
