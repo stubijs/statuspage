@@ -37,7 +37,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "0.35.3",
     "c8": "7.13.0",
-    "eslint": "8.34.0",
+    "eslint": "8.35.0",
     "eslint-plugin-cypress": "2.12.1",
     "jsdom": "21.1.0",
     "lint-staged": "13.1.2",
