@@ -62,7 +62,7 @@ importers:
       tailwindcss: 3.2.7
       typescript: 4.9.5
       unplugin-vue-components: 0.24.1
-      vitepress: 1.0.0-alpha.56
+      vitepress: 1.0.0-alpha.58
       vue: 3.2.47
       vue-i18n: 9.2.2
       vue-tsc: 1.2.0
@@ -86,7 +86,7 @@ importers:
       tailwindcss: 3.2.7_postcss@8.4.21
       typescript: 4.9.5
       unplugin-vue-components: 0.24.1_vue@3.2.47
-      vitepress: 1.0.0-alpha.56
+      vitepress: 1.0.0-alpha.58
       vue-tsc: 1.2.0_typescript@4.9.5
 
   packages/status-worker:
@@ -6544,8 +6544,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.56:
-    resolution: {integrity: sha512-FNoanHwmgWn4xZZcc8D34VKWcEs0F7e39xiVUahI7VzzI4VeiB+R/euYtPIUcTxIC2pRDhclw7/DO0JFYSGIpw==}
+  /vitepress/1.0.0-alpha.58:
+    resolution: {integrity: sha512-aENSAiE2uKMoQPwBTELY8Nig5qSWrmAl+MgsO3l/TE8At6kXii+2rseEId/bVfT700JeucYdqtCgWxu+LwpYIw==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.3
