@@ -30,7 +30,7 @@ importers:
     specifiers:
       '@types/fs-extra': 11.0.1
       '@types/node': 18.15.3
-      fs-extra: 11.1.0
+      fs-extra: 11.1.1
       node-fetch: 3.3.1
       ts-node: 10.9.1
       tslib: 2.5.0
@@ -38,7 +38,7 @@ importers:
     devDependencies:
       '@types/fs-extra': 11.0.1
       '@types/node': 18.15.3
-      fs-extra: 11.1.0
+      fs-extra: 11.1.1
       node-fetch: 3.3.1
       ts-node: 10.9.1_cbfmry4sbbh4vatmdrsmatfg5a
       tslib: 2.5.0
@@ -3903,8 +3903,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
-  /fs-extra/11.1.0:
-    resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
+  /fs-extra/11.1.1:
+    resolution: {integrity: sha512-MGIE4HOvQCeUCzmlHs0vXpih4ysz4wg9qiSAu6cd42lVwPbTM1TjV7RusoyQqMmk/95gdQZX72u+YW+c3eEpFQ==}
     engines: {node: '>=14.14'}
     dependencies:
       graceful-fs: 4.2.10
