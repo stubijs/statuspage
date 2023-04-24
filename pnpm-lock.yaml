@@ -135,8 +135,8 @@ importers:
         specifier: 4.9.5
         version: 4.9.5
       wrangler:
-        specifier: 2.16.0
-        version: 2.16.0
+        specifier: 2.17.0
+        version: 2.17.0
 
 packages:
 
@@ -6977,8 +6977,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /wrangler@2.16.0:
-    resolution: {integrity: sha512-jhkOmEAF7jH58VvnGx7Uqjs2u2T17e/5r9W3OsqESyBjc/8ALUYuwqQ2gr8JsXFny/cE0ysJas0fdY9wggWMCw==}
+  /wrangler@2.17.0:
+    resolution: {integrity: sha512-ucmVHP5BAUVyC/18hReEKgxGSgU0EOxGd+ElHRHVBeGH6LPcsOoC1TolTaDYYnbOuZMbYmHAR5OH1agayr3kZg==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     dependencies:
