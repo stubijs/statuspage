@@ -62,11 +62,11 @@ importers:
   packages/status-page:
     dependencies:
       '@ag-grid-community/core':
-        specifier: 29.3.2
-        version: 29.3.2
+        specifier: 29.3.3
+        version: 29.3.3
       '@ag-grid-community/vue3':
-        specifier: 29.3.2
-        version: 29.3.2
+        specifier: 29.3.3
+        version: 29.3.3
       vue:
         specifier: 3.2.47
         version: 3.2.47
@@ -75,8 +75,8 @@ importers:
         version: 9.2.2(vue@3.2.47)
     devDependencies:
       '@ag-grid-community/client-side-row-model':
-        specifier: 29.3.2
-        version: 29.3.2
+        specifier: 29.3.3
+        version: 29.3.3
       '@testing-library/cypress':
         specifier: 9.0.0
         version: 9.0.0(cypress@12.10.0)
@@ -140,19 +140,19 @@ importers:
 
 packages:
 
-  /@ag-grid-community/client-side-row-model@29.3.2:
-    resolution: {integrity: sha512-r0iSgPzoqTn8nNeL92+umPRVy/6cmE+73JeS8s6X6GRH3/dtnpoqwad2z1QXerYNqbe2qk1ydn233IRPvpKJHw==}
+  /@ag-grid-community/client-side-row-model@29.3.3:
+    resolution: {integrity: sha512-7BjLseiB625CiDECsSJBDn6xt59VMl0Fs1PwaCWtrTX0AKYBoU5W/SaOezRKW6saH6FnXxEW+47Vyrz+s+rRJQ==}
     dependencies:
-      '@ag-grid-community/core': 29.3.2
+      '@ag-grid-community/core': 29.3.3
     dev: true
 
-  /@ag-grid-community/core@29.3.2:
-    resolution: {integrity: sha512-7ftlfoMeFeD7AtYQp1V5oHnK1cjlnKYaBRBmIhWsDNRT7l10GzWK/Y8q2mQH3/XOwVk2xgxj4gta3xERDtv5iw==}
+  /@ag-grid-community/core@29.3.3:
+    resolution: {integrity: sha512-cr15doApCrzf7QJYAi0X4zZMv7sFi4nBmEFN4asxSTxrbFGzqzVjO2ymQi5U60NikRTQOuYx3Kzx4PzOTuH4dA==}
 
-  /@ag-grid-community/vue3@29.3.2:
-    resolution: {integrity: sha512-23gE/aNkn067CeN4l8ogLQxkuNwf+zrSgsCmIaHQhmo18ExBBpuqhp9Hb/14+GwO5rjA3aIyc03Usbgj9EnfRg==}
+  /@ag-grid-community/vue3@29.3.3:
+    resolution: {integrity: sha512-3HRhn1lpNu91dvmK0HBMq1kGOh2XpT5WL5IvIjUtgz757jmqdxIbVM9QxFdbCUwB5EKEJpXnNKbIqa2aWZVrWQ==}
     dependencies:
-      '@ag-grid-community/core': 29.3.2
+      '@ag-grid-community/core': 29.3.3
       vue: 3.2.47
     dev: false
 
