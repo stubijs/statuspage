@@ -23,7 +23,7 @@
     "ag-grid-community": "^29.0.0",
     "autoprefixer": "10.4.14",
     "axe-core": "4.7.0",
-    "cypress": "12.10.0",
+    "cypress": "12.11.0",
     "cypress-axe": "1.4.0",
     "d3": "7.8.4",
     "postcss": "8.4.23",
