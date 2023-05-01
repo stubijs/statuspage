@@ -120,8 +120,8 @@ importers:
         specifier: 1.0.0-alpha.75
         version: 1.0.0-alpha.75(@algolia/client-search@4.14.2)
       vue-tsc:
-        specifier: 1.6.2
-        version: 1.6.2(typescript@4.9.5)
+        specifier: 1.6.3
+        version: 1.6.3(typescript@4.9.5)
 
   packages/status-worker:
     devDependencies:
@@ -1814,8 +1814,8 @@ packages:
       typescript: 4.9.5
     dev: true
 
-  /@volar/vue-language-core@1.6.2:
-    resolution: {integrity: sha512-xcp4PMSoWAwBC6Lq8vmCCL6dShQtmgJXYvDeaBotGsKl5YbHermcR7U5Mog3mv6p2EIV1ErjhAzy5RgBsz17rQ==}
+  /@volar/vue-language-core@1.6.3:
+    resolution: {integrity: sha512-e9OTDCPa8Wuh0ORhD4z++qTIcrsrqcI9waspr93YcQCq6j+Q+JTFuy7HBSQgyezSAsP6x1WWokKVk4fWWDJQOw==}
     dependencies:
       '@volar/language-core': 1.4.1
       '@volar/source-map': 1.4.1
@@ -1828,13 +1828,13 @@ packages:
       vue-template-compiler: 2.7.14
     dev: true
 
-  /@volar/vue-typescript@1.6.2(typescript@4.9.5):
-    resolution: {integrity: sha512-9eWmdB2oW48FhQwebjrzk2uphlEw9RxJACN8DCz3xwShT/XyfDDUT99aTT1esULSV2fWijoSImXzb+bq4Vo3mQ==}
+  /@volar/vue-typescript@1.6.3(typescript@4.9.5):
+    resolution: {integrity: sha512-Dz29Qym33P1MSZDTZJ6PPLN1TLQfkX+g2pRnHqLCsFdSUu4yWYnElBURCn5WJkekxV/v+k2T43aur2RCSY3Ovg==}
     peerDependencies:
       typescript: '*'
     dependencies:
       '@volar/typescript': 1.4.1(typescript@4.9.5)
-      '@volar/vue-language-core': 1.6.2
+      '@volar/vue-language-core': 1.6.3
       typescript: 4.9.5
     dev: true
 
@@ -6940,14 +6940,14 @@ packages:
       he: 1.2.0
     dev: true
 
-  /vue-tsc@1.6.2(typescript@4.9.5):
-    resolution: {integrity: sha512-ts3I9x4Psx2q+DVo/ks1xjPdQ+EefaRxCBMU9U9EFz8IJFKpWrKBFelbzsGkfXvqbM0oZsmh/4wpYhgkrSKCoQ==}
+  /vue-tsc@1.6.3(typescript@4.9.5):
+    resolution: {integrity: sha512-q7l27j0eSJgyGat0khetrvoeaAHieRZFnf8WAJyKvB3eF0AxmLqfs4ahwZhaojBJjZ/lAXZa+Xt8EX54KzQ34w==}
     hasBin: true
     peerDependencies:
       typescript: '*'
     dependencies:
-      '@volar/vue-language-core': 1.6.2
-      '@volar/vue-typescript': 1.6.2(typescript@4.9.5)
+      '@volar/vue-language-core': 1.6.3
+      '@volar/vue-typescript': 1.6.3(typescript@4.9.5)
       semver: 7.3.8
       typescript: 4.9.5
     dev: true
