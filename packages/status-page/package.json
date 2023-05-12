@@ -12,7 +12,7 @@
   "dependencies": {
     "@ag-grid-community/core": "29.3.4",
     "@ag-grid-community/vue3": "29.3.4",
-    "vue": "3.3.1",
+    "vue": "3.3.2",
     "vue-i18n": "9.2.2"
   },
   "devDependencies": {
