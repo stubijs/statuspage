@@ -62,11 +62,11 @@ importers:
   packages/status-page:
     dependencies:
       '@ag-grid-community/core':
-        specifier: 29.3.4
-        version: 29.3.4
+        specifier: 29.3.5
+        version: 29.3.5
       '@ag-grid-community/vue3':
-        specifier: 29.3.4
-        version: 29.3.4
+        specifier: 29.3.5
+        version: 29.3.5
       vue:
         specifier: 3.3.2
         version: 3.3.2
@@ -75,8 +75,8 @@ importers:
         version: 9.2.2(vue@3.3.2)
     devDependencies:
       '@ag-grid-community/client-side-row-model':
-        specifier: 29.3.4
-        version: 29.3.4
+        specifier: 29.3.5
+        version: 29.3.5
       '@testing-library/cypress':
         specifier: 9.0.0
         version: 9.0.0(cypress@12.12.0)
@@ -140,19 +140,19 @@ importers:
 
 packages:
 
-  /@ag-grid-community/client-side-row-model@29.3.4:
-    resolution: {integrity: sha512-uzM0gJa7qcEEORr27c4zywinHLpnnnaximjqdAZ1vOaGDliGmf4ks75jCek+obAwzIAZeNwZGdFxIrwv3/PBgw==}
+  /@ag-grid-community/client-side-row-model@29.3.5:
+    resolution: {integrity: sha512-+uA28LTAummyYdZbEDys+cTECPn1Po1f6vX9QZOK9gpZdNzSpGjd3Vc1SKR/2brR6XMGlPeSRsX+FPZmG9uvHQ==}
     dependencies:
-      '@ag-grid-community/core': 29.3.4
+      '@ag-grid-community/core': 29.3.5
     dev: true
 
-  /@ag-grid-community/core@29.3.4:
-    resolution: {integrity: sha512-WLLfMwxuQqyw3dtVDDIKCO1eRWqhzqJ8427I8SQnwGDHWoZbeVnFgR2Z5InrOjloh36/UyEkK/T8QgwwhmDmDA==}
+  /@ag-grid-community/core@29.3.5:
+    resolution: {integrity: sha512-r86bOCscnKVtaYyKqlN2UCtfbjf4UcmxHfVuXzJ94iN8Jy3iiQVrbQnbNArnjR589Bt/1VR/m+SdAMsOLcdpag==}
 
-  /@ag-grid-community/vue3@29.3.4:
-    resolution: {integrity: sha512-qkBe3h+Y14h3+0muq3uDWrFMXeC5eo+GnCP/HLlF5+kqqwSOho3tE43nh5Snbi7gNPXpdOVw4U734rHxdM/IwA==}
+  /@ag-grid-community/vue3@29.3.5:
+    resolution: {integrity: sha512-gBX4fZrSVgBDOcge+KqwHhFeCOyN+2hhW/9dd3TMv2eN7hfHr3UCXs4X9VJKwmuhT4MD1d+pwNTjx+uaWP/qKQ==}
     dependencies:
-      '@ag-grid-community/core': 29.3.4
+      '@ag-grid-community/core': 29.3.5
       vue: 3.3.2
     dev: false
 
