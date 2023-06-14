@@ -19,10 +19,10 @@
   },
   "monitors": [
     {
-      "id": "cms-jstubenrauch-de",
-      "name": "cms.jstubenrauch.de",
-      "description": "CMS jstubenrauch.",
-      "url": "https://cms.jstubenrauch.de/admin/login",
+      "id": "bibica.net",
+      "name": "bibica.net",
+      "description": "Trang chủ bibica.net",
+      "url": "https://bibica.net",
       "method": "GET",
       "expectStatus": 200,
       "followRedirect": false,
@@ -31,31 +31,6 @@
       "lat": 50.110924,
       "shouldAnalyze": true
     },
-    {
-      "id": "status-jstubenrauch-de",
-      "name": "status.jstubenrauch.de",
-      "description": "Status Page jstubenrauch.",
-      "url": "https://status.jstubenrauch.de/",
-      "method": "GET",
-      "expectStatus": 200,
-      "followRedirect": false,
-      "linkable": true,
-      "lon": 8.682127,
-      "lat": 50.110924,
-      "shouldAnalyze": true
-    },
-    {
-      "id": "circuits-jstubenrauch-de",
-      "name": "circuits.jstubenrauch.de",
-      "description": "OpenCircuits MOD by Jan Stubenrauch.",
-      "url": "https://circuits.jstubenrauch.de/",
-      "method": "GET",
-      "expectStatus": 200,
-      "followRedirect": false,
-      "linkable": true,
-      "lon": 8.682127,
-      "lat": 50.110924,
-      "shouldAnalyze": true
-    }
+    
   ]
 }
