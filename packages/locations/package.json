@@ -12,7 +12,7 @@
     "ts-check": "tsc --noEmit && echo ok || echo not ok"
   },
   "devDependencies": {
-    "@types/fs-extra": "11.0.1",
+    "@types/fs-extra": "11.0.4",
     "@types/node": "18.16.16",
     "fs-extra": "11.1.1",
     "node-fetch": "3.3.1",
