@@ -30,8 +30,8 @@ importers:
         specifier: 4.1.5
         version: 4.1.5
       simple-git-hooks:
-        specifier: 2.8.1
-        version: 2.8.1
+        specifier: 2.9.0
+        version: 2.9.0
       typescript:
         specifier: 4.9.5
         version: 4.9.5
@@ -6675,8 +6675,8 @@ packages:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: true
 
-  /simple-git-hooks@2.8.1:
-    resolution: {integrity: sha512-DYpcVR1AGtSfFUNzlBdHrQGPsOhuuEJ/FkmPOOlFysP60AHd3nsEpkGq/QEOdtUyT1Qhk7w9oLmFoMG+75BDog==}
+  /simple-git-hooks@2.9.0:
+    resolution: {integrity: sha512-waSQ5paUQtyGC0ZxlHmcMmD9I1rRXauikBwX31bX58l5vTOhCEcBC5Bi+ZDkPXTjDnZAF8TbCqKBY+9+sVPScw==}
     hasBin: true
     requiresBuild: true
     dev: true
