@@ -12,8 +12,8 @@ importers:
         specifier: 0.37.0
         version: 0.37.0(eslint@8.39.0)(typescript@4.9.5)
       c8:
-        specifier: 7.13.0
-        version: 7.13.0
+        specifier: 7.14.0
+        version: 7.14.0
       eslint:
         specifier: 8.39.0
         version: 8.39.0
@@ -2733,8 +2733,8 @@ packages:
       streamsearch: 1.1.0
     dev: true
 
-  /c8@7.13.0:
-    resolution: {integrity: sha512-/NL4hQTv1gBL6J6ei80zu3IiTrmePDKXKXOTLpHvcIWZTVYQlDhVWjjWvkhICylE8EwwnMVzDZugCvdx0/DIIA==}
+  /c8@7.14.0:
+    resolution: {integrity: sha512-i04rtkkcNcCf7zsQcSv/T9EbUn4RXQ6mropeMcjFOsQXQ0iGLAr/xT6TImQg4+U9hmNpN9XdvPkjUL1IzbgxJw==}
     engines: {node: '>=10.12.0'}
     hasBin: true
     dependencies:
