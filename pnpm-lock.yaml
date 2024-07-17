@@ -92,7 +92,7 @@ importers:
         version: 9.13.0(vue@3.3.9)
       ag-grid-community:
         specifier: ^29.0.0
-        version: 29.0.0
+        version: 29.3.5
       autoprefixer:
         specifier: 10.4.19
         version: 10.4.19(postcss@8.4.39)
@@ -2375,8 +2375,8 @@ packages:
     hasBin: true
     dev: true
 
-  /ag-grid-community@29.0.0:
-    resolution: {integrity: sha512-onAQIqjhP1L93W5myAsfLBMBUyZPrWDb8FRulJuhjQKo8DEA4GSZ+oJHxwwLymm4biLu54zvZ+9GkTftha8gAg==}
+  /ag-grid-community@29.3.5:
+    resolution: {integrity: sha512-LxUo21f2/CH31ACEs1C7Q/ggGGI1fQPSTB4aY5OThmM+lBkygZ7QszBE8jpfgWOIjvjdtcdIeQbmbjkHeMsA7A==}
     dev: true
 
   /agent-base@6.0.2:
