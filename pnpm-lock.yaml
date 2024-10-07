@@ -66,11 +66,11 @@ importers:
   packages/status-page:
     dependencies:
       '@ag-grid-community/core':
-        specifier: 29.3.5
-        version: 29.3.5
+        specifier: 32.2.2
+        version: 32.2.2
       '@ag-grid-community/vue3':
-        specifier: 29.3.5
-        version: 29.3.5(typescript@4.9.5)
+        specifier: 32.2.2
+        version: 32.2.2(typescript@4.9.5)
       vue:
         specifier: 3.5.10
         version: 3.5.10(typescript@4.9.5)
@@ -79,8 +79,8 @@ importers:
         version: 9.14.1(vue@3.5.10)
     devDependencies:
       '@ag-grid-community/client-side-row-model':
-        specifier: 29.3.5
-        version: 29.3.5
+        specifier: 32.2.2
+        version: 32.2.2
       '@testing-library/cypress':
         specifier: 9.0.0
         version: 9.0.0(cypress@12.17.4)
@@ -91,8 +91,8 @@ importers:
         specifier: 9.13.0
         version: 9.13.0(vue@3.5.10)
       ag-grid-community:
-        specifier: ^29.0.0
-        version: 29.3.5
+        specifier: ^32.0.0
+        version: 32.2.2
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.47)
@@ -144,19 +144,23 @@ importers:
 
 packages:
 
-  /@ag-grid-community/client-side-row-model@29.3.5:
-    resolution: {integrity: sha512-+uA28LTAummyYdZbEDys+cTECPn1Po1f6vX9QZOK9gpZdNzSpGjd3Vc1SKR/2brR6XMGlPeSRsX+FPZmG9uvHQ==}
+  /@ag-grid-community/client-side-row-model@32.2.2:
+    resolution: {integrity: sha512-BenXaVRISOAlMwl59BWGAJ/RBRsc0eHR3i/pGRmjQc8eGgdTqjrePL4kDL7UXDAKoqqNsoGKK5TGHjCHAs1cHA==}
     dependencies:
-      '@ag-grid-community/core': 29.3.5
+      '@ag-grid-community/core': 32.2.2
+      tslib: 2.7.0
     dev: true
 
-  /@ag-grid-community/core@29.3.5:
-    resolution: {integrity: sha512-r86bOCscnKVtaYyKqlN2UCtfbjf4UcmxHfVuXzJ94iN8Jy3iiQVrbQnbNArnjR589Bt/1VR/m+SdAMsOLcdpag==}
-
-  /@ag-grid-community/vue3@29.3.5(typescript@4.9.5):
-    resolution: {integrity: sha512-gBX4fZrSVgBDOcge+KqwHhFeCOyN+2hhW/9dd3TMv2eN7hfHr3UCXs4X9VJKwmuhT4MD1d+pwNTjx+uaWP/qKQ==}
+  /@ag-grid-community/core@32.2.2:
+    resolution: {integrity: sha512-8w++Q5DKbFKhee7ZZ3HCx6KkMTHVwtV+xNwN/RJZneQ3WkXJYvsnkgVWmiwtglEo1iuMArxTz6pqOz/p23TBxA==}
     dependencies:
-      '@ag-grid-community/core': 29.3.5
+      ag-charts-types: 10.2.0
+      tslib: 2.7.0
+
+  /@ag-grid-community/vue3@32.2.2(typescript@4.9.5):
+    resolution: {integrity: sha512-fbGy2c2/775huBmLXJtYPoKaKLLWQGxTrm18VOACFwo4hFkGVBgovygFwtOPuXNZDkV4rZWrgQ59zJCkKFY36Q==}
+    dependencies:
+      '@ag-grid-community/core': 32.2.2
       vue: 3.5.10(typescript@4.9.5)
     transitivePeerDependencies:
       - typescript
@@ -2313,7 +2317,7 @@ packages:
     dependencies:
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@4.9.5)
       '@typescript-eslint/utils': 6.21.0(eslint@8.57.1)(typescript@4.9.5)
-      debug: 4.3.6
+      debug: 4.3.7
       eslint: 8.57.1
       ts-api-utils: 1.3.0(typescript@4.9.5)
       typescript: 4.9.5
@@ -2363,7 +2367,7 @@ packages:
     dependencies:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/visitor-keys': 6.21.0
-      debug: 4.3.6
+      debug: 4.3.7
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
@@ -2774,15 +2778,20 @@ packages:
     hasBin: true
     dev: true
 
-  /ag-grid-community@29.3.5:
-    resolution: {integrity: sha512-LxUo21f2/CH31ACEs1C7Q/ggGGI1fQPSTB4aY5OThmM+lBkygZ7QszBE8jpfgWOIjvjdtcdIeQbmbjkHeMsA7A==}
+  /ag-charts-types@10.2.0:
+    resolution: {integrity: sha512-PUqH1QtugpYLnlbMdeSZVf5PpT1XZVsP69qN1JXhetLtQpVC28zaj7ikwu9CMA9N9b+dBboA9QcjUQUJZVUokQ==}
+
+  /ag-grid-community@32.2.2:
+    resolution: {integrity: sha512-RQluoEXbTCkYHHwmOUzG4wGBX3yQffFH+52aWJUAFqFKNNHYKYGhjvH2iuAa2xw3CWva1hupUaDpP+Rol32Arg==}
+    dependencies:
+      ag-charts-types: 10.2.0
     dev: true
 
   /agent-base@6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
     dependencies:
-      debug: 4.3.6
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7382,7 +7391,6 @@ packages:
 
   /tslib@2.7.0:
     resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
-    dev: true
 
   /tsutils@3.21.0(typescript@4.9.5):
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
@@ -7881,7 +7889,7 @@ packages:
       espree: 9.6.1
       esquery: 1.6.0
       lodash: 4.17.21
-      semver: 7.6.2
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
     dev: true
