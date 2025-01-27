@@ -14,7 +14,7 @@
   "devDependencies": {
     "@types/fs-extra": "11.0.4",
     "@types/node": "18.19.74",
-    "fs-extra": "11.2.0",
+    "fs-extra": "11.3.0",
     "node-fetch": "3.3.2",
     "ts-node": "10.9.2",
     "tslib": "2.8.1",
