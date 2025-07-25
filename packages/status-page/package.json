@@ -13,7 +13,7 @@
     "@ag-grid-community/core": "29.3.5",
     "@ag-grid-community/vue3": "29.3.5",
     "vue": "3.5.18",
-    "vue-i18n": "9.14.3"
+    "vue-i18n": "9.14.5"
   },
   "devDependencies": {
     "@ag-grid-community/client-side-row-model": "29.3.5",
