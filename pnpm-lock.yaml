@@ -121,8 +121,8 @@ importers:
         specifier: 0.28.0
         version: 0.28.0(vue@3.5.18)
       vitepress:
-        specifier: 1.6.3
-        version: 1.6.3(@algolia/client-search@5.34.1)(postcss@8.5.6)(search-insights@2.17.3)(typescript@4.9.5)
+        specifier: 1.6.4
+        version: 1.6.4(@algolia/client-search@5.34.1)(postcss@8.5.6)(search-insights@2.17.3)(typescript@4.9.5)
       vue-tsc:
         specifier: 1.8.27
         version: 1.8.27(typescript@4.9.5)
@@ -2753,10 +2753,6 @@ packages:
 
   /@vue/shared@3.5.10:
     resolution: {integrity: sha512-VkkBhU97Ki+XJ0xvl4C9YJsIZ2uIlQ7HqPpZOS3m9VCvmROPaChZU6DexdMJqvz9tbgG+4EtFVrSuailUq5KGQ==}
-    dev: true
-
-  /@vue/shared@3.5.13:
-    resolution: {integrity: sha512-/hnE/qP5ZoGpol0a5mDi45bOd7t3tjYJBjsgCsivow7D48cJeV5l05RD82lPqi7gRiphZM37rnhW1l6ZoCNNnQ==}
     dev: true
 
   /@vue/shared@3.5.18:
@@ -8178,8 +8174,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress@1.6.3(@algolia/client-search@5.34.1)(postcss@8.5.6)(search-insights@2.17.3)(typescript@4.9.5):
-    resolution: {integrity: sha512-fCkfdOk8yRZT8GD9BFqusW3+GggWYZ/rYncOfmgcDtP3ualNHCAg+Robxp2/6xfH1WwPHtGpPwv7mbA3qomtBw==}
+  /vitepress@1.6.4(@algolia/client-search@5.34.1)(postcss@8.5.6)(search-insights@2.17.3)(typescript@4.9.5):
+    resolution: {integrity: sha512-+2ym1/+0VVrbhNyRoFFesVvBvHAVMZMK0rw60E3X/5349M1GuVdKeazuksqopEdvkKwKGs21Q729jX81/bkBJg==}
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4
@@ -8199,7 +8195,7 @@ packages:
       '@types/markdown-it': 14.1.2
       '@vitejs/plugin-vue': 5.2.1(vite@5.4.14)(vue@3.5.18)
       '@vue/devtools-api': 7.7.1
-      '@vue/shared': 3.5.13
+      '@vue/shared': 3.5.18
       '@vueuse/core': 12.5.0(typescript@4.9.5)
       '@vueuse/integrations': 12.5.0(focus-trap@7.6.4)(typescript@4.9.5)
       focus-trap: 7.6.4
