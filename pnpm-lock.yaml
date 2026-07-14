@@ -48,8 +48,8 @@ importers:
         specifier: 18.19.130
         version: 18.19.130
       fs-extra:
-        specifier: 11.3.5
-        version: 11.3.5
+        specifier: 11.3.6
+        version: 11.3.6
       node-fetch:
         specifier: 3.3.2
         version: 3.3.2
@@ -5195,8 +5195,8 @@ packages:
     resolution: {integrity: sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==}
     dev: true
 
-  /fs-extra@11.3.5:
-    resolution: {integrity: sha512-eKpRKAovdpZtR1WopLHxlBWvAgPny3c4gX1G5Jhwmmw4XJj0ifSD5qB5TOo8hmA0wlRKDAOAhEE1yVPgs6Fgcg==}
+  /fs-extra@11.3.6:
+    resolution: {integrity: sha512-w8ZNZr2mKIc7qeNaQ9AVPT1+iFaI+Avd4xudVOvdDJ8VytREi1Ft5Ih7hd9jjehod8vAM5GMsfQ/TpPf4EyoEA==}
     engines: {node: '>=14.14'}
     dependencies:
       graceful-fs: 4.2.10
