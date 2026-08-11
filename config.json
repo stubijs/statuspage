@@ -1,7 +1,7 @@
 {
   "settings": {
-    "title": "Status Page",
-    "url": "https://status.jstubenrauch.de",
+    "title": "Status Page - Deviantal Monitoring.",
+    "url": "https://trantringhia.org",
     "logo": "favicon.png",
     "daysInHistogram": 30,
     "daysSavedForHistogram": 90,
