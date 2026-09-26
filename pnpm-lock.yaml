@@ -130,8 +130,8 @@ importers:
   packages/status-worker:
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: ^4.0.0
-        version: 4.20260702.1
+        specifier: ^5.0.0
+        version: 5.20260926.1
       '@types/node':
         specifier: 18.19.130
         version: 18.19.130
@@ -542,8 +542,8 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudflare/workers-types@4.20260702.1:
-    resolution: {integrity: sha512-mOhf5TUEB1m2vPrxtqoIGfz0fUC9xyxRDx5gWHy5s+OCo6dcV+g7wI1R7gYCMFohhqF/2y2xeKVwMwCJjfn/WA==}
+  /@cloudflare/workers-types@5.20260926.1:
+    resolution: {integrity: sha512-jLtwSjBFtXucrEIj584vNk/k9OwgW4ij7/nK40hnCw137/0ilqfkTlYIUTWlTEbUX2V/+XVBijzZha9spdQTUw==}
     dev: true
 
   /@colors/colors@1.5.0:
